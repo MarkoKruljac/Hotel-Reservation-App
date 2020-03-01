@@ -10,26 +10,31 @@ Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanje vaše 
 
 Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra raditi na ovom projektu. A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
 
-# Naziv projekta
-(u redak iznad navedite kratki proizvoljni naziv projekta prikladan akademskoj zajednici, a ovaj tekst obrišite)
+## Hotel
 
 ## Projektni tim
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
-Ime i prezime | ... | ... | ...
+Marko Kruljac | mkruljac@foi.hr     | 0016129698 | mkruljac98
+Dominik Lunko | dlunko@foi.hr       | 0016129271 | DominikLunko
+Petar Kozina  | pkozina@foi.hr      | 0016129864 | pkozina
 
 ## Opis domene
-Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
+Izrada aplikacije hotela kojoj su glavne funkcionalnosti CRUD operacije vezane za posjetioce , CRUD operacije vezane za sobe. Isto tako, aplikacija bi sadržavala izvješta oko statistike količine posjetioca na dnevnoj, tjednoj, mjesečnoj i godišnjoj razini te duljina njihovog najma soba. Također, aplikacija je namijenja i ispisu računa koja se izdaje samom posjetiocu sukladno s njihovim troškovima koji su ostvrareni u hotelu, a služi i zaposlenima kako rezervirali sobe te pregledavali one koje su rezervirane od vanjskih korisnika.
 
 ## Specifikacija projekta
-Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
-
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
+F01 | Prijava u aplikaciju | Za pristup hotelu potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom zaposlenja. | Marko Kruljac
+F02 | Upravljanje zaposlenicima | Mogućnost pregleda svih zaposlenika, dodavanje, uređivanje i brisanje istih. Ovom funkcijom aplikacije upravlja isključivo administrator. | Dominik Lunko
+F03 | Upravljanje sobama | Mogućnost dodavanja, brisanja, pregleda i pretraživanje soba u hotelu. | Petar Kozina 
+F04 | Upravljanje posjetiocima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja posjetioca u hotelu. | Dominik Lunko
+F05 | Rezervacija soba | Mogućnost rezervacije soba od strane korisnika. Rezervacija se može obaviti na fizički način ili putem dostupnog linka za rezervaciju. | Marko Kruljac 
+F06 | Upravaljanje rezervacijma | Mogućnost dodavanja, brisanja, pregleda i pretraživanja rezervacija koje su obavljene od strane korisnika. | Petar Kozina
+F07 | Upravljanje dobavljačima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja dobavljača koji su povezani s hotelom. | Marko Kruljac
+F08 | Izdavanje računa | Isporuka računa posjetiocima hotela koji se odnose na troškove njihovog boravka. | Dominik Lunko
+F09 | Generiranje izvještaja | Mogućnost generiranja raznih izvještaja te njihov izvoz u PDF format na temelju informacija dostupnih u bazi podataka. | Petar Kozina
 
 ## Tehnologije i oprema
-Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
+Microsoft Visual Studio 2019, Microsoft SQL server, GitHub, C# (.net), Microsoft Office, Differ 
