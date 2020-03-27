@@ -1,4 +1,5 @@
-## PI20-021 Hotel (mentor: Zlatko Stapić)
+## PI20-021 Hotel 
+(mentor: Zlatko Stapić)
 
 ## Projektni tim
 
