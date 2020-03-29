@@ -10,19 +10,21 @@ Dominik Lunko | dlunko@foi.hr       | 0016129271 | DominikLunko
 Petar Kozina  | pkozina@foi.hr      | 0016129864 | pkozina
 
 ## Opis domene
-Izrada aplikacije hotela kojoj su glavne funkcionalnosti CRUD operacije vezane za posjetioce , CRUD operacije vezane za sobe. Isto tako, aplikacija bi sadržavala izvješta oko statistike količine posjetioca na dnevnoj, tjednoj, mjesečnoj i godišnjoj razini te duljina njihovog najma soba. Također, aplikacija je namijenja i ispisu računa koja se izdaje samom posjetiocu sukladno s njihovim troškovima koji su ostvrareni u hotelu, a služi i zaposlenima kako rezervirali sobe te pregledavali one koje su rezervirane od vanjskih korisnika.
-
+Izrada aplikacije hotela kojoj su glavne funkcionalnosti CRUD operacije vezane za posjetioce , CRUD operacije vezane za sobe te njezina prodaja različitim iznajmljivačima tako da se svakom iznajmljivaču pri prodaji kreira jedan račun upravitelja koji onda dalje upravlja svojim hotelima i ostalim podacima. Isto tako, aplikacija bi sadržavala izvještaje oko statistike količine posjetioca na dnevnoj, tjednoj, mjesečnoj i godišnjoj razini te duljina njihovog najma soba, a izvješća bi se mogla pohraniti u PDF ili biti ispisana te bi imala mogućnost prikaza u tabličnom ili grafičkom obliku. Nadalje, aplikacija je namijenjena i ispisu računa koji se izdaju samom posjetiocu sukladno njegovim troškovima koji su ostvareni u hotelu te bi podržavala slanje računa na e-mail gosta. Također, jedna od funkcija aplikacije je to da služi zaposlenima kako bi rezervirali sobe te pregledavali one koje su rezervirane od vanjskih korisnika. Osim toga, aplikacija bi imala automatski podsjetnik za rezervacije gdje bi se svako jutro slao mail svim korisnicima koji imaju rezervaciju sljedeći dan. Završeno, aplikacija bi omogućavala izradu dnevnog plana s popisom svih zaprimanja i izdavanja soba koji su planirani za taj dan te pripremom dnevnog rasporeda kako bi se svi gosti primili i ispratili na vrijeme, a sobe pospremile. 
 ## Specifikacija projekta
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Prijava u aplikaciju | Za pristup hotelu potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom zaposlenja. | Marko Kruljac
 F02 | Upravljanje zaposlenicima | Mogućnost pregleda svih zaposlenika, dodavanje, uređivanje i brisanje istih. Ovom funkcijom aplikacije upravlja isključivo administrator. | Dominik Lunko
 F03 | Upravljanje sobama | Mogućnost dodavanja, brisanja, pregleda i pretraživanje soba u hotelu. | Petar Kozina 
-F04 | Upravljanje posjetiocima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja posjetioca u hotelu. | Dominik Lunko
-F05 | Upravaljanje rezervacijma | Mogućnost dodavanja, brisanja, pregleda i pretraživanja rezervacija koje su obavljene od strane korisnika. | Petar Kozina
-F06 | Upravljanje dobavljačima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja dobavljača koji su povezani s hotelom. | Marko Kruljac
-F07 | Izdavanje računa | Isporuka računa posjetiocima hotela koji se odnose na troškove njihovog boravka. | Marko Kruljac
-F08 | Generiranje izvještaja | Mogućnost generiranja raznih izvještaja te njihov izvoz u PDF format na temelju informacija dostupnih u bazi podataka. | Dominik Lunko
+F04 | Upravljanje posjetiocima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja posjetioca u hotelu. | Petar Kozina
+F05 | Upravaljanje rezervacijma | Mogućnost dodavanja, brisanja, pregleda i pretraživanja rezervacija koje su obavljene od strane korisnika. | Dominik Lunko
+F06 | Upravljanje dobavljačima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja dobavljača koji su povezani s hotelom. | Petar Kozina
+F07 | Izdavanje računa | Isporuka računa posjetiocima hotela koji se odnose na troškove njihovog boravka. Mogućnost slanja računa na e-mail gosta. | Dominik Lunko
+F08 | Generiranje izvještaja | Mogućnost generiranja raznih izvještaja te njihov izvoz u PDF format ili ispis na temelju informacija dostupnih u bazi podataka. Mogućnost prikaza izvješća u tabličnom i/ili grafičkom obliku. | Marko Kruljac
+F09 | Automatski podsjetnik za rezervacije | Mogućnost slanja svakog jutra e-maila svim korisnicima koji imaju rezervaciju sljedeći dan. | Petar Kozina
+F10 | Izrada dnevnog plana | Mogućnost izrade dnevnog plana s popisom svih zaprimanja i izdavanja soba koji su planirani za taj dan te tako omogućiti to da se gosti prime i isprate na vrijeme, a sobe pospreme. | Marko Kruljac
+
 
 ## Tehnologije i oprema
 Microsoft Visual Studio 2019, Microsoft SQL server, GitHub, C# (.net), Microsoft Office, Differ 
