@@ -20,7 +20,7 @@ F03 | Upravaljanje rezervacijma | Mogućnost dodavanja, brisanja, pregleda i pre
 F04 | Upravljanje dobavljačima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja dobavljača koji su povezani s hotelom. | Petar Kozina
 F05 | Izdavanje računa | Isporuka računa posjetiocima hotela koji se odnose na troškove njihovog boravka. Mogućnost slanja računa na e-mail gosta. | Dominik Lunko
 F06 | Generiranje izvještaja | Mogućnost generiranja raznih izvještaja te njihov izvoz u PDF format ili ispis na temelju informacija dostupnih u bazi podataka. Mogućnost prikaza izvješća u tabličnom i/ili grafičkom obliku. | Marko Kruljac
-F07 | Automatski podsjetnik za rezervacije | Mogućnost slanja svakog jutra e-maila svim korisnicima koji imaju rezervaciju sljedeći dan. | Petar Kozina
+F07 | Automatski podsjetnik za rezervacije | Mogućnost slanja svakog jutra e-maila svim gostima koji imaju rezervaciju sljedeći dan. | Petar Kozina
 F08 | Izrada dnevnog plana | Mogućnost izrade dnevnog plana s popisom svih zaprimanja i izdavanja soba koji su planirani za taj dan te tako omogućiti to da se gosti prime i isprate na vrijeme, a sobe pospreme. | Marko Kruljac
 
 
