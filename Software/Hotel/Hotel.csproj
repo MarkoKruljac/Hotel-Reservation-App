@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5CD2953-2AC1-4665-8C7A-029567A02B56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hotel</RootNamespace>
+    <AssemblyName>Hotel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dobavljac.cs" />
+    <Compile Include="Forme\DnevniPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DnevniPlan.Designer.cs">
+      <DependentUpon>DnevniPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DobavljačForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DobavljačForm.Designer.cs">
+      <DependentUpon>DobavljačForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\GlavnaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\GlavnaForma.Designer.cs">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\KorisnickaDokumentacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\KorisnickaDokumentacija.Designer.cs">
+      <DependentUpon>KorisnickaDokumentacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PrijavaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PrijavaForm.Designer.cs">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gost.cs" />
+    <Compile Include="Hotel.cs" />
+    <Compile Include="Korisnik.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forme\RacunForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\RacunForm.Designer.cs">
+      <DependentUpon>RacunForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\RezervacijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\RezervacijaForm.Designer.cs">
+      <DependentUpon>RezervacijaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZaposlenikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZaposlenikForm.Designer.cs">
+      <DependentUpon>ZaposlenikForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Racun.cs" />
+    <Compile Include="Rezervacija.cs" />
+    <Compile Include="Soba.cs" />
+    <Compile Include="StatusRezervacije.cs" />
+    <Compile Include="StavkaRacuna.cs" />
+    <Compile Include="TipGosta.cs" />
+    <Compile Include="Usluga.cs" />
+    <Compile Include="VrstaKorisnika.cs" />
+    <Compile Include="VrstaRezervacije.cs" />
+    <EmbeddedResource Include="Forme\DnevniPlan.resx">
+      <DependentUpon>DnevniPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DobavljačForm.resx">
+      <DependentUpon>DobavljačForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\GlavnaForma.resx">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\KorisnickaDokumentacija.resx">
+      <DependentUpon>KorisnickaDokumentacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PrijavaForm.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forme\RacunForm.resx">
+      <DependentUpon>RacunForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\RezervacijaForm.resx">
+      <DependentUpon>RezervacijaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZaposlenikForm.resx">
+      <DependentUpon>ZaposlenikForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
