@@ -15,10 +15,10 @@ Izrada aplikacije hotela kojoj su glavne funkcionalnosti CRUD operacije vezane z
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Prijava u aplikaciju | Za pristup hotelu potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom zaposlenja. | Marko Kruljac
-F02 | Upravljanje zaposlenicima | Mogućnost pregleda svih zaposlenika, dodavanje, uređivanje i brisanje istih. Ovom funkcijom aplikacije upravlja isključivo administrator. | Dominik Lunko
+F02 | Upravljanje zaposlenicima | Mogućnost pregleda svih zaposlenika, dodavanje, uređivanje i brisanje istih. Ovom funkcijom aplikacije upravlja isključivo administrator. | Petar Kozina
 F03 | Upravaljanje rezervacijma | Mogućnost dodavanja, brisanja, pregleda i pretraživanja rezervacija koje su obavljene od strane korisnika. | Dominik Lunko
-F04 | Upravljanje dobavljačima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja dobavljača koji su povezani s hotelom. | Petar Kozina
-F05 | Izdavanje računa | Isporuka računa posjetiocima hotela koji se odnose na troškove njihovog boravka. Mogućnost slanja računa na e-mail gosta. | Dominik Lunko
+F04 | Upravljanje dobavljačima | Mogućnost dodavanja, brisanja, pregleda i pretraživanja dobavljača koji su povezani s hotelom. | Dominik Lunko
+F05 | Izdavanje računa | Isporuka računa posjetiocima hotela koji se odnose na troškove njihovog boravka. Mogućnost slanja računa na e-mail gosta. | Petar Kozina
 F06 | Generiranje izvještaja | Mogućnost generiranja raznih izvještaja te njihov izvoz u PDF format ili ispis na temelju informacija dostupnih u bazi podataka. Mogućnost prikaza izvješća u tabličnom i/ili grafičkom obliku. | Marko Kruljac
 F07 | Automatski podsjetnik za rezervacije | Mogućnost slanja svakog jutra e-maila svim gostima koji imaju rezervaciju sljedeći dan. | Petar Kozina
 F08 | Izrada dnevnog plana | Mogućnost izrade dnevnog plana s popisom svih zaprimanja i izdavanja soba koji su planirani za taj dan te tako omogućiti to da se gosti prime i isprate na vrijeme, a sobe pospreme. | Marko Kruljac
