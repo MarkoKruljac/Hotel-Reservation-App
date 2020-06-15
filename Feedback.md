@@ -16,7 +16,7 @@
 * Sadržaj ste grupirali po tipu informacija a ne po funkcionalnostima ili drugim aspektima važnim za projekt ili za tim. Stoga, moj prijedlog je da se taj dio restrukturira te da sav sdržaj bude smješten u ono poglavlje na koje se odnosi to jest ovisno o funkcionalnim ili nefunkcionalnim zahtjevima. Ta poglavlja bi u sebi sadržavala sve što je važno za taj zahtjev (od opisa slučaja korištenja, dijela modela podataka, skice sučelja, integracije i interakcije s drugim funkcionalnostima opisane dijagramima aktivnosti, slijeda i slično). Ovu promjenu nije teško napraviti jer većinu tih artefakata već imate.
 * Poglavlja nemojte imenovati po dijagramima. Zapamtite da poglavlja nisu tu zbog dijagrama, već su dijagrami tu da vam pomognu da iskomunicirate neku drugu temu, bilo da se radi i strukturi dokumenta, tijeku podataka ili aktivnosti, stanjima ili bilo kojoj drugoj specifikaciji. Stoga, osim izmjene naziva poglavlja, koristite i ostale UML dijagrame gdje je prikladno i potrebno.
 * UC: Sintaksički ispravni uz izuzetak prvog dijagrmaa koji ima malu sintaksičku pogrešku. 
-* AD: Detaljno razrađene aktivnosti unutar dijagrama imaju početni ali ne i završni čvor.
+* AD: Sintaksički ispravni.
 * CD: Dijagram nije pregledan. Podijeliti ga na više specifičnih dijagrama kako je navedeno u komentaru o restrukturiranju.
 * Semantiku i usklađenost svih dijagama s kodom ćemo provjeravati na obrani.
 * U dokumentaciju dodati poglavlje s uputama za podešavanje razvojne i produkcijske okoline te s podacima o testiranju programa (npr. korisnička imena i lozinke).
