@@ -32,8 +32,8 @@
             this.dodaj_btn = new System.Windows.Forms.Button();
             this.izmijeni_btn = new System.Windows.Forms.Button();
             this.izbriši_btn = new System.Windows.Forms.Button();
-            this.zatvori_btn = new System.Windows.Forms.Button();
             this.dobavljač_lbl = new System.Windows.Forms.Label();
+            this.btnOsvjeziDobavljace = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaci_dtg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,13 +42,14 @@
             this.dobavljaci_dtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dobavljaci_dtg.Location = new System.Drawing.Point(12, 55);
             this.dobavljaci_dtg.Name = "dobavljaci_dtg";
-            this.dobavljaci_dtg.Size = new System.Drawing.Size(850, 409);
+            this.dobavljaci_dtg.RowHeadersWidth = 51;
+            this.dobavljaci_dtg.Size = new System.Drawing.Size(602, 409);
             this.dobavljaci_dtg.TabIndex = 0;
             this.dobavljaci_dtg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dobavljaci_dgv_CellContentClick);
             // 
             // dodaj_btn
             // 
-            this.dodaj_btn.Location = new System.Drawing.Point(625, 470);
+            this.dodaj_btn.Location = new System.Drawing.Point(377, 470);
             this.dodaj_btn.Name = "dodaj_btn";
             this.dodaj_btn.Size = new System.Drawing.Size(75, 40);
             this.dodaj_btn.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // izmijeni_btn
             // 
-            this.izmijeni_btn.Location = new System.Drawing.Point(706, 470);
+            this.izmijeni_btn.Location = new System.Drawing.Point(458, 470);
             this.izmijeni_btn.Name = "izmijeni_btn";
             this.izmijeni_btn.Size = new System.Drawing.Size(75, 40);
             this.izmijeni_btn.TabIndex = 2;
@@ -68,23 +69,13 @@
             // 
             // izbriši_btn
             // 
-            this.izbriši_btn.Location = new System.Drawing.Point(787, 470);
+            this.izbriši_btn.Location = new System.Drawing.Point(539, 470);
             this.izbriši_btn.Name = "izbriši_btn";
             this.izbriši_btn.Size = new System.Drawing.Size(75, 40);
             this.izbriši_btn.TabIndex = 3;
             this.izbriši_btn.Text = "Izbriši";
             this.izbriši_btn.UseVisualStyleBackColor = true;
             this.izbriši_btn.Click += new System.EventHandler(this.izbriši_btn_Click);
-            // 
-            // zatvori_btn
-            // 
-            this.zatvori_btn.Location = new System.Drawing.Point(787, 12);
-            this.zatvori_btn.Name = "zatvori_btn";
-            this.zatvori_btn.Size = new System.Drawing.Size(75, 37);
-            this.zatvori_btn.TabIndex = 4;
-            this.zatvori_btn.Text = "Zatvori";
-            this.zatvori_btn.UseVisualStyleBackColor = true;
-            this.zatvori_btn.Click += new System.EventHandler(this.zatvori_btn_Click);
             // 
             // dobavljač_lbl
             // 
@@ -96,13 +87,23 @@
             this.dobavljač_lbl.Text = "Popis dobavljača:";
             this.dobavljač_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnOsvjeziDobavljace
+            // 
+            this.btnOsvjeziDobavljace.Location = new System.Drawing.Point(503, 17);
+            this.btnOsvjeziDobavljace.Name = "btnOsvjeziDobavljace";
+            this.btnOsvjeziDobavljace.Size = new System.Drawing.Size(70, 32);
+            this.btnOsvjeziDobavljace.TabIndex = 6;
+            this.btnOsvjeziDobavljace.Text = "Osvjezi";
+            this.btnOsvjeziDobavljace.UseVisualStyleBackColor = true;
+            this.btnOsvjeziDobavljace.Click += new System.EventHandler(this.btnOsvjeziDobavljace_Click);
+            // 
             // DobavljačForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 539);
+            this.ClientSize = new System.Drawing.Size(659, 539);
+            this.Controls.Add(this.btnOsvjeziDobavljace);
             this.Controls.Add(this.dobavljač_lbl);
-            this.Controls.Add(this.zatvori_btn);
             this.Controls.Add(this.izbriši_btn);
             this.Controls.Add(this.izmijeni_btn);
             this.Controls.Add(this.dodaj_btn);
@@ -122,8 +123,8 @@
         private System.Windows.Forms.Button dodaj_btn;
         private System.Windows.Forms.Button izmijeni_btn;
         private System.Windows.Forms.Button izbriši_btn;
-        private System.Windows.Forms.Button zatvori_btn;
         private System.Windows.Forms.Label dobavljač_lbl;
+        private System.Windows.Forms.Button btnOsvjeziDobavljace;
     }
 }
 

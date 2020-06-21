@@ -117,4 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Prilikom prijave korisnika (administrator ili zaposlenik) popunjavaju se polja za unos korisničkog imena i lozinke koji su dobiveni pri zaposlenju. Nakon unosa možete kliknuti na gumb Prijavi se. Ukoliko su podaci ispravno uneseni dobit ćete poruku da ste uspješno prijavljeni pod ulogom koju ste odabrali i da ukoliko ima rezervacija za sutra (od danasnjeg dana) automatski podsjetnik salje mailove tim gostima koji imaju rezervaciju, a ukoliko su im mailovi vec poslani, prilikom sljedeće prijave im se neće opet slati mailovi te vam se otvara glavna forma aplikacije, u protivnom ćete dobiti poruku kako podaci nisu ispravni te ćete morati ponovno upisivati podatke. </value>
+  </data>
+  <data name="richTextBox5.Text" xml:space="preserve">
+    <value>Pritiskom na Dobavljači otvara se forma Dobavljači 
+Pritiskom na  Zaposlenici otvara se forma Zaposlenici
+Pritiskom na  Dnevni plan  otvara se forma Dnevni plan 
+Pritiskom na  Rezervacije  otvara se forma Rezervacije 
+Pritiskom na  Gosti  otvara se forma Gosti 
+Pritiskom na  Pomoć  otvara se forma Pomoć
+Pritiskom na  Odjava  odjavljujete se iz aplikacije i otvara se forma Prijava
+
+</value>
+  </data>
+  <data name="richTextBox7.Text" xml:space="preserve">
+    <value>Pritiskom na gumb Dobavljači otvara vam se forma za unos dobavljača. Ovdje možete dodavati, izmjenjivati i brisati podatke o dobavljaču. Kada dodate dobavljača pritisnete gumb:  - Izvrsi -  dobivate poruku da ste uspješno dodali dobavljača i nakon pritiska na gumb 
+- Osvjezi - isti je vidljiv na formi. 
+Ista stvar vrijedi za izmjenu, a za brisanje samo označite dobavljača na formi i pritisnete gumb Izbriši.</value>
+  </data>
+  <data name="richTextBox9.Text" xml:space="preserve">
+    <value>Pritiskom na gumb Zaposlenici otvara vam se forma zaposlenika. Ovdje možete vidjeti zaposlenike hotela i njihove podatke, te dodavati, izmjenjivati i brisati zaposlenike. Prilikom dodavanja zaposlenika ispunjavate potrebne podatke i kliknete na gumb Spremi te nakon toga dobivate poruku o uspješnom dodavanju zaposlenika i istog možete vidjeti na popisu na formi. Isto vrijedi za izmjenu podataka, a za brisanje samo označite zaposlenika i stisnete gumb Izbriši. Također možete pretraživati zaposlenike po prezimenu i osvježavati popis.</value>
+  </data>
+  <data name="richTextBox11.Text" xml:space="preserve">
+    <value>Pritiskom gumba Dnevni plan na glavnoj formi otvaram vam se forma gdje vidite goste koji na današnji datum useljavaju i iseljavaju. Ukoliko nema takvih pritiskom na gumb
+Prikaži račun ispisuje se poruka da nema dostupnih rezervacija. 
+Ukoliko ima, pritiskom na:
+Prikaži račun  prikazuju se podaci o računu te pritiskom na gumb 
+Naplati osvježavanjem forme rezervacija se briše s forme dnevnog plana ali se ne briše s forme rezervacija. 
+Također pritiskom na gumb:
+Obavljeno iseljenje  briše se rezervacija s forme dnevnog plana ali se i briše s forme rezervacija.
+</value>
+  </data>
+  <data name="richTextBox13.Text" xml:space="preserve">
+    <value>Pritiskom gumba Rezervacije na glavnoj formi otvara vam se forma gdje se vide rezervacije i podaci o rezervacijama. Postoji mogućnost dodavanja, izmjene i brisanja rezervacije. Prilikom dodavanja pritisnete na gumb
+Dodaj   popunite odgovarajuće podatke i stisnete na
+Izvrši te dobivate poruku o uspješnom dodavanju rezervacije.
+Isto vrijedi za izmjenu. Ukoliko želite izbrisati rezervaciju označite ju te stisnete gumb Izbriši. Također rezervacije možete pretraživati po prezimenu i osvježavati popis rezervacija.
+
+</value>
+  </data>
+  <data name="richTextBox15.Text" xml:space="preserve">
+    <value>Pritiskom gumba Gosti na glavnoj formi otvara vam se forma gdje se vide podaci o gostima. Postoji mogućnost dodavanja, izmjene i brisanja gosta. Prilikom dodavanja pritisnete na gumb: 
+Dodaj gosta  popunite odgovarajuće podatke 
+ Dodaj  dobivate poruku o uspješnom dodavanju gosta.
+ Isto vrijedi za izmjenu. Ukoliko želite izbrisati gosta označite ga te stisnete gumb Izbriši gosta. Također goste možete pretraživati po prezimenu i osvježavati popis gostiju.</value>
+  </data>
 </root>

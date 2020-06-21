@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dobavljac.cs" />
+    <Compile Include="Dobavljac.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Forme\DnevniPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,11 +70,65 @@
     <Compile Include="Forme\DobavljačForm.Designer.cs">
       <DependentUpon>DobavljačForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\DodavanjeDobavljacaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodavanjeDobavljacaForm.Designer.cs">
+      <DependentUpon>DodavanjeDobavljacaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodavanjeGostiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodavanjeGostiForm.Designer.cs">
+      <DependentUpon>DodavanjeGostiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodavanjeRezervacijeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodavanjeRezervacijeForm.Designer.cs">
+      <DependentUpon>DodavanjeRezervacijeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodavanjeZaposlenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodavanjeZaposlenika.Designer.cs">
+      <DependentUpon>DodavanjeZaposlenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\GostiForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\GostiForma.Designer.cs">
+      <DependentUpon>GostiForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\GlavnaForma.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\GlavnaForma.Designer.cs">
       <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmjenaDobavljacaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmjenaDobavljacaForma.Designer.cs">
+      <DependentUpon>IzmjenaDobavljacaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmjenaGostaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmjenaGostaForm.Designer.cs">
+      <DependentUpon>IzmjenaGostaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmjenaRezervacijeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmjenaRezervacijeForm.Designer.cs">
+      <DependentUpon>IzmjenaRezervacijeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmjenaZaposlenikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmjenaZaposlenikaForm.Designer.cs">
+      <DependentUpon>IzmjenaZaposlenikaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\KorisnickaDokumentacija.cs">
       <SubType>Form</SubType>
@@ -77,9 +142,36 @@
     <Compile Include="Forme\PrijavaForm.Designer.cs">
       <DependentUpon>PrijavaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gost.cs" />
-    <Compile Include="Hotel.cs" />
-    <Compile Include="Korisnik.cs" />
+    <Compile Include="Forme\ZaposlenikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZaposlenikForm.Designer.cs">
+      <DependentUpon>ZaposlenikForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gost.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnik.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forme\RacunForm.cs">
@@ -94,35 +186,83 @@
     <Compile Include="Forme\RezervacijaForm.Designer.cs">
       <DependentUpon>RezervacijaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forme\ZaposlenikForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Racun.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forme\ZaposlenikForm.Designer.cs">
-      <DependentUpon>ZaposlenikForm.cs</DependentUpon>
+    <Compile Include="Rezervacija.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Racun.cs" />
-    <Compile Include="Rezervacija.cs" />
-    <Compile Include="Soba.cs" />
-    <Compile Include="StatusRezervacije.cs" />
-    <Compile Include="StavkaRacuna.cs" />
-    <Compile Include="TipGosta.cs" />
-    <Compile Include="Usluga.cs" />
-    <Compile Include="VrstaKorisnika.cs" />
-    <Compile Include="VrstaRezervacije.cs" />
+    <Compile Include="Soba.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StavkaRacuna.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StrucnaSprema.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usluga.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaGosta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaKorisnika.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaRezervacije.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaSobe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forme\DnevniPlan.resx">
       <DependentUpon>DnevniPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\DobavljačForm.resx">
       <DependentUpon>DobavljačForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodavanjeDobavljacaForm.resx">
+      <DependentUpon>DodavanjeDobavljacaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodavanjeGostiForm.resx">
+      <DependentUpon>DodavanjeGostiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodavanjeRezervacijeForm.resx">
+      <DependentUpon>DodavanjeRezervacijeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodavanjeZaposlenika.resx">
+      <DependentUpon>DodavanjeZaposlenika.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\GlavnaForma.resx">
       <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\GostiForma.resx">
+      <DependentUpon>GostiForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmjenaDobavljacaForma.resx">
+      <DependentUpon>IzmjenaDobavljacaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmjenaGostaForm.resx">
+      <DependentUpon>IzmjenaGostaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmjenaRezervacijeForm.resx">
+      <DependentUpon>IzmjenaRezervacijeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmjenaZaposlenikaForm.resx">
+      <DependentUpon>IzmjenaZaposlenikaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\KorisnickaDokumentacija.resx">
       <DependentUpon>KorisnickaDokumentacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\PrijavaForm.resx">
       <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZaposlenikForm.resx">
+      <DependentUpon>ZaposlenikForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,9 +279,14 @@
     <EmbeddedResource Include="Forme\RezervacijaForm.resx">
       <DependentUpon>RezervacijaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forme\ZaposlenikForm.resx">
-      <DependentUpon>ZaposlenikForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,6 +299,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
