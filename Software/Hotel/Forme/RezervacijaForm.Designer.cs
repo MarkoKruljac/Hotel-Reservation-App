@@ -33,7 +33,9 @@
             this.dodaj_btn = new System.Windows.Forms.Button();
             this.izmijeni_btn = new System.Windows.Forms.Button();
             this.izbriši_btn = new System.Windows.Forms.Button();
-            this.zatvori_btn = new System.Windows.Forms.Button();
+            this.btnOsvjeziRezervacije = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbPretragaPoPrezimenu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.rezervacija_dtg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             this.rezervacija_dtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rezervacija_dtg.Location = new System.Drawing.Point(44, 50);
             this.rezervacija_dtg.Name = "rezervacija_dtg";
+            this.rezervacija_dtg.RowHeadersWidth = 51;
             this.rezervacija_dtg.Size = new System.Drawing.Size(703, 345);
             this.rezervacija_dtg.TabIndex = 1;
             this.rezervacija_dtg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rezervacija_dtg_CellContentClick);
@@ -85,22 +88,43 @@
             this.izbriši_btn.UseVisualStyleBackColor = true;
             this.izbriši_btn.Click += new System.EventHandler(this.izbriši_btn_Click);
             // 
-            // zatvori_btn
+            // btnOsvjeziRezervacije
             // 
-            this.zatvori_btn.Location = new System.Drawing.Point(672, 7);
-            this.zatvori_btn.Name = "zatvori_btn";
-            this.zatvori_btn.Size = new System.Drawing.Size(75, 40);
-            this.zatvori_btn.TabIndex = 5;
-            this.zatvori_btn.Text = "Zatvori";
-            this.zatvori_btn.UseVisualStyleBackColor = true;
-            this.zatvori_btn.Click += new System.EventHandler(this.zatvori_btn_Click);
+            this.btnOsvjeziRezervacije.Location = new System.Drawing.Point(694, 17);
+            this.btnOsvjeziRezervacije.Name = "btnOsvjeziRezervacije";
+            this.btnOsvjeziRezervacije.Size = new System.Drawing.Size(53, 24);
+            this.btnOsvjeziRezervacije.TabIndex = 6;
+            this.btnOsvjeziRezervacije.Text = "Osvježi";
+            this.btnOsvjeziRezervacije.UseVisualStyleBackColor = true;
+            this.btnOsvjeziRezervacije.Click += new System.EventHandler(this.btnOsvjeziRezervacije_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(417, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Pretraga po prezimenu:";
+            // 
+            // tbPretragaPoPrezimenu
+            // 
+            this.tbPretragaPoPrezimenu.Location = new System.Drawing.Point(537, 17);
+            this.tbPretragaPoPrezimenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPretragaPoPrezimenu.Name = "tbPretragaPoPrezimenu";
+            this.tbPretragaPoPrezimenu.Size = new System.Drawing.Size(101, 20);
+            this.tbPretragaPoPrezimenu.TabIndex = 8;
+            this.tbPretragaPoPrezimenu.TextChanged += new System.EventHandler(this.tbPretragaPoPrezimenu_TextChanged);
             // 
             // RezervacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.zatvori_btn);
+            this.Controls.Add(this.tbPretragaPoPrezimenu);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnOsvjeziRezervacije);
             this.Controls.Add(this.izbriši_btn);
             this.Controls.Add(this.izmijeni_btn);
             this.Controls.Add(this.dodaj_btn);
@@ -108,6 +132,7 @@
             this.Controls.Add(this.rezervacije_lbl);
             this.Name = "RezervacijaForm";
             this.Text = "Rezervacija";
+            this.Load += new System.EventHandler(this.RezervacijaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rezervacija_dtg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,6 +146,8 @@
         private System.Windows.Forms.Button dodaj_btn;
         private System.Windows.Forms.Button izmijeni_btn;
         private System.Windows.Forms.Button izbriši_btn;
-        private System.Windows.Forms.Button zatvori_btn;
+        private System.Windows.Forms.Button btnOsvjeziRezervacije;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbPretragaPoPrezimenu;
     }
 }
