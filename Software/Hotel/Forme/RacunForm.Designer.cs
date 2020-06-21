@@ -28,85 +28,335 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.racun_dgv = new System.Windows.Forms.DataGridView();
-            this.kreirajRacun_btn = new System.Windows.Forms.Button();
-            this.Azuriraj_btn = new System.Windows.Forms.Button();
-            this.obrisi_btn = new System.Windows.Forms.Button();
-            this.zatvori_btn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.racun_dgv)).BeginInit();
+            this.btnNaplati = new System.Windows.Forms.Button();
+            this.lbPrezimeGosta = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbPrezimeIzdavaca = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbCijenaSobe = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbIDracuna = new System.Windows.Forms.Label();
+            this.lbImeIzdavaca = new System.Windows.Forms.Label();
+            this.lbImeGosta = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lbUKDana = new System.Windows.Forms.Label();
+            this.lbVrstaUsluge = new System.Windows.Forms.Label();
+            this.lbKaucija = new System.Windows.Forms.Label();
+            this.lbUkupanIznos = new System.Windows.Forms.Label();
+            this.lbBrojSobe = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cijenaKN = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // racun_dgv
+            // btnNaplati
             // 
-            this.racun_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.racun_dgv.Location = new System.Drawing.Point(34, 58);
-            this.racun_dgv.Name = "racun_dgv";
-            this.racun_dgv.Size = new System.Drawing.Size(532, 286);
-            this.racun_dgv.TabIndex = 0;
+            this.btnNaplati.Location = new System.Drawing.Point(280, 471);
+            this.btnNaplati.Name = "btnNaplati";
+            this.btnNaplati.Size = new System.Drawing.Size(88, 25);
+            this.btnNaplati.TabIndex = 3;
+            this.btnNaplati.Text = "Naplati";
+            this.btnNaplati.UseVisualStyleBackColor = true;
+            this.btnNaplati.Click += new System.EventHandler(this.obrisi_btn_Click);
             // 
-            // kreirajRacun_btn
+            // lbPrezimeGosta
             // 
-            this.kreirajRacun_btn.Location = new System.Drawing.Point(612, 100);
-            this.kreirajRacun_btn.Name = "kreirajRacun_btn";
-            this.kreirajRacun_btn.Size = new System.Drawing.Size(140, 40);
-            this.kreirajRacun_btn.TabIndex = 1;
-            this.kreirajRacun_btn.Text = "Kreiraj novi račun";
-            this.kreirajRacun_btn.UseVisualStyleBackColor = true;
-            this.kreirajRacun_btn.Click += new System.EventHandler(this.kreirajRacun_btn_Click);
+            this.lbPrezimeGosta.AutoSize = true;
+            this.lbPrezimeGosta.Location = new System.Drawing.Point(246, 72);
+            this.lbPrezimeGosta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPrezimeGosta.Name = "lbPrezimeGosta";
+            this.lbPrezimeGosta.Size = new System.Drawing.Size(35, 13);
+            this.lbPrezimeGosta.TabIndex = 4;
+            this.lbPrezimeGosta.Text = "label1";
             // 
-            // Azuriraj_btn
+            // label2
             // 
-            this.Azuriraj_btn.Location = new System.Drawing.Point(612, 162);
-            this.Azuriraj_btn.Name = "Azuriraj_btn";
-            this.Azuriraj_btn.Size = new System.Drawing.Size(140, 40);
-            this.Azuriraj_btn.TabIndex = 2;
-            this.Azuriraj_btn.Text = "Ažuriraj odabrani račun";
-            this.Azuriraj_btn.UseVisualStyleBackColor = true;
-            this.Azuriraj_btn.Click += new System.EventHandler(this.Azuriraj_btn_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 212);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Cijena odabrane sobe: ";
             // 
-            // obrisi_btn
+            // lbPrezimeIzdavaca
             // 
-            this.obrisi_btn.Location = new System.Drawing.Point(612, 232);
-            this.obrisi_btn.Name = "obrisi_btn";
-            this.obrisi_btn.Size = new System.Drawing.Size(140, 40);
-            this.obrisi_btn.TabIndex = 3;
-            this.obrisi_btn.Text = "Obriši račun";
-            this.obrisi_btn.UseVisualStyleBackColor = true;
-            this.obrisi_btn.Click += new System.EventHandler(this.obrisi_btn_Click);
+            this.lbPrezimeIzdavaca.AutoSize = true;
+            this.lbPrezimeIzdavaca.Location = new System.Drawing.Point(246, 111);
+            this.lbPrezimeIzdavaca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPrezimeIzdavaca.Name = "lbPrezimeIzdavaca";
+            this.lbPrezimeIzdavaca.Size = new System.Drawing.Size(35, 13);
+            this.lbPrezimeIzdavaca.TabIndex = 6;
+            this.lbPrezimeIzdavaca.Text = "label3";
             // 
-            // zatvori_btn
+            // label4
             // 
-            this.zatvori_btn.Location = new System.Drawing.Point(713, 12);
-            this.zatvori_btn.Name = "zatvori_btn";
-            this.zatvori_btn.Size = new System.Drawing.Size(75, 40);
-            this.zatvori_btn.TabIndex = 6;
-            this.zatvori_btn.Text = "Zatvori";
-            this.zatvori_btn.UseVisualStyleBackColor = true;
-            this.zatvori_btn.Click += new System.EventHandler(this.zatvori_btn_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 111);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ime i prezime izdavatelja: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 335);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Kaucija:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 294);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Vrsta usluge: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 251);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Ukupno dana boravka:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 413);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Ukupan iznos za platiti: ";
+            // 
+            // lbCijenaSobe
+            // 
+            this.lbCijenaSobe.AutoSize = true;
+            this.lbCijenaSobe.Location = new System.Drawing.Point(166, 212);
+            this.lbCijenaSobe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCijenaSobe.Name = "lbCijenaSobe";
+            this.lbCijenaSobe.Size = new System.Drawing.Size(35, 13);
+            this.lbCijenaSobe.TabIndex = 12;
+            this.lbCijenaSobe.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 72);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Ime i prezime gosta: ";
+            // 
+            // lbIDracuna
+            // 
+            this.lbIDracuna.AutoSize = true;
+            this.lbIDracuna.Location = new System.Drawing.Point(166, 38);
+            this.lbIDracuna.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbIDracuna.Name = "lbIDracuna";
+            this.lbIDracuna.Size = new System.Drawing.Size(41, 13);
+            this.lbIDracuna.TabIndex = 14;
+            this.lbIDracuna.Text = "label11";
+            // 
+            // lbImeIzdavaca
+            // 
+            this.lbImeIzdavaca.AutoSize = true;
+            this.lbImeIzdavaca.Location = new System.Drawing.Point(166, 111);
+            this.lbImeIzdavaca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbImeIzdavaca.Name = "lbImeIzdavaca";
+            this.lbImeIzdavaca.Size = new System.Drawing.Size(41, 13);
+            this.lbImeIzdavaca.TabIndex = 15;
+            this.lbImeIzdavaca.Text = "label12";
+            // 
+            // lbImeGosta
+            // 
+            this.lbImeGosta.AutoSize = true;
+            this.lbImeGosta.Location = new System.Drawing.Point(166, 72);
+            this.lbImeGosta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbImeGosta.Name = "lbImeGosta";
+            this.lbImeGosta.Size = new System.Drawing.Size(41, 13);
+            this.lbImeGosta.TabIndex = 16;
+            this.lbImeGosta.Text = "label13";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(13, 38);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Broj računa: ";
+            // 
+            // lbUKDana
+            // 
+            this.lbUKDana.AutoSize = true;
+            this.lbUKDana.Location = new System.Drawing.Point(166, 251);
+            this.lbUKDana.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUKDana.Name = "lbUKDana";
+            this.lbUKDana.Size = new System.Drawing.Size(41, 13);
+            this.lbUKDana.TabIndex = 18;
+            this.lbUKDana.Text = "label15";
+            // 
+            // lbVrstaUsluge
+            // 
+            this.lbVrstaUsluge.AutoSize = true;
+            this.lbVrstaUsluge.Location = new System.Drawing.Point(166, 294);
+            this.lbVrstaUsluge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbVrstaUsluge.Name = "lbVrstaUsluge";
+            this.lbVrstaUsluge.Size = new System.Drawing.Size(41, 13);
+            this.lbVrstaUsluge.TabIndex = 19;
+            this.lbVrstaUsluge.Text = "label16";
+            // 
+            // lbKaucija
+            // 
+            this.lbKaucija.AutoSize = true;
+            this.lbKaucija.Location = new System.Drawing.Point(166, 335);
+            this.lbKaucija.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbKaucija.Name = "lbKaucija";
+            this.lbKaucija.Size = new System.Drawing.Size(41, 13);
+            this.lbKaucija.TabIndex = 20;
+            this.lbKaucija.Text = "label17";
+            this.lbKaucija.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // lbUkupanIznos
+            // 
+            this.lbUkupanIznos.AutoSize = true;
+            this.lbUkupanIznos.Location = new System.Drawing.Point(166, 413);
+            this.lbUkupanIznos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUkupanIznos.Name = "lbUkupanIznos";
+            this.lbUkupanIznos.Size = new System.Drawing.Size(41, 13);
+            this.lbUkupanIznos.TabIndex = 21;
+            this.lbUkupanIznos.Text = "label18";
+            // 
+            // lbBrojSobe
+            // 
+            this.lbBrojSobe.AutoSize = true;
+            this.lbBrojSobe.Location = new System.Drawing.Point(166, 174);
+            this.lbBrojSobe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbBrojSobe.Name = "lbBrojSobe";
+            this.lbBrojSobe.Size = new System.Drawing.Size(41, 13);
+            this.lbBrojSobe.TabIndex = 23;
+            this.lbBrojSobe.Text = "label19";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 174);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(105, 13);
+            this.label20.TabIndex = 22;
+            this.label20.Text = "Broj odabrane sobe: ";
+            // 
+            // cijenaKN
+            // 
+            this.cijenaKN.AutoSize = true;
+            this.cijenaKN.Location = new System.Drawing.Point(205, 212);
+            this.cijenaKN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.cijenaKN.Name = "cijenaKN";
+            this.cijenaKN.Size = new System.Drawing.Size(22, 13);
+            this.cijenaKN.TabIndex = 24;
+            this.cijenaKN.Text = "KN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(205, 335);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "KN";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(205, 413);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(22, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "KN";
             // 
             // RacunForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.zatvori_btn);
-            this.Controls.Add(this.obrisi_btn);
-            this.Controls.Add(this.Azuriraj_btn);
-            this.Controls.Add(this.kreirajRacun_btn);
-            this.Controls.Add(this.racun_dgv);
+            this.ClientSize = new System.Drawing.Size(404, 516);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cijenaKN);
+            this.Controls.Add(this.lbBrojSobe);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.lbUkupanIznos);
+            this.Controls.Add(this.lbKaucija);
+            this.Controls.Add(this.lbVrstaUsluge);
+            this.Controls.Add(this.lbUKDana);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lbImeGosta);
+            this.Controls.Add(this.lbImeIzdavaca);
+            this.Controls.Add(this.lbIDracuna);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lbCijenaSobe);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbPrezimeIzdavaca);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbPrezimeGosta);
+            this.Controls.Add(this.btnNaplati);
             this.Name = "RacunForm";
             this.Text = "Racun";
-            ((System.ComponentModel.ISupportInitialize)(this.racun_dgv)).EndInit();
+            this.Load += new System.EventHandler(this.RacunForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView racun_dgv;
-        private System.Windows.Forms.Button kreirajRacun_btn;
-        private System.Windows.Forms.Button Azuriraj_btn;
-        private System.Windows.Forms.Button obrisi_btn;
-        private System.Windows.Forms.Button zatvori_btn;
+        private System.Windows.Forms.Button btnNaplati;
+        private System.Windows.Forms.Label lbPrezimeGosta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbPrezimeIzdavaca;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbCijenaSobe;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbIDracuna;
+        private System.Windows.Forms.Label lbImeIzdavaca;
+        private System.Windows.Forms.Label lbImeGosta;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbUKDana;
+        private System.Windows.Forms.Label lbVrstaUsluge;
+        private System.Windows.Forms.Label lbKaucija;
+        private System.Windows.Forms.Label lbUkupanIznos;
+        private System.Windows.Forms.Label lbBrojSobe;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label cijenaKN;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
