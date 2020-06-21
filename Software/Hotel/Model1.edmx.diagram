@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1106a09e96a649e8b19244f965e8715d" Name="Diagram1">
+        <EntityTypeShape EntityType="PI20_021_DBModel.Dobavljac" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.Gost" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.Hotel" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.Korisnik" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.Racun" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.Rezervacija" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.Soba" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.StrucnaSprema" Width="1.5" PointX="3.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.Usluga" Width="1.5" PointX="6" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.VrstaGosta" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.VrstaKorisnika" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.VrstaRezervacije" Width="1.5" PointX="6" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.VrstaSobe" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.StavkaRacuna" Width="1.5" PointX="11.25" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Dobavljac_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Gost_VrstaGosta" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Gost" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_StavkaRacuna_Gost" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Korisnik_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Soba_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Korisnik_StrucnaSprema" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_StavkaRacuna_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Racun_Rezervacija" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Racun_Soba" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_StavkaRacuna_Racun" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Soba" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Usluga" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_VrstaRezervacije" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Soba_VrstaSobe" ManuallyRouted="false" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Korisnik_VrstaKorisnika" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

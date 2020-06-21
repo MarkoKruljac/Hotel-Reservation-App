@@ -28,46 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.zatvori_btn = new System.Windows.Forms.Button();
-            this.dnevniPlan_dgv = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dnevniPlan_dgv)).BeginInit();
+            this.dnevniPlanUseljenje_dgv = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvIseljenjeDnevniPlan = new System.Windows.Forms.DataGridView();
+            this.btnOsvjezi = new System.Windows.Forms.Button();
+            this.btnObaviIseljenja = new System.Windows.Forms.Button();
+            this.btnIzdajRacun = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dnevniPlanUseljenje_dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIseljenjeDnevniPlan)).BeginInit();
             this.SuspendLayout();
             // 
-            // zatvori_btn
+            // dnevniPlanUseljenje_dgv
             // 
-            this.zatvori_btn.Location = new System.Drawing.Point(713, 12);
-            this.zatvori_btn.Name = "zatvori_btn";
-            this.zatvori_btn.Size = new System.Drawing.Size(75, 40);
-            this.zatvori_btn.TabIndex = 6;
-            this.zatvori_btn.Text = "Zatvori";
-            this.zatvori_btn.UseVisualStyleBackColor = true;
+            this.dnevniPlanUseljenje_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dnevniPlanUseljenje_dgv.Location = new System.Drawing.Point(13, 63);
+            this.dnevniPlanUseljenje_dgv.Margin = new System.Windows.Forms.Padding(4);
+            this.dnevniPlanUseljenje_dgv.Name = "dnevniPlanUseljenje_dgv";
+            this.dnevniPlanUseljenje_dgv.RowHeadersWidth = 51;
+            this.dnevniPlanUseljenje_dgv.Size = new System.Drawing.Size(1035, 183);
+            this.dnevniPlanUseljenje_dgv.TabIndex = 7;
+            this.dnevniPlanUseljenje_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dnevniPlan_dgv_CellContentClick);
             // 
-            // dnevniPlan_dgv
+            // label1
             // 
-            this.dnevniPlan_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dnevniPlan_dgv.Location = new System.Drawing.Point(12, 59);
-            this.dnevniPlan_dgv.Name = "dnevniPlan_dgv";
-            this.dnevniPlan_dgv.Size = new System.Drawing.Size(776, 379);
-            this.dnevniPlan_dgv.TabIndex = 7;
-            this.dnevniPlan_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dnevniPlan_dgv_CellContentClick);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Danas useljavaju:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 275);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Danas iseljavaju:";
+            // 
+            // dgvIseljenjeDnevniPlan
+            // 
+            this.dgvIseljenjeDnevniPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIseljenjeDnevniPlan.Location = new System.Drawing.Point(13, 296);
+            this.dgvIseljenjeDnevniPlan.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvIseljenjeDnevniPlan.Name = "dgvIseljenjeDnevniPlan";
+            this.dgvIseljenjeDnevniPlan.RowHeadersWidth = 51;
+            this.dgvIseljenjeDnevniPlan.Size = new System.Drawing.Size(1035, 183);
+            this.dgvIseljenjeDnevniPlan.TabIndex = 9;
+            // 
+            // btnOsvjezi
+            // 
+            this.btnOsvjezi.Location = new System.Drawing.Point(1117, 13);
+            this.btnOsvjezi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOsvjezi.Name = "btnOsvjezi";
+            this.btnOsvjezi.Size = new System.Drawing.Size(121, 30);
+            this.btnOsvjezi.TabIndex = 12;
+            this.btnOsvjezi.Text = "Osvjezi";
+            this.btnOsvjezi.UseVisualStyleBackColor = true;
+            this.btnOsvjezi.Click += new System.EventHandler(this.btnOsvjezi_Click);
+            // 
+            // btnObaviIseljenja
+            // 
+            this.btnObaviIseljenja.Location = new System.Drawing.Point(1087, 383);
+            this.btnObaviIseljenja.Margin = new System.Windows.Forms.Padding(4);
+            this.btnObaviIseljenja.Name = "btnObaviIseljenja";
+            this.btnObaviIseljenja.Size = new System.Drawing.Size(140, 42);
+            this.btnObaviIseljenja.TabIndex = 13;
+            this.btnObaviIseljenja.Text = "ObavljenoIseljenje";
+            this.btnObaviIseljenja.UseVisualStyleBackColor = true;
+            this.btnObaviIseljenja.Click += new System.EventHandler(this.btnObaviIseljenja_Click);
+            // 
+            // btnIzdajRacun
+            // 
+            this.btnIzdajRacun.Location = new System.Drawing.Point(1056, 204);
+            this.btnIzdajRacun.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIzdajRacun.Name = "btnIzdajRacun";
+            this.btnIzdajRacun.Size = new System.Drawing.Size(140, 42);
+            this.btnIzdajRacun.TabIndex = 14;
+            this.btnIzdajRacun.Text = "Izdaj račun";
+            this.btnIzdajRacun.UseVisualStyleBackColor = true;
+            this.btnIzdajRacun.Click += new System.EventHandler(this.btnIzdajRacun_Click);
             // 
             // DnevniPlan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dnevniPlan_dgv);
-            this.Controls.Add(this.zatvori_btn);
+            this.ClientSize = new System.Drawing.Size(1265, 503);
+            this.Controls.Add(this.btnIzdajRacun);
+            this.Controls.Add(this.btnObaviIseljenja);
+            this.Controls.Add(this.btnOsvjezi);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgvIseljenjeDnevniPlan);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dnevniPlanUseljenje_dgv);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DnevniPlan";
             this.Text = "DnevniPlan";
-            ((System.ComponentModel.ISupportInitialize)(this.dnevniPlan_dgv)).EndInit();
+            this.Load += new System.EventHandler(this.DnevniPlan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dnevniPlanUseljenje_dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIseljenjeDnevniPlan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button zatvori_btn;
-        private System.Windows.Forms.DataGridView dnevniPlan_dgv;
+        private System.Windows.Forms.DataGridView dnevniPlanUseljenje_dgv;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvIseljenjeDnevniPlan;
+        private System.Windows.Forms.Button btnOsvjezi;
+        private System.Windows.Forms.Button btnObaviIseljenja;
+        private System.Windows.Forms.Button btnIzdajRacun;
     }
 }
