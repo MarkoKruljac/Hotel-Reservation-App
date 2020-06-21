@@ -1,6 +1,6 @@
 ﻿namespace Hotel
 {
-    partial class PrijavaForm
+    partial class frmPrijava
     {
         /// <summary>
         /// Required designer variable.
@@ -28,63 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrijava));
             this.prijavagroupBox = new System.Windows.Forms.GroupBox();
-            this.prijavi_btn = new System.Windows.Forms.Button();
-            this.ulogagroupBox = new System.Windows.Forms.GroupBox();
+            this.btnOdustani = new System.Windows.Forms.Button();
+            this.lbPrijava = new System.Windows.Forms.Label();
+            this.gbUloga = new System.Windows.Forms.GroupBox();
             this.zaposlenik_rbtn = new System.Windows.Forms.RadioButton();
             this.administrator_rbtn = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lozinka_lbl = new System.Windows.Forms.Label();
-            this.imetextBox = new System.Windows.Forms.TextBox();
-            this.korisnickoIme_lbl = new System.Windows.Forms.Label();
-            this.odustani_btn = new System.Windows.Forms.Button();
+            this.btnPrijava = new System.Windows.Forms.Button();
+            this.imetextbox = new System.Windows.Forms.TextBox();
+            this.lbLozinka = new System.Windows.Forms.Label();
+            this.tbLozinka = new System.Windows.Forms.TextBox();
+            this.lbKorisnickoIme = new System.Windows.Forms.Label();
+            this.pbPrijava = new System.Windows.Forms.PictureBox();
             this.prijavagroupBox.SuspendLayout();
-            this.ulogagroupBox.SuspendLayout();
+            this.gbUloga.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPrijava)).BeginInit();
             this.SuspendLayout();
             // 
             // prijavagroupBox
             // 
-            this.prijavagroupBox.Controls.Add(this.odustani_btn);
-            this.prijavagroupBox.Controls.Add(this.prijavi_btn);
-            this.prijavagroupBox.Controls.Add(this.ulogagroupBox);
-            this.prijavagroupBox.Controls.Add(this.textBox1);
-            this.prijavagroupBox.Controls.Add(this.lozinka_lbl);
-            this.prijavagroupBox.Controls.Add(this.imetextBox);
-            this.prijavagroupBox.Controls.Add(this.korisnickoIme_lbl);
-            this.prijavagroupBox.Location = new System.Drawing.Point(107, 61);
+            this.prijavagroupBox.Controls.Add(this.btnOdustani);
+            this.prijavagroupBox.Controls.Add(this.lbPrijava);
+            this.prijavagroupBox.Controls.Add(this.gbUloga);
+            this.prijavagroupBox.Controls.Add(this.btnPrijava);
+            this.prijavagroupBox.Controls.Add(this.imetextbox);
+            this.prijavagroupBox.Controls.Add(this.lbLozinka);
+            this.prijavagroupBox.Controls.Add(this.tbLozinka);
+            this.prijavagroupBox.Controls.Add(this.lbKorisnickoIme);
+            this.prijavagroupBox.Location = new System.Drawing.Point(493, 0);
+            this.prijavagroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.prijavagroupBox.Name = "prijavagroupBox";
-            this.prijavagroupBox.Size = new System.Drawing.Size(566, 366);
+            this.prijavagroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prijavagroupBox.Size = new System.Drawing.Size(496, 554);
             this.prijavagroupBox.TabIndex = 0;
             this.prijavagroupBox.TabStop = false;
-            this.prijavagroupBox.Text = "Prijava";
+            this.prijavagroupBox.Enter += new System.EventHandler(this.prijavagroupBox_Enter);
             // 
-            // prijavi_btn
+            // btnOdustani
             // 
-            this.prijavi_btn.Location = new System.Drawing.Point(323, 327);
-            this.prijavi_btn.Name = "prijavi_btn";
-            this.prijavi_btn.Size = new System.Drawing.Size(75, 23);
-            this.prijavi_btn.TabIndex = 6;
-            this.prijavi_btn.Text = "Prijavi se ";
-            this.prijavi_btn.UseVisualStyleBackColor = true;
-            this.prijavi_btn.Click += new System.EventHandler(this.prijavi_btn_Click);
+            this.btnOdustani.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnOdustani.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnOdustani.FlatAppearance.BorderSize = 2;
+            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdustani.ForeColor = System.Drawing.Color.White;
+            this.btnOdustani.Location = new System.Drawing.Point(69, 478);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(167, 62);
+            this.btnOdustani.TabIndex = 4;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = false;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
-            // ulogagroupBox
+            // lbPrijava
             // 
-            this.ulogagroupBox.Controls.Add(this.zaposlenik_rbtn);
-            this.ulogagroupBox.Controls.Add(this.administrator_rbtn);
-            this.ulogagroupBox.Location = new System.Drawing.Point(198, 174);
-            this.ulogagroupBox.Name = "ulogagroupBox";
-            this.ulogagroupBox.Size = new System.Drawing.Size(200, 100);
-            this.ulogagroupBox.TabIndex = 5;
-            this.ulogagroupBox.TabStop = false;
-            this.ulogagroupBox.Text = "Uloga";
+            this.lbPrijava.AutoSize = true;
+            this.lbPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbPrijava.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lbPrijava.Location = new System.Drawing.Point(151, 48);
+            this.lbPrijava.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPrijava.Name = "lbPrijava";
+            this.lbPrijava.Size = new System.Drawing.Size(168, 39);
+            this.lbPrijava.TabIndex = 6;
+            this.lbPrijava.Text = "PRIJAVA";
+            this.lbPrijava.Click += new System.EventHandler(this.label1_Click_2);
+            // 
+            // gbUloga
+            // 
+            this.gbUloga.Controls.Add(this.zaposlenik_rbtn);
+            this.gbUloga.Controls.Add(this.administrator_rbtn);
+            this.gbUloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gbUloga.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.gbUloga.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gbUloga.Location = new System.Drawing.Point(75, 308);
+            this.gbUloga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbUloga.Name = "gbUloga";
+            this.gbUloga.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbUloga.Size = new System.Drawing.Size(333, 123);
+            this.gbUloga.TabIndex = 3;
+            this.gbUloga.TabStop = false;
+            this.gbUloga.Text = "Uloga";
             // 
             // zaposlenik_rbtn
             // 
             this.zaposlenik_rbtn.AutoSize = true;
-            this.zaposlenik_rbtn.Location = new System.Drawing.Point(10, 57);
+            this.zaposlenik_rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.zaposlenik_rbtn.Location = new System.Drawing.Point(13, 70);
+            this.zaposlenik_rbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.zaposlenik_rbtn.Name = "zaposlenik_rbtn";
-            this.zaposlenik_rbtn.Size = new System.Drawing.Size(77, 17);
+            this.zaposlenik_rbtn.Size = new System.Drawing.Size(119, 24);
             this.zaposlenik_rbtn.TabIndex = 1;
             this.zaposlenik_rbtn.TabStop = true;
             this.zaposlenik_rbtn.Text = "Zaposlenik";
@@ -93,70 +126,103 @@
             // administrator_rbtn
             // 
             this.administrator_rbtn.AutoSize = true;
-            this.administrator_rbtn.Location = new System.Drawing.Point(10, 33);
+            this.administrator_rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.administrator_rbtn.Location = new System.Drawing.Point(13, 41);
+            this.administrator_rbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.administrator_rbtn.Name = "administrator_rbtn";
-            this.administrator_rbtn.Size = new System.Drawing.Size(85, 17);
-            this.administrator_rbtn.TabIndex = 0;
+            this.administrator_rbtn.Size = new System.Drawing.Size(143, 24);
+            this.administrator_rbtn.TabIndex = 1;
             this.administrator_rbtn.TabStop = true;
             this.administrator_rbtn.Text = "Administrator";
             this.administrator_rbtn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnPrijava
             // 
-            this.textBox1.Location = new System.Drawing.Point(258, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.btnPrijava.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnPrijava.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPrijava.FlatAppearance.BorderSize = 2;
+            this.btnPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPrijava.ForeColor = System.Drawing.Color.White;
+            this.btnPrijava.Location = new System.Drawing.Point(251, 478);
+            this.btnPrijava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrijava.Name = "btnPrijava";
+            this.btnPrijava.Size = new System.Drawing.Size(167, 62);
+            this.btnPrijava.TabIndex = 5;
+            this.btnPrijava.Text = "Prijavi se ";
+            this.btnPrijava.UseVisualStyleBackColor = false;
+            this.btnPrijava.Click += new System.EventHandler(this.prijavi_btn_Click);
             // 
-            // lozinka_lbl
+            // imetextbox
             // 
-            this.lozinka_lbl.AutoSize = true;
-            this.lozinka_lbl.Location = new System.Drawing.Point(205, 124);
-            this.lozinka_lbl.Name = "lozinka_lbl";
-            this.lozinka_lbl.Size = new System.Drawing.Size(47, 13);
-            this.lozinka_lbl.TabIndex = 2;
-            this.lozinka_lbl.Text = "Lozinka:";
-            this.lozinka_lbl.Click += new System.EventHandler(this.label1_Click_1);
+            this.imetextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.imetextbox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imetextbox.Location = new System.Drawing.Point(75, 156);
+            this.imetextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imetextbox.Multiline = true;
+            this.imetextbox.Name = "imetextbox";
+            this.imetextbox.Size = new System.Drawing.Size(333, 31);
+            this.imetextbox.TabIndex = 0;
             // 
-            // imetextBox
+            // lbLozinka
             // 
-            this.imetextBox.Location = new System.Drawing.Point(258, 63);
-            this.imetextBox.Name = "imetextBox";
-            this.imetextBox.Size = new System.Drawing.Size(100, 20);
-            this.imetextBox.TabIndex = 1;
+            this.lbLozinka.AutoSize = true;
+            this.lbLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbLozinka.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lbLozinka.Location = new System.Drawing.Point(69, 218);
+            this.lbLozinka.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbLozinka.Name = "lbLozinka";
+            this.lbLozinka.Size = new System.Drawing.Size(94, 25);
+            this.lbLozinka.TabIndex = 7;
+            this.lbLozinka.Text = "Lozinka:";
             // 
-            // korisnickoIme_lbl
+            // tbLozinka
             // 
-            this.korisnickoIme_lbl.AutoSize = true;
-            this.korisnickoIme_lbl.Location = new System.Drawing.Point(174, 63);
-            this.korisnickoIme_lbl.Name = "korisnickoIme_lbl";
-            this.korisnickoIme_lbl.Size = new System.Drawing.Size(78, 13);
-            this.korisnickoIme_lbl.TabIndex = 0;
-            this.korisnickoIme_lbl.Text = "Korisničko ime:";
-            this.korisnickoIme_lbl.Click += new System.EventHandler(this.label1_Click);
+            this.tbLozinka.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbLozinka.Location = new System.Drawing.Point(75, 246);
+            this.tbLozinka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbLozinka.Multiline = true;
+            this.tbLozinka.Name = "tbLozinka";
+            this.tbLozinka.Size = new System.Drawing.Size(333, 31);
+            this.tbLozinka.TabIndex = 2;
             // 
-            // odustani_btn
+            // lbKorisnickoIme
             // 
-            this.odustani_btn.Location = new System.Drawing.Point(463, 327);
-            this.odustani_btn.Name = "odustani_btn";
-            this.odustani_btn.Size = new System.Drawing.Size(75, 23);
-            this.odustani_btn.TabIndex = 7;
-            this.odustani_btn.Text = "Odustani";
-            this.odustani_btn.UseVisualStyleBackColor = true;
-            this.odustani_btn.Click += new System.EventHandler(this.odustani_btn_Click);
+            this.lbKorisnickoIme.AutoSize = true;
+            this.lbKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbKorisnickoIme.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lbKorisnickoIme.Location = new System.Drawing.Point(69, 128);
+            this.lbKorisnickoIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbKorisnickoIme.Name = "lbKorisnickoIme";
+            this.lbKorisnickoIme.Size = new System.Drawing.Size(160, 25);
+            this.lbKorisnickoIme.TabIndex = 7;
+            this.lbKorisnickoIme.Text = "Korisničko ime:";
             // 
-            // PrijavaForm
+            // pbPrijava
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.pbPrijava.Image = ((System.Drawing.Image)(resources.GetObject("pbPrijava.Image")));
+            this.pbPrijava.Location = new System.Drawing.Point(1, 0);
+            this.pbPrijava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPrijava.Name = "pbPrijava";
+            this.pbPrijava.Size = new System.Drawing.Size(496, 554);
+            this.pbPrijava.TabIndex = 1;
+            this.pbPrijava.TabStop = false;
+            // 
+            // frmPrijava
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(989, 554);
+            this.Controls.Add(this.pbPrijava);
             this.Controls.Add(this.prijavagroupBox);
-            this.Name = "PrijavaForm";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmPrijava";
             this.Text = "Prijava";
+            this.Load += new System.EventHandler(this.PrijavaForm_Load);
             this.prijavagroupBox.ResumeLayout(false);
             this.prijavagroupBox.PerformLayout();
-            this.ulogagroupBox.ResumeLayout(false);
-            this.ulogagroupBox.PerformLayout();
+            this.gbUloga.ResumeLayout(false);
+            this.gbUloga.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPrijava)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,14 +230,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox prijavagroupBox;
-        private System.Windows.Forms.Label korisnickoIme_lbl;
-        private System.Windows.Forms.Label lozinka_lbl;
-        private System.Windows.Forms.TextBox imetextBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button prijavi_btn;
-        private System.Windows.Forms.GroupBox ulogagroupBox;
+        private System.Windows.Forms.Label lbKorisnickoIme;
+        private System.Windows.Forms.Label lbLozinka;
+        private System.Windows.Forms.TextBox tbLozinka;
+        private System.Windows.Forms.Button btnPrijava;
+        private System.Windows.Forms.GroupBox gbUloga;
         private System.Windows.Forms.RadioButton zaposlenik_rbtn;
         private System.Windows.Forms.RadioButton administrator_rbtn;
-        private System.Windows.Forms.Button odustani_btn;
+        private System.Windows.Forms.PictureBox pbPrijava;
+        private System.Windows.Forms.Label lbPrijava;
+        private System.Windows.Forms.TextBox imetextbox;
+        private System.Windows.Forms.Button btnOdustani;
     }
 }
