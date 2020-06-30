@@ -66,6 +66,7 @@ namespace Hotel.Forme
         }
         private void Azuriraj()
         {
+            try { 
             using (var context = new PI20_021_DBEntities2())
             {
                 int ID = int.Parse(odabraniGost.ID_gost.ToString());
@@ -100,7 +101,12 @@ namespace Hotel.Forme
                 MessageBox.Show("Uspješno ste izmjenili podatke o gostu");
 
                 }
-                btnIzvrsiGost.Enabled = false;        
+                        
+            }
+            }
+            catch
+            {
+                MessageBox.Show("Nepotpuni podaci!");
             }
         }
         private void btnIzvrsiGost_Click(object sender, EventArgs e)

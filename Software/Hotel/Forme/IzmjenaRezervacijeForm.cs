@@ -110,6 +110,7 @@ namespace Hotel.Forme
         }
         private void Azuriraj()
         {
+            
             using(var context = new PI20_021_DBEntities2()) {
               
             int ID = int.Parse(odabranaRezervacija.ID_rezervacija.ToString());
@@ -191,6 +192,16 @@ namespace Hotel.Forme
                 double cijenaSobe = upit.FirstOrDefault();
                 tbIzmjenaCijenaSobe.Text = cijenaSobe.ToString();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbIzmjenaPrezime_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

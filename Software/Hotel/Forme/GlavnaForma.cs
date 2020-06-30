@@ -29,7 +29,8 @@ namespace Hotel
 
         private void pomoc_btn_Click(object sender, EventArgs e)
         {
-
+            KorisnickaDokumentacija korisnickaDokumentacija = new KorisnickaDokumentacija();
+            korisnickaDokumentacija.ShowDialog();
         }
 
         private void dnevniPlan_btn_Click(object sender, EventArgs e)

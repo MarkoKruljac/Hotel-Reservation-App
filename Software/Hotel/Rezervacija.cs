@@ -28,6 +28,7 @@ namespace Hotel
         public int ID_gosta { get; set; }
         public int ID_usluge { get; set; }
         public int ID_vrste_rezervacije { get; set; }
+        public Nullable<bool> PoslanEmail { get; set; }
     
         public virtual Gost Gost { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

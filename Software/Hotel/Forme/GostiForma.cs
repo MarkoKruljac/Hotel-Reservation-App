@@ -71,30 +71,68 @@ namespace Hotel.Forme
 
         private void IzbrisiGosta()
         {
+            if(dgvGosti.CurrentRow != null) { 
             int ID = int.Parse(dgvGosti.CurrentRow.Cells[0].Value.ToString());
             using (var context = new PI20_021_DBEntities2())
             {
-                var upit = from g in context.Gost
-                           where g.ID_gost == ID
-                           select g;
-                try { 
-                context.Gost.Attach(upit.FirstOrDefault());
-                context.Gost.Remove(upit.FirstOrDefault());
-                context.SaveChanges();
+                    var upit = from g in context.Gost
+                               where g.ID_gost == ID
+                               select g;
+                    var obrisiRezervacijuGosta = from r in context.Rezervacija
+                                                 from g in context.Gost
+                                                 where upit.FirstOrDefault().ID_gost == r.ID_gosta
+                                                 select r;
+                    var upitZaBrisanjeRacunaGosta = from g in context.Gost
+                                                    from ra in context.Racun
+                                                    from r in context.Rezervacija
+                                                    where r.ID_gosta == g.ID_gost && obrisiRezervacijuGosta.FirstOrDefault().ID_rezervacija == ra.ID_rezervacije
+                                                    select ra;
+
+
+                    if (upitZaBrisanjeRacunaGosta.FirstOrDefault() != null)
+                    {
+                        context.Racun.Remove(upitZaBrisanjeRacunaGosta.FirstOrDefault());
+                        context.Rezervacija.Remove(obrisiRezervacijuGosta.FirstOrDefault());
+                        context.Gost.Attach(upit.FirstOrDefault());
+                        context.Gost.Remove(upit.FirstOrDefault());
+                        context.SaveChanges();
+
+                    }
+                    else
+                    {
+                        if (obrisiRezervacijuGosta.FirstOrDefault() != null)
+                        {
+                            context.Rezervacija.Remove(obrisiRezervacijuGosta.FirstOrDefault());
+                            context.Gost.Remove(upit.FirstOrDefault());
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            context.Gost.Remove(upit.FirstOrDefault());
+                            context.SaveChanges();
+                        }
+
+                    }
+                
                 }
-                catch{
-                    MessageBox.Show("Odaberite Gosta");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Nema dostupnih gostiju");
+                btnIzbrisiGosta.Enabled = false;
+                btnIzmjenaGosta.Enabled = false;
             }
             DohvatiGoste();
         }
         private void btnIzbrisiGosta_Click(object sender, EventArgs e)
         {
+
             IzbrisiGosta();
         }   
         
         private void btnIzmjenaGosta_Click(object sender, EventArgs e)
         {
+            if(dgvGosti.CurrentRow != null) { 
             int ID = int.Parse(dgvGosti.CurrentRow.Cells[0].Value.ToString());
             using (var context = new PI20_021_DBEntities2())
             {
@@ -106,7 +144,14 @@ namespace Hotel.Forme
                 izmjenaGostaForm.ShowDialog();
                 
             }
-            
+            }
+            else
+            {
+                MessageBox.Show("Nema dostupnih gostiju");
+                btnIzbrisiGosta.Enabled = false;
+                btnIzmjenaGosta.Enabled = false;
+            }
+
         }
 
         private void btnOsvjeziGoste_Click(object sender, EventArgs e)

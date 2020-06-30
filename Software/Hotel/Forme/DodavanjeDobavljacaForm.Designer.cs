@@ -29,187 +29,233 @@
         private void InitializeComponent()
         {
             this.btbDodajDobavljaca = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbDodajHotelDobavljaca = new System.Windows.Forms.ComboBox();
             this.tbDodajDatumIstekaDobavljaca = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.tbDodajZiroRacDobavljaca = new System.Windows.Forms.TextBox();
             this.tbDodajEmailDobaljaca = new System.Windows.Forms.TextBox();
             this.tbDodajTelefonDobavljaca = new System.Windows.Forms.TextBox();
             this.tbDodajDatumPocDobavljaca = new System.Windows.Forms.TextBox();
             this.tbDodajAdresuDobavljaca = new System.Windows.Forms.TextBox();
             this.tbDodajNazivDobavljaca = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btbDodajDobavljaca
             // 
-            this.btbDodajDobavljaca.Location = new System.Drawing.Point(765, 327);
+            this.btbDodajDobavljaca.BackColor = System.Drawing.Color.OliveDrab;
+            this.btbDodajDobavljaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btbDodajDobavljaca.ForeColor = System.Drawing.Color.White;
+            this.btbDodajDobavljaca.Location = new System.Drawing.Point(295, 370);
+            this.btbDodajDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btbDodajDobavljaca.Name = "btbDodajDobavljaca";
-            this.btbDodajDobavljaca.Size = new System.Drawing.Size(84, 31);
+            this.btbDodajDobavljaca.Size = new System.Drawing.Size(125, 50);
             this.btbDodajDobavljaca.TabIndex = 0;
-            this.btbDodajDobavljaca.Text = "Izvrsi";
-            this.btbDodajDobavljaca.UseVisualStyleBackColor = true;
+            this.btbDodajDobavljaca.Text = "Spremi";
+            this.btbDodajDobavljaca.UseVisualStyleBackColor = false;
             this.btbDodajDobavljaca.Click += new System.EventHandler(this.btbDodajDobavljaca_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Adresa";
             // 
             // cbDodajHotelDobavljaca
             // 
             this.cbDodajHotelDobavljaca.FormattingEnabled = true;
-            this.cbDodajHotelDobavljaca.Location = new System.Drawing.Point(652, 215);
+            this.cbDodajHotelDobavljaca.Location = new System.Drawing.Point(378, 263);
+            this.cbDodajHotelDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDodajHotelDobavljaca.Name = "cbDodajHotelDobavljaca";
-            this.cbDodajHotelDobavljaca.Size = new System.Drawing.Size(117, 24);
+            this.cbDodajHotelDobavljaca.Size = new System.Drawing.Size(170, 21);
             this.cbDodajHotelDobavljaca.TabIndex = 2;
             // 
             // tbDodajDatumIstekaDobavljaca
             // 
-            this.tbDodajDatumIstekaDobavljaca.Location = new System.Drawing.Point(649, 75);
+            this.tbDodajDatumIstekaDobavljaca.Location = new System.Drawing.Point(67, 180);
+            this.tbDodajDatumIstekaDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajDatumIstekaDobavljaca.Name = "tbDodajDatumIstekaDobavljaca";
-            this.tbDodajDatumIstekaDobavljaca.Size = new System.Drawing.Size(166, 22);
+            this.tbDodajDatumIstekaDobavljaca.Size = new System.Drawing.Size(137, 20);
             this.tbDodajDatumIstekaDobavljaca.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(447, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ZiroRacun";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Telefon";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Naziv";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(447, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 17);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "DatumPocetkaUgovor";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(649, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 17);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "DatumIstekaUgovora";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(646, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 17);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "UgovorSaHotelom";
             // 
             // tbDodajZiroRacDobavljaca
             // 
-            this.tbDodajZiroRacDobavljaca.Location = new System.Drawing.Point(450, 215);
+            this.tbDodajZiroRacDobavljaca.Location = new System.Drawing.Point(162, 264);
+            this.tbDodajZiroRacDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajZiroRacDobavljaca.Name = "tbDodajZiroRacDobavljaca";
-            this.tbDodajZiroRacDobavljaca.Size = new System.Drawing.Size(100, 22);
+            this.tbDodajZiroRacDobavljaca.Size = new System.Drawing.Size(149, 20);
             this.tbDodajZiroRacDobavljaca.TabIndex = 10;
             // 
             // tbDodajEmailDobaljaca
             // 
-            this.tbDodajEmailDobaljaca.Location = new System.Drawing.Point(261, 217);
+            this.tbDodajEmailDobaljaca.Location = new System.Drawing.Point(500, 180);
+            this.tbDodajEmailDobaljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajEmailDobaljaca.Name = "tbDodajEmailDobaljaca";
-            this.tbDodajEmailDobaljaca.Size = new System.Drawing.Size(100, 22);
+            this.tbDodajEmailDobaljaca.Size = new System.Drawing.Size(167, 20);
             this.tbDodajEmailDobaljaca.TabIndex = 11;
             // 
             // tbDodajTelefonDobavljaca
             // 
-            this.tbDodajTelefonDobavljaca.Location = new System.Drawing.Point(54, 217);
+            this.tbDodajTelefonDobavljaca.Location = new System.Drawing.Point(263, 180);
+            this.tbDodajTelefonDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajTelefonDobavljaca.Name = "tbDodajTelefonDobavljaca";
-            this.tbDodajTelefonDobavljaca.Size = new System.Drawing.Size(100, 22);
+            this.tbDodajTelefonDobavljaca.Size = new System.Drawing.Size(157, 20);
             this.tbDodajTelefonDobavljaca.TabIndex = 12;
             // 
             // tbDodajDatumPocDobavljaca
             // 
-            this.tbDodajDatumPocDobavljaca.Location = new System.Drawing.Point(450, 75);
+            this.tbDodajDatumPocDobavljaca.Location = new System.Drawing.Point(500, 97);
+            this.tbDodajDatumPocDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajDatumPocDobavljaca.Name = "tbDodajDatumPocDobavljaca";
-            this.tbDodajDatumPocDobavljaca.Size = new System.Drawing.Size(122, 22);
+            this.tbDodajDatumPocDobavljaca.Size = new System.Drawing.Size(167, 20);
             this.tbDodajDatumPocDobavljaca.TabIndex = 13;
             // 
             // tbDodajAdresuDobavljaca
             // 
-            this.tbDodajAdresuDobavljaca.Location = new System.Drawing.Point(261, 75);
+            this.tbDodajAdresuDobavljaca.Location = new System.Drawing.Point(263, 97);
+            this.tbDodajAdresuDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajAdresuDobavljaca.Name = "tbDodajAdresuDobavljaca";
-            this.tbDodajAdresuDobavljaca.Size = new System.Drawing.Size(100, 22);
+            this.tbDodajAdresuDobavljaca.Size = new System.Drawing.Size(157, 20);
             this.tbDodajAdresuDobavljaca.TabIndex = 14;
             // 
             // tbDodajNazivDobavljaca
             // 
-            this.tbDodajNazivDobavljaca.Location = new System.Drawing.Point(54, 75);
+            this.tbDodajNazivDobavljaca.Location = new System.Drawing.Point(68, 97);
+            this.tbDodajNazivDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajNazivDobavljaca.Name = "tbDodajNazivDobavljaca";
-            this.tbDodajNazivDobavljaca.Size = new System.Drawing.Size(100, 22);
+            this.tbDodajNazivDobavljaca.Size = new System.Drawing.Size(136, 20);
             this.tbDodajNazivDobavljaca.TabIndex = 15;
             // 
-            // label8
+            // label12
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(258, 186);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 17);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Email";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label12.Location = new System.Drawing.Point(65, 80);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 15);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "Naziv";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label9.Location = new System.Drawing.Point(260, 80);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 15);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "Adresa";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label10.Location = new System.Drawing.Point(497, 80);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(158, 15);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "Datum početka ugovora";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label11.Location = new System.Drawing.Point(65, 163);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 15);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "Datum isteka ugovora";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label13.Location = new System.Drawing.Point(260, 163);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 15);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "Telefon";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label14.Location = new System.Drawing.Point(497, 163);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 15);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Email";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label15.Location = new System.Drawing.Point(159, 246);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 15);
+            this.label15.TabIndex = 54;
+            this.label15.Text = "Žiro račun";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label16.Location = new System.Drawing.Point(375, 246);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(119, 15);
+            this.label16.TabIndex = 55;
+            this.label16.Text = "Ugovor s hotelom";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(43, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(658, 310);
+            this.panel1.TabIndex = 56;
             // 
             // DodavanjeDobavljacaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 384);
-            this.Controls.Add(this.label8);
+            this.ClientSize = new System.Drawing.Size(744, 461);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.tbDodajNazivDobavljaca);
             this.Controls.Add(this.tbDodajAdresuDobavljaca);
             this.Controls.Add(this.tbDodajDatumPocDobavljaca);
             this.Controls.Add(this.tbDodajTelefonDobavljaca);
             this.Controls.Add(this.tbDodajEmailDobaljaca);
             this.Controls.Add(this.tbDodajZiroRacDobavljaca);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbDodajDatumIstekaDobavljaca);
             this.Controls.Add(this.cbDodajHotelDobavljaca);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btbDodajDobavljaca);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DodavanjeDobavljacaForm";
-            this.Text = "DodavanjeDobavljacaForm";
+            this.Text = "Dodavanje dobavljača";
             this.Load += new System.EventHandler(this.DodavanjeDobavljacaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,21 +265,22 @@
         #endregion
 
         private System.Windows.Forms.Button btbDodajDobavljaca;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbDodajHotelDobavljaca;
         private System.Windows.Forms.TextBox tbDodajDatumIstekaDobavljaca;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbDodajZiroRacDobavljaca;
         private System.Windows.Forms.TextBox tbDodajEmailDobaljaca;
         private System.Windows.Forms.TextBox tbDodajTelefonDobavljaca;
         private System.Windows.Forms.TextBox tbDodajDatumPocDobavljaca;
         private System.Windows.Forms.TextBox tbDodajAdresuDobavljaca;
         private System.Windows.Forms.TextBox tbDodajNazivDobavljaca;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel1;
     }
 }

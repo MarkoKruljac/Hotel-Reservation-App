@@ -93,8 +93,51 @@ namespace Hotel.Forme
             DohvatiZaposlenike();
         }
 
-        private void btnIzbrisiZaposlenika_Click(object sender, EventArgs e)
+        private void tbPretragaPoPrezimenu_TextChanged(object sender, EventArgs e)
         {
+            string prezimeZaposlenika = tbPretragaPoPrezimenu.Text;
+            DohvatiZaposlenikePoPrezimenu(prezimeZaposlenika);
+        }
+
+        private void btnDodajZaposlenike_Click_1(object sender, EventArgs e)
+        {
+            DodavanjeZaposlenika dodavanjeZaposlenika = new DodavanjeZaposlenika();
+            dodavanjeZaposlenika.ShowDialog();
+            this.Hide();
+        }
+
+        private void btnIzmijeniZaposlenika_Click_1(object sender, EventArgs e)
+        {
+            if(dgvZaposlenici.CurrentRow == null)
+            {
+                MessageBox.Show("Nema vise dostupnih zaposlenika!");
+                btnIzbrisiZaposlenika.Enabled = false;
+                btnIzmijeniZaposlenika.Enabled = false;
+            }
+            else { 
+            int ID = int.Parse(dgvZaposlenici.CurrentRow.Cells[0].Value.ToString());
+            using (var context = new PI20_021_DBEntities2())
+            {
+                var upit = from k in context.Korisnik
+                           where k.ID_korisnik == ID
+                           select k;
+                Korisnik odabraniKorisnik = upit.FirstOrDefault();
+                IzmjenaZaposlenikaForm izmjenaZaposlenika = new IzmjenaZaposlenikaForm(odabraniKorisnik);
+                izmjenaZaposlenika.ShowDialog();
+
+            }
+            }
+        }
+
+        private void btnIzbrisiZaposlenika_Click_1(object sender, EventArgs e)
+        {
+            if (dgvZaposlenici.CurrentRow == null)
+            {
+                MessageBox.Show("Nema vise dostupnih zaposlenika!");
+                btnIzbrisiZaposlenika.Enabled = false;
+                btnIzmijeniZaposlenika.Enabled = false;
+            }
+            else { 
             int ID = int.Parse(dgvZaposlenici.CurrentRow.Cells[0].Value.ToString());
 
             using (var context = new PI20_021_DBEntities2())
@@ -107,34 +150,7 @@ namespace Hotel.Forme
                 context.SaveChanges();
             }
             DohvatiZaposlenike();
-        }
-
-        private void btnDodajZaposlenike_Click(object sender, EventArgs e)
-        {
-            DodavanjeZaposlenika dodavanjeZaposlenika = new DodavanjeZaposlenika();
-            dodavanjeZaposlenika.ShowDialog();
-            this.Hide();
-        }
-
-        private void btnIzmijeniZaposlenika_Click(object sender, EventArgs e)
-        {
-            int ID = int.Parse(dgvZaposlenici.CurrentRow.Cells[0].Value.ToString());
-            using (var context = new PI20_021_DBEntities2())
-            {
-                var upit = from k in context.Korisnik
-                           where k.ID_korisnik == ID
-                           select k;
-                Korisnik odabraniKorisnik = upit.FirstOrDefault();
-                IzmjenaZaposlenikaForm izmjenaZaposlenika = new IzmjenaZaposlenikaForm(odabraniKorisnik);
-                izmjenaZaposlenika.ShowDialog();
-
             }
-        }
-
-        private void tbPretragaPoPrezimenu_TextChanged(object sender, EventArgs e)
-        {
-            string prezimeZaposlenika = tbPretragaPoPrezimenu.Text;
-            DohvatiZaposlenikePoPrezimenu(prezimeZaposlenika);
         }
     }
 }

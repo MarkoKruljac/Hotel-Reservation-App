@@ -55,6 +55,7 @@ namespace Hotel.Forme
         }
         private void Azuriraj()
         {
+            
             using (var context = new PI20_021_DBEntities2())
             {
                 int ID = int.Parse(odabraniDobavljac.ID_dobavljac.ToString());

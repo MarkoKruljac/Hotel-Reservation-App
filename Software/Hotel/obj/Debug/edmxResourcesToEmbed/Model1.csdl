@@ -98,6 +98,7 @@
     <NavigationProperty Name="Soba" Relationship="Self.FK_Rezervacija_Soba" FromRole="Rezervacija" ToRole="Soba" />
     <NavigationProperty Name="Usluga" Relationship="Self.FK_Rezervacija_Usluga" FromRole="Rezervacija" ToRole="Usluga" />
     <NavigationProperty Name="VrstaRezervacije" Relationship="Self.FK_Rezervacija_VrstaRezervacije" FromRole="Rezervacija" ToRole="VrstaRezervacije" />
+    <Property Name="PoslanEmail" Type="Boolean" />
   </EntityType>
   <EntityType Name="Soba">
     <Key>

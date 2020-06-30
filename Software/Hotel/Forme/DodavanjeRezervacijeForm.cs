@@ -25,7 +25,7 @@ namespace Hotel.Forme
         private void btnOdustaniDR_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+
         }
         public void PopuniUsluge()
         {
@@ -33,7 +33,7 @@ namespace Hotel.Forme
             using (var context = new PI20_021_DBEntities2())
             {
                 var upit = from u in context.Usluga
-                             select u.NazivUsluge;
+                           select u.NazivUsluge;
                 usluge = upit.ToList();
             }
             cbUsluga.DataSource = usluge;
@@ -49,7 +49,7 @@ namespace Hotel.Forme
             }
             cbVrstaRez.DataSource = vrstaRezervacija;
         }
-        
+
         public void PopuniBrojSobe()
         {
             List<int> brSoba = new List<int>() { };
@@ -76,67 +76,91 @@ namespace Hotel.Forme
                 }
                 brSoba.Distinct();
             }
-            cbBrojSobe.DataSource = brSoba;
+            if(brSoba.Count ==0)
+            {
+                
+                this.Close();
+                
+            }
+            else
+            {
+                cbBrojSobe.DataSource = brSoba;
+            }
+            
 
 
         }
 
-        
+
         private void btnIzvrsi_Click(object sender, EventArgs e)
         {
-     
+
             using (var context = new PI20_021_DBEntities2())
             {
-                DateTime datePoc;
-                DateTime dateZav;
-                
-                datePoc = DateTime.Parse(tbDatumPoc.Text);
-                dateZav = DateTime.Parse(tbDatumZav.Text);
-                int cijena = int.Parse(tbCijenaRez.Text);
-                string ImeGosta = tbImeGosta.Text;
-                
-                string PrezimeGosta = tbPrezimeGosta.Text;
-                
-                var gost = from g in context.Gost
-                           where g.Ime == tbImeGosta.Text && g.Prezime == tbPrezimeGosta.Text
-                           select g.ID_gost;
-                
-                var usluga = from u in context.Usluga
-                             where u.NazivUsluge == cbUsluga.SelectedItem.ToString()
-                             select u.ID_usluga;
-                var vrstaReze = from vR in context.VrstaRezervacije
-                                where vR.NazivVrsteRezeravcije == cbVrstaRez.SelectedItem.ToString()
-                                select vR.ID_vrsta_rezervacije;
-
-
-                
-
-                Rezervacija rezervacija = new Rezervacija
+                try
                 {
-                    Datum_pocetka = datePoc,
-                    Datum_zavrsetka = dateZav,
-                    Cijena_rezervacije = cijena,
-                    ID_gosta = gost.FirstOrDefault(),
-                    ID_vrste_rezervacije = vrstaReze.FirstOrDefault(),
-                    ID_usluge = usluga.FirstOrDefault(),
-                    ID_sobe = int.Parse(cbBrojSobe.SelectedItem.ToString())
+                    DateTime datePoc;
+                    DateTime dateZav;
+
+                    datePoc = DateTime.Parse(tbDatumPoc.Text);
+                    dateZav = DateTime.Parse(tbDatumZav.Text);
+
+                    int cijena = int.Parse(tbCijenaRez.Text);
+                    string ImeGosta = tbImeGosta.Text;
+
+                    string PrezimeGosta = tbPrezimeGosta.Text;
+
+                    var gost = from g in context.Gost
+                               where g.Ime == tbImeGosta.Text && g.Prezime == tbPrezimeGosta.Text
+                               select g.ID_gost;
+
+                    var usluga = from u in context.Usluga
+                                 where u.NazivUsluge == cbUsluga.SelectedItem.ToString()
+                                 select u.ID_usluga;
+                    var vrstaReze = from vR in context.VrstaRezervacije
+                                    where vR.NazivVrsteRezeravcije == cbVrstaRez.SelectedItem.ToString()
+                                    select vR.ID_vrsta_rezervacije;
+
+                    int broj = int.Parse(cbBrojSobe.SelectedItem.ToString());
+                    var upitZaSlobodneSobe = 
+                                             from r in context.Rezervacija
+                                             where r.ID_sobe == broj
+                                             select r;
+
+                    if (upitZaSlobodneSobe.FirstOrDefault() != null)
+                    {
+                        MessageBox.Show("Zauzeta soba!");
+                        
+                    }
+                    else
+                    {
+                        Rezervacija rezervacija = new Rezervacija
+                        {
+                            Datum_pocetka = datePoc,
+                            Datum_zavrsetka = dateZav,
+                            Cijena_rezervacije = cijena,
+                            ID_gosta = gost.FirstOrDefault(),
+                            ID_vrste_rezervacije = vrstaReze.FirstOrDefault(),
+                            ID_usluge = usluga.FirstOrDefault(),
+                            ID_sobe = broj,
+                            PoslanEmail = false
+                        };
+                        context.Rezervacija.Add(rezervacija);
+
+                        context.SaveChanges();
+                        MessageBox.Show("Uspješno ste unjeli rezervaciju");
+                        btnIzvrsi.Enabled = false;
+                    }
                     
-
-                };
-
-
-                try {
-                    context.Rezervacija.Add(rezervacija);
-
-                    context.SaveChanges();
-                    MessageBox.Show("Uspješno ste unjeli rezervaciju");
-                    btnIzvrsi.Enabled = false;
                 }
                 catch
                 {
-                    MessageBox.Show("Netocno podaci o gostu");
+                    MessageBox.Show("Neispravni podaci!");
                 }
             }
+
+                
+            
             
         }
 
@@ -147,6 +171,8 @@ namespace Hotel.Forme
             PopuniVrstuRezervacije();
             PopuniBrojSobe();
             
+
+
         }
 
         private void label9_Click(object sender, EventArgs e)

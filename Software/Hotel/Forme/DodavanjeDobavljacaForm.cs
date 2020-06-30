@@ -38,7 +38,7 @@ namespace Hotel.Forme
         {
             using (var context = new PI20_021_DBEntities2())
             {
-
+                try { 
                 string nazivDobavljaca = tbDodajNazivDobavljaca.Text;
 
                 string adresaDobavljaca = tbDodajAdresuDobavljaca.Text;
@@ -78,9 +78,15 @@ namespace Hotel.Forme
                     ID_hotela = idHotelaDobavljaca
                      
                 };
+                 
                 context.Dobavljac.Add(dobavljac);
                 context.SaveChanges();
                 MessageBox.Show("Uspješno ste dodali novog dobavljaca!");
+                }
+                catch
+                {
+                    MessageBox.Show("Neispravni podaci!");
+                }
             }
         }
     }

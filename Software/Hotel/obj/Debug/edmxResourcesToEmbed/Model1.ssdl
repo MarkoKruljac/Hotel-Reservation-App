@@ -79,6 +79,7 @@
     <Property Name="ID_gosta" Type="int" Nullable="false" />
     <Property Name="ID_usluge" Type="int" Nullable="false" />
     <Property Name="ID_vrste_rezervacije" Type="int" Nullable="false" />
+    <Property Name="PoslanEmail" Type="bit" />
   </EntityType>
   <EntityType Name="Soba">
     <Key>

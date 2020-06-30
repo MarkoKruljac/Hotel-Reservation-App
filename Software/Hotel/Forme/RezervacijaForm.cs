@@ -25,40 +25,103 @@ namespace Hotel
             this.Hide();
             
         }
-
-        private void izbriši_btn_Click(object sender, EventArgs e)
+        public void ObrisiRacun(int ID)
         {
             
-            int ID = int.Parse(rezervacija_dtg.CurrentRow.Cells[0].Value.ToString());
-
             using (var context = new PI20_021_DBEntities2())
             {
-                var upit = (from r in context.Rezervacija
-                            where r.ID_rezervacija == ID
-                            select r);
-                context.Rezervacija.Attach(upit.FirstOrDefault());
-                context.Rezervacija.Remove(upit.FirstOrDefault());
+                var upitZaBrisanjeRacuna = from ra in context.Racun
+                                           where ra.ID_rezervacije == ID
+                                           select ra;
+                context.Racun.Attach(upitZaBrisanjeRacuna.FirstOrDefault());
+                context.Racun.Remove(upitZaBrisanjeRacuna.FirstOrDefault());
                 context.SaveChanges();
             }
-            DohvatiRezervacije();
-            
-            
+
+        }
+        
+        public void ObrisiRezervaciju()
+        {
+            if (rezervacija_dtg.CurrentRow == null)
+            {
+                MessageBox.Show("Nema vise dostupnih rezervacija!");
+                izbriši_btn.Enabled = false;
+                izmijeni_btn.Enabled = false;
+            }
+            else
+            {
+                int IDbrisanja = int.Parse(rezervacija_dtg.CurrentRow.Cells[0].Value.ToString());
+
+
+
+                using (var context = new PI20_021_DBEntities2())
+                {
+                    var ProvjeraPostojiLiRacun = from ra in context.Racun
+                                                 where IDbrisanja == ra.ID_rezervacije
+                                                 select ra;
+
+                    if (ProvjeraPostojiLiRacun.FirstOrDefault() != null)
+                    {
+                        ObrisiRacun(IDbrisanja);
+                        var upit = (from r in context.Rezervacija
+                                    where r.ID_rezervacija == IDbrisanja
+                                    select r);
+                        context.Rezervacija.Attach(upit.FirstOrDefault());
+                        context.Rezervacija.Remove(upit.FirstOrDefault());
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        var upit = (from r in context.Rezervacija
+                                    where r.ID_rezervacija == IDbrisanja
+                                    select r);
+                        context.Rezervacija.Attach(upit.FirstOrDefault());
+                        context.Rezervacija.Remove(upit.FirstOrDefault());
+                        context.SaveChanges();
+                    }
+                }
+                DohvatiRezervacije();
+            }
+        }
+        private void izbriši_btn_Click(object sender, EventArgs e)
+        {
+
+            ObrisiRezervaciju();
+
         }
 
         private void izmijeni_btn_Click(object sender, EventArgs e)
         {
-            int ID = int.Parse(rezervacija_dtg.CurrentRow.Cells[0].Value.ToString());
-            using (var context = new PI20_021_DBEntities2())
+            if(rezervacija_dtg.CurrentRow == null)
             {
+                MessageBox.Show("Nema dostupnih rezervacija!");
+                izmijeni_btn.Enabled = false;
+                izbriši_btn.Enabled = false;
+            }
+            else { 
+            int ID = int.Parse(rezervacija_dtg.CurrentRow.Cells[0].Value.ToString());
+           
+                using (var context = new PI20_021_DBEntities2())
+                {
+                    var ProvjeraPostojiLiRacun_izmjena = from ra in context.Racun
+                                             where ID == ra.ID_rezervacije
+                                             select ra;
+
+                    if (ProvjeraPostojiLiRacun_izmjena.FirstOrDefault() != null)
+                    {
+                        ObrisiRacun(ID);
+                    }
+
                 var upit = from r in context.Rezervacija
-                           where r.ID_rezervacija == ID
-                           select r;
-                Rezervacija odabranaRezervacija = upit.FirstOrDefault();
-                IzmjenarezervacijeForm izmjenarezervacijeForm= new IzmjenarezervacijeForm(odabranaRezervacija);
-                izmjenarezervacijeForm.ShowDialog();
+                            where r.ID_rezervacija == ID
+                            select r;
+                    Rezervacija odabranaRezervacija = upit.FirstOrDefault();
+                    IzmjenarezervacijeForm izmjenarezervacijeForm= new IzmjenarezervacijeForm(odabranaRezervacija);
+                    izmjenarezervacijeForm.ShowDialog();
+
+                }
 
             }
-
         }
         
         private void dodaj_btn_Click(object sender, EventArgs e)
@@ -145,6 +208,11 @@ namespace Hotel
         private void RezervacijaForm_Load(object sender, EventArgs e)
         {
             DohvatiRezervacije();
+            if(rezervacija_dtg.CurrentRow == null)
+            {
+                izbriši_btn.Enabled = false;
+                izmijeni_btn.Enabled = false;
+            }
         }
 
         private void btnOsvjeziRezervacije_Click(object sender, EventArgs e)

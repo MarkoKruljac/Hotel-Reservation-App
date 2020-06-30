@@ -76,6 +76,7 @@
     <EntitySetMapping Name="Rezervacija">
       <EntityTypeMapping TypeName="PI20_021_DBModel.Rezervacija">
         <MappingFragment StoreEntitySet="Rezervacija">
+          <ScalarProperty Name="PoslanEmail" ColumnName="PoslanEmail" />
           <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
           <ScalarProperty Name="Datum_pocetka" ColumnName="Datum_pocetka" />
           <ScalarProperty Name="Datum_zavrsetka" ColumnName="Datum_zavrsetka" />

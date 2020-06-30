@@ -84,6 +84,7 @@
           <Property Name="ID_gosta" Type="int" Nullable="false" />
           <Property Name="ID_usluge" Type="int" Nullable="false" />
           <Property Name="ID_vrste_rezervacije" Type="int" Nullable="false" />
+          <Property Name="PoslanEmail" Type="bit" />
         </EntityType>
         <EntityType Name="Soba">
           <Key>
@@ -543,6 +544,7 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <NavigationProperty Name="Soba" Relationship="Self.FK_Rezervacija_Soba" FromRole="Rezervacija" ToRole="Soba" />
           <NavigationProperty Name="Usluga" Relationship="Self.FK_Rezervacija_Usluga" FromRole="Rezervacija" ToRole="Usluga" />
           <NavigationProperty Name="VrstaRezervacije" Relationship="Self.FK_Rezervacija_VrstaRezervacije" FromRole="Rezervacija" ToRole="VrstaRezervacije" />
+          <Property Name="PoslanEmail" Type="Boolean" />
         </EntityType>
         <EntityType Name="Soba">
           <Key>
@@ -986,6 +988,7 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <EntitySetMapping Name="Rezervacija">
             <EntityTypeMapping TypeName="PI20_021_DBModel.Rezervacija">
               <MappingFragment StoreEntitySet="Rezervacija">
+                <ScalarProperty Name="PoslanEmail" ColumnName="PoslanEmail" />
                 <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
                 <ScalarProperty Name="Datum_pocetka" ColumnName="Datum_pocetka" />
                 <ScalarProperty Name="Datum_zavrsetka" ColumnName="Datum_zavrsetka" />

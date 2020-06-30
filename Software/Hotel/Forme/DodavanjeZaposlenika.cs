@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -73,7 +74,8 @@ namespace Hotel.Forme
 
         private void btnDodajZaposlenika_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
                 using (var context = new PI20_021_DBEntities2())
                 {
 
@@ -96,20 +98,20 @@ namespace Hotel.Forme
                     string lozinkaZaposlenika = tbDodajLozinkuZaposleniku.Text;
 
                     var vrstaKorisnikaupit = from vk in context.VrstaKorisnika
-                                    where vk.Naziv == cbDodajVrstuZaposlenika.SelectedItem.ToString()
-                                    select vk;
+                                             where vk.Naziv == cbDodajVrstuZaposlenika.SelectedItem.ToString()
+                                             select vk;
 
                     int IDvrste = vrstaKorisnikaupit.FirstOrDefault().ID_vrsta_korisnika;
 
                     var strucnaSpremaupit = from ss in context.StrucnaSprema
-                                    where ss.Naziv == cbDodajStrucnuSpremuZaposlenika.SelectedItem.ToString()
-                                    select ss;
+                                            where ss.Naziv == cbDodajStrucnuSpremuZaposlenika.SelectedItem.ToString()
+                                            select ss;
 
                     int IDspreme = strucnaSpremaupit.FirstOrDefault().ID_strucna_sprema;
 
                     var hotelZaposlenikaUpit = from h in context.Hotel
-                                            where h.Ime == cbDodajHotelZaposleniku.SelectedItem.ToString()
-                                            select h;
+                                               where h.Ime == cbDodajHotelZaposleniku.SelectedItem.ToString()
+                                               select h;
 
                     int IDhotela = hotelZaposlenikaUpit.FirstOrDefault().ID_hotel;
 
@@ -129,11 +131,17 @@ namespace Hotel.Forme
                         ID_strucne_spreme = IDspreme,
                         ID_hotela = IDhotela
                     };
-                        context.Korisnik.Add(korisnik);
-                        context.SaveChanges();
-                        MessageBox.Show("Uspješno ste dodali novog zaposlenika!");
+                    context.Korisnik.Add(korisnik);
+                    context.SaveChanges();
+                    MessageBox.Show("Uspješno ste dodali novog zaposlenika!");
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Nepotpuni podaci!");
+            }
+            }
             
         }
-    }
+    
 }

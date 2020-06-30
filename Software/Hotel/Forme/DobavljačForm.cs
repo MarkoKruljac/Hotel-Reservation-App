@@ -44,7 +44,7 @@ namespace Hotel
         {
             DohvatiDobavljace();
         }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -57,22 +57,33 @@ namespace Hotel
 
         private void izbriši_btn_Click(object sender, EventArgs e)
         {
+            
+            if(dobavljaci_dtg.CurrentRow != null) { 
             int ID = int.Parse(dobavljaci_dtg.CurrentRow.Cells[0].Value.ToString());
 
-            using (var context = new PI20_021_DBEntities2())
+                using (var context = new PI20_021_DBEntities2())
+                {
+                    var upit = (from d in context.Dobavljac
+                                where d.ID_dobavljac == ID
+                                select d);
+                    context.Dobavljac.Attach(upit.FirstOrDefault());
+                    context.Dobavljac.Remove(upit.FirstOrDefault());
+                    context.SaveChanges();
+                }
+              }
+            
+            else
             {
-                var upit = (from d in context.Dobavljac
-                            where d.ID_dobavljac == ID
-                            select d);
-                context.Dobavljac.Attach(upit.FirstOrDefault());
-                context.Dobavljac.Remove(upit.FirstOrDefault());
-                context.SaveChanges();
+                MessageBox.Show("Nema dostupnih dobavljača!");
+                izbriši_btn.Enabled = false;
+                izmijeni_btn.Enabled = false;
             }
             DohvatiDobavljace();
         }
 
         private void izmijeni_btn_Click(object sender, EventArgs e)
         {
+            if(dobavljaci_dtg.CurrentRow != null) { 
             int ID = int.Parse(dobavljaci_dtg.CurrentRow.Cells[0].Value.ToString());
             using (var context = new PI20_021_DBEntities2())
             {
@@ -83,6 +94,13 @@ namespace Hotel
                 IzmjenaDobavljacaForma izmjenaDobavljacaForma = new IzmjenaDobavljacaForma(odabraniDobavljac);
                 izmjenaDobavljacaForma.ShowDialog();
 
+            }
+            }
+            else
+            {
+                MessageBox.Show("Nema dostupnih dobavljača!");
+                izbriši_btn.Enabled = false;
+                izmijeni_btn.Enabled = false;
             }
         }
 

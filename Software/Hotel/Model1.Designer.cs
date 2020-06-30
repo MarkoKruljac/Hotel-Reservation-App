@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\domin\Desktop\PI_PROJEKT\Hotel_srijeda_19_29\Hotel_Zadnja_verzija\Hotel_rezervcije_gost_login_finito\Hotel\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\domin\Desktop\PI_PROJEKT\Hotel_nedjelja\Hotel_četvrtak_18_30\Hotel_četvrtak_18_30\Hotel_Zadnja_verzija\Hotel_rezervcije_gost_login_finito\Hotel\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
