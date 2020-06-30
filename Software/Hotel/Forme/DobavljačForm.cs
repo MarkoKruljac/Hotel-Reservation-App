@@ -23,7 +23,7 @@ namespace Hotel
             {
                 var upit = from d in context.Dobavljac
                            from h in context.Hotel
-                           where h.ID_hotel == d.ID_hotela
+                           where h.ID_hotel == d.ID_hotela && d.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                IdDobavljaca = d.ID_dobavljac,

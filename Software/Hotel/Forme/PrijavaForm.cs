@@ -19,6 +19,8 @@ namespace Hotel
         
         public static string imeZaposlenika;
         public static string prezimeZaposlenika;
+        public static int IDprijavljenog;
+        public static int IDhotela;
         public int brojac;
         public frmPrijava()
         {
@@ -144,6 +146,7 @@ namespace Hotel
                         {
                             imeZaposlenika = upitZaZaposlenika.FirstOrDefault().Ime;
                             prezimeZaposlenika = upitZaZaposlenika.FirstOrDefault().Prezime;
+                            IDhotela = upitZaZaposlenika.FirstOrDefault().ID_hotela;
                             Admin = false;
                             GlavnaForma glavnaForma = new GlavnaForma(Admin);
 
@@ -174,6 +177,8 @@ namespace Hotel
                         {
                             imeZaposlenika = upitZaAdministratora.FirstOrDefault().Ime;
                             prezimeZaposlenika = upitZaAdministratora.FirstOrDefault().Prezime;
+                            IDprijavljenog = upitZaAdministratora.FirstOrDefault().ID_korisnik;
+                            IDhotela = upitZaAdministratora.FirstOrDefault().ID_hotela;
                             Admin = true;
                             GlavnaForma glavnaForma = new GlavnaForma(Admin);
                             

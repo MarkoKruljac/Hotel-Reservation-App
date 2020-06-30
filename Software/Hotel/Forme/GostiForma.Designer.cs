@@ -81,7 +81,7 @@
             this.btnOsvjeziGoste.ForeColor = System.Drawing.Color.White;
             this.btnOsvjeziGoste.Location = new System.Drawing.Point(674, 12);
             this.btnOsvjeziGoste.Name = "btnOsvjeziGoste";
-            this.btnOsvjeziGoste.Size = new System.Drawing.Size(100, 26);
+            this.btnOsvjeziGoste.Size = new System.Drawing.Size(102, 32);
             this.btnOsvjeziGoste.TabIndex = 5;
             this.btnOsvjeziGoste.Text = "Osvježi";
             this.btnOsvjeziGoste.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@
             // 
             // tbPrezimeGosta
             // 
-            this.tbPrezimeGosta.Location = new System.Drawing.Point(470, 22);
+            this.tbPrezimeGosta.Location = new System.Drawing.Point(465, 22);
             this.tbPrezimeGosta.Name = "tbPrezimeGosta";
             this.tbPrezimeGosta.Size = new System.Drawing.Size(136, 22);
             this.tbPrezimeGosta.TabIndex = 6;
@@ -100,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label1.Location = new System.Drawing.Point(258, 22);
+            this.label1.Location = new System.Drawing.Point(210, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 20);
             this.label1.TabIndex = 7;

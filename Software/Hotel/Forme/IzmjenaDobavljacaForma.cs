@@ -18,18 +18,8 @@ namespace Hotel.Forme
             InitializeComponent();
             odabraniDobavljac = dobavljac;
         }
-        public void PopuniHotelDobavljaca()
-        {
-            List<string> hotelDobavljaca = new List<string>() { };
-            using (var context = new PI20_021_DBEntities2())
-            {
-                var upit = from h in context.Hotel
-                           select h.Ime;
-                hotelDobavljaca = upit.ToList();
-            }
-            hotelDobavljaca.Distinct();
-            cbIzmjeniHotelDobavljaca.DataSource = hotelDobavljaca;
-        }
+        
+        
         private void PopuniTextBoxeve()
         {
             using (var context = new PI20_021_DBEntities2())
@@ -43,11 +33,7 @@ namespace Hotel.Forme
                 tbIzmjeniZiroRacDobavljaca.Text = odabraniDobavljac.Broj_ziro_racuna.ToString();
 
 
-                var upitHotelDobavljaca = from d in context.Dobavljac
-                                         from h in context.Hotel
-                                         where odabraniDobavljac.ID_hotela == h.ID_hotel
-                                         select h.Ime;
-                cbIzmjeniHotelDobavljaca.Text = upitHotelDobavljaca.FirstOrDefault();
+                
 
 
                 
@@ -66,14 +52,12 @@ namespace Hotel.Forme
                 string ziroRacun = tbIzmjeniZiroRacDobavljaca.Text;
                 string telefon = tbIzmjeniTelefonDobavljaca.Text.ToString();
                 string email = tbIzmjeniEmailDobaljaca.Text.ToString();
-                string ugovorSaHotelom = cbIzmjeniHotelDobavljaca.SelectedItem.ToString();
-                var upit = from h in context.Hotel
-                           where h.Ime == ugovorSaHotelom
-                           select h;
+                
+                
                 var upit2 = from d in context.Dobavljac
                             where d.ID_dobavljac == ID
                             select d;
-                int id = upit.FirstOrDefault().ID_hotel;
+                
                 if (upit2.FirstOrDefault() != null)
                 {
                     foreach (var item in upit2)
@@ -85,7 +69,7 @@ namespace Hotel.Forme
                         item.Broj_ziro_racuna = ziroRacun;
                         item.Telefon = telefon;
                         item.Email = email;
-                        item.ID_hotela = id;
+                        
 
 
                     }
@@ -100,7 +84,7 @@ namespace Hotel.Forme
 
         private void IzmjenaDobavljacaForma_Load(object sender, EventArgs e)
         {
-            PopuniHotelDobavljaca();
+            
             PopuniTextBoxeve();
         }
 

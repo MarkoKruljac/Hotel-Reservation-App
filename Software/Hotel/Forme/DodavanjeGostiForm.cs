@@ -57,7 +57,8 @@ namespace Hotel.Forme
                         Telefon = telefonGosta,
                         Adresa = adresaGosta,
                         Email = emailGosta,
-                        ID_vrste_gosta = upitZaIDvrste.FirstOrDefault()
+                        ID_vrste_gosta = upitZaIDvrste.FirstOrDefault(),
+                        ID_hotela = frmPrijava.IDhotela
 
 
                     };

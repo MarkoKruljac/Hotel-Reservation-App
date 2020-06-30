@@ -31,38 +31,36 @@ namespace Hotel
         {
             using (var context = new PI20_021_DBEntities2())
             {
-                    
-                
-                    var upituseljenja = from r in context.Rezervacija
-                                from vr in context.VrstaRezervacije
-                                from g in context.Gost
-                                from u in context.Usluga
-                                from s in context.Soba
-                                from vS in context.VrstaSobe
-                                from ra in context.Racun
-                                where r.Datum_pocetka.Day == DateTime.Now.Day && r.Datum_pocetka.Month == DateTime.Now.Month &&
-                                r.Datum_pocetka.Year == DateTime.Now.Year
-                                && (ra.ID_rezervacije != r.ID_rezervacija || ra.ID_rezervacije == r.ID_rezervacija && ra.Placen == false) &&
-                                s.ID_soba == r.ID_sobe && r.ID_vrste_rezervacije == vr.ID_vrsta_rezervacije && s.ID_vrste_sobe == vS.ID_vrsta_sobe
-                                && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga 
 
-                                select new
-                                {
-                                    ID = r.ID_rezervacija,
-                                    DatumPocetka = r.Datum_pocetka,
-                                    DatumZavrsetka = r.Datum_zavrsetka,
-                                    CijenaRezervacije = r.Cijena_rezervacije,
-                                    NazivVrsteRez = vr.NazivVrsteRezeravcije,
-                                    ImeGosta = g.Ime,
-                                    PrezimeGosta = g.Prezime,
-                                    BrojSobe = s.ID_soba,
-                                    CijenaSobe = vS.Cijena,
-                                    VrstaUsluge = u.NazivUsluge
-                                };
+                var upitIseljenja = from r in context.Rezervacija
+                                    from vr in context.VrstaRezervacije
+                                    from g in context.Gost
+                                    from u in context.Usluga
+                                    from s in context.Soba
+                                    from vS in context.VrstaSobe
+                                    from ra in context.Racun
+                                    where s.ID_soba == r.ID_sobe && r.ID_vrste_rezervacije == vr.ID_vrsta_rezervacije
+                                    && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga
+                                    && s.ID_vrste_sobe == vS.ID_vrsta_sobe && r.Datum_pocetka.Day == DateTime.Now.Day && r.Datum_pocetka.Month == DateTime.Now.Month &&
+                                    r.Datum_pocetka.Year == DateTime.Now.Year 
+                                    select new
+                                    {
+                                        ID = r.ID_rezervacija,
+                                        DatumPocetka = r.Datum_pocetka,
+                                        DatumZavrsetka = r.Datum_zavrsetka,
+                                        CijenaRezervacije = r.Cijena_rezervacije,
+                                        NazivVrsteRez = vr.NazivVrsteRezeravcije,
+                                        ImeGosta = g.Ime,
+                                        PrezimeGosta = g.Prezime,
+                                        BrojSobe = s.ID_soba,
+                                        CijenaSobe = vS.Cijena,
+                                        VrstaUsluge = u.NazivUsluge
+                                    };
+                dgvIseljenjeDnevniPlan.DataSource = upitIseljenja.ToList();
 
-                    dnevniPlanUseljenje_dgv.DataSource = upituseljenja.ToList();
 
-                
+
+
             }
         }
 

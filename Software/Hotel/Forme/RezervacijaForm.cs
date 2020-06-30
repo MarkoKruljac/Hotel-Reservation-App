@@ -151,7 +151,7 @@ namespace Hotel
                            where s.ID_soba==r.ID_sobe && r.ID_vrste_rezervacije == vr.ID_vrsta_rezervacije 
                            
                            && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga
-                           && s.ID_vrste_sobe == vS.ID_vrsta_sobe
+                           && s.ID_vrste_sobe == vS.ID_vrsta_sobe && r.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                ID = r.ID_rezervacija,
@@ -165,6 +165,7 @@ namespace Hotel
                                BrojSobe = s.ID_soba,
                                CijenaSobe = vS.Cijena,
                                VrstaUsluge = u.NazivUsluge
+                               
 
                            };
 

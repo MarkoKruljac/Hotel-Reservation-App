@@ -19,23 +19,21 @@
         <EntityTypeShape EntityType="PI20_021_DBModel.VrstaKorisnika" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PI20_021_DBModel.VrstaRezervacije" Width="1.5" PointX="6" PointY="20.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PI20_021_DBModel.VrstaSobe" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI20_021_DBModel.StavkaRacuna" Width="1.5" PointX="11.25" PointY="8.5" IsExpanded="true" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Dobavljac_Hotel" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Gost_VrstaGosta" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Gost" ManuallyRouted="false" />
-        <AssociationConnector Association="PI20_021_DBModel.FK_StavkaRacuna_Gost" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Korisnik_Hotel" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Soba_Hotel" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Korisnik_StrucnaSprema" ManuallyRouted="false" />
-        <AssociationConnector Association="PI20_021_DBModel.FK_StavkaRacuna_Korisnik" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Racun_Rezervacija" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Racun_Soba" ManuallyRouted="false" />
-        <AssociationConnector Association="PI20_021_DBModel.FK_StavkaRacuna_Racun" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Soba" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Usluga" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_VrstaRezervacije" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Soba_VrstaSobe" ManuallyRouted="false" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Korisnik_VrstaKorisnika" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Hotel" />
+        <AssociationConnector Association="PI20_021_DBModel.FK_Gost_Hotel" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

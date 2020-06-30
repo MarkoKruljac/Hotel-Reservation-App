@@ -53,23 +53,13 @@ namespace Hotel.Forme
             cbDodajStrucnuSpremuZaposlenika.DataSource = strucnaSprema;
         }
 
-        public void PopuniHotel()
-        {
-            List<string> hotel = new List<string>() { };
-            using (var context = new PI20_021_DBEntities2())
-            {
-                var upit = from h in context.Hotel
-                           select h.Ime;
-                hotel = upit.ToList();
-            }
-            cbDodajHotelZaposleniku.DataSource = hotel;
-        }
+        
 
         private void DodavanjeZaposlenika_Load(object sender, EventArgs e)
         {
             PopuniVrstuZaposlenika();
             PopuniStrucnuSpremu();
-            PopuniHotel();
+            
         }
 
         private void btnDodajZaposlenika_Click(object sender, EventArgs e)
@@ -109,11 +99,9 @@ namespace Hotel.Forme
 
                     int IDspreme = strucnaSpremaupit.FirstOrDefault().ID_strucna_sprema;
 
-                    var hotelZaposlenikaUpit = from h in context.Hotel
-                                               where h.Ime == cbDodajHotelZaposleniku.SelectedItem.ToString()
-                                               select h;
 
-                    int IDhotela = hotelZaposlenikaUpit.FirstOrDefault().ID_hotel;
+
+                    int IDhotela = frmPrijava.IDhotela;
 
 
                     Korisnik korisnik = new Korisnik

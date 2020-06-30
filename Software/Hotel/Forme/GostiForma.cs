@@ -25,7 +25,7 @@ namespace Hotel.Forme
             {
                 var upit = from g in context.Gost
                            from vG in context.VrstaGosta
-                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta
+                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta && g.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                ID = g.ID_gost,
@@ -47,7 +47,7 @@ namespace Hotel.Forme
             {
                 var upit = from g in context.Gost
                            from vG in context.VrstaGosta
-                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta && g.Prezime.Contains(prezime)
+                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta && g.Prezime.Contains(prezime) && g.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                ID = g.ID_gost,

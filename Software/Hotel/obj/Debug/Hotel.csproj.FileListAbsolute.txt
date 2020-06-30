@@ -716,7 +716,6 @@ C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Sof
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\bin\Debug\EntityFramework.xml
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.csprojAssemblyReference.cache
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.DnevniPlan.resources
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.DobavljačForm.resources
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.Forme.DodavanjeDobavljacaForm.resources
@@ -740,3 +739,4 @@ C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Sof
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.csproj.CopyComplete
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.exe
 C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.pdb
+C:\Users\domin\Desktop\PI_PROJEKT\houtel\r20--mkruljac-pkozina-dlunko-master\Software\Hotel\obj\Debug\Hotel.csprojAssemblyReference.cache

@@ -143,7 +143,8 @@ namespace Hotel.Forme
                             ID_vrste_rezervacije = vrstaReze.FirstOrDefault(),
                             ID_usluge = usluga.FirstOrDefault(),
                             ID_sobe = broj,
-                            PoslanEmail = false
+                            PoslanEmail = false,
+                            ID_hotela = frmPrijava.IDhotela
                         };
                         context.Rezervacija.Add(rezervacija);
 

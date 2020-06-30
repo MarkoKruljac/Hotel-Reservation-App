@@ -19,6 +19,7 @@
     <EntitySetMapping Name="Gost">
       <EntityTypeMapping TypeName="PI20_021_DBModel.Gost">
         <MappingFragment StoreEntitySet="Gost">
+          <ScalarProperty Name="ID_hotela" ColumnName="ID_hotela" />
           <ScalarProperty Name="ID_gost" ColumnName="ID_gost" />
           <ScalarProperty Name="Ime" ColumnName="Ime" />
           <ScalarProperty Name="Prezime" ColumnName="Prezime" />
@@ -76,6 +77,7 @@
     <EntitySetMapping Name="Rezervacija">
       <EntityTypeMapping TypeName="PI20_021_DBModel.Rezervacija">
         <MappingFragment StoreEntitySet="Rezervacija">
+          <ScalarProperty Name="ID_hotela" ColumnName="ID_hotela" />
           <ScalarProperty Name="PoslanEmail" ColumnName="PoslanEmail" />
           <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
           <ScalarProperty Name="Datum_pocetka" ColumnName="Datum_pocetka" />
@@ -158,15 +160,6 @@
           <ScalarProperty Name="ID_vrsta_sobe" ColumnName="ID_vrsta_sobe" />
           <ScalarProperty Name="Cijena" ColumnName="Cijena" />
           <ScalarProperty Name="Naziv" ColumnName="Naziv" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="StavkaRacuna">
-      <EntityTypeMapping TypeName="PI20_021_DBModel.StavkaRacuna">
-        <MappingFragment StoreEntitySet="StavkaRacuna">
-          <ScalarProperty Name="ID_racuna" ColumnName="ID_racuna" />
-          <ScalarProperty Name="ID_korisnika" ColumnName="ID_korisnika" />
-          <ScalarProperty Name="ID_gosta" ColumnName="ID_gosta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
