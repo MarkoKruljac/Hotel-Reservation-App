@@ -115,8 +115,13 @@ namespace Hotel
         {
             
             DohvatiDnevniPlanUseljenja();
+            if(dnevniPlanUseljenje_dgv.CurrentRow == null)
+            {
+                
+            }
+            else { 
             ObojiPlaceneRacune();
-
+            }
 
 
             DohvatiDnevniPlanIseljenja();
@@ -129,7 +134,14 @@ namespace Hotel
         {
             DohvatiDnevniPlanUseljenja();
             DohvatiDnevniPlanIseljenja();
-            ObojiPlaceneRacune();
+            if (dnevniPlanUseljenje_dgv.CurrentRow == null)
+            {
+                
+            }
+            else
+            {
+                ObojiPlaceneRacune();
+            }
 
 
         }
