@@ -32,37 +32,44 @@ namespace Hotel
             using (var context = new PI20_021_DBEntities2())
             {
 
-                var upitIseljenja = from r in context.Rezervacija
-                                    from vr in context.VrstaRezervacije
-                                    from g in context.Gost
-                                    from u in context.Usluga
-                                    from s in context.Soba
-                                    from vS in context.VrstaSobe
-                                    from ra in context.Racun
-                                    where s.ID_soba == r.ID_sobe && r.ID_vrste_rezervacije == vr.ID_vrsta_rezervacije
-                                    && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga
-                                    && s.ID_vrste_sobe == vS.ID_vrsta_sobe && r.Datum_pocetka.Day == DateTime.Now.Day && r.Datum_pocetka.Month == DateTime.Now.Month &&
-                                    r.Datum_pocetka.Year == DateTime.Now.Year 
-                                    select new
-                                    {
-                                        ID = r.ID_rezervacija,
-                                        DatumPocetka = r.Datum_pocetka,
-                                        DatumZavrsetka = r.Datum_zavrsetka,
-                                        CijenaRezervacije = r.Cijena_rezervacije,
-                                        NazivVrsteRez = vr.NazivVrsteRezeravcije,
-                                        ImeGosta = g.Ime,
-                                        PrezimeGosta = g.Prezime,
-                                        BrojSobe = s.ID_soba,
-                                        CijenaSobe = vS.Cijena,
-                                        VrstaUsluge = u.NazivUsluge
-                                    };
-                dgvIseljenjeDnevniPlan.DataSource = upitIseljenja.ToList();
+                var upitUseljenja = from r in context.Rezervacija
+                           from vr in context.VrstaRezervacije
+                           from g in context.Gost
+                           from u in context.Usluga
+                           from s in context.Soba
+                           from vS in context.VrstaSobe
+                           from ra in context.Racun
+                           where s.ID_soba == r.ID_sobe && r.ID_vrste_rezervacije == vr.ID_vrsta_rezervacije
+
+                           && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga && r.Datum_pocetka.Day == DateTime.Now.Day && r.Datum_pocetka.Month == DateTime.Now.Month &&
+                           r.Datum_pocetka.Year == DateTime.Now.Year
+                           && s.ID_vrste_sobe == vS.ID_vrsta_sobe && r.ID_hotela == frmPrijava.IDhotela 
+                           select new
+                           {
+                               ID = r.ID_rezervacija,
+                               DatumPocetka = r.Datum_pocetka,
+                               DatumZavrsetka = r.Datum_zavrsetka,
+                               CijenaRezervacije = r.Cijena_rezervacije,
+                               NazivVrsteRez = vr.NazivVrsteRezeravcije,
+                               ImeGosta = g.Ime,
+                               PrezimeGosta = g.Prezime,
+
+                               BrojSobe = s.ID_soba,
+                               CijenaSobe = vS.Cijena,
+                               VrstaUsluge = u.NazivUsluge,
+                               PlacenRacun = ra.Placen
+
+                           };
+
+                
+                dnevniPlanUseljenje_dgv.DataSource = upitUseljenja.ToList();
 
 
 
 
             }
         }
+        
 
         private void DohvatiDnevniPlanIseljenja()
         {
@@ -99,8 +106,8 @@ namespace Hotel
         
         private void DnevniPlan_Load(object sender, EventArgs e)
         {
-           
             DohvatiDnevniPlanUseljenja();
+            
             
             DohvatiDnevniPlanIseljenja();
             if (dgvIseljenjeDnevniPlan == null)
@@ -110,7 +117,7 @@ namespace Hotel
         }
         public void OsvjeziDnevniPlan()
         {
-            DohvatiDnevniPlanUseljenja();
+            
             DohvatiDnevniPlanIseljenja();
             
         }
@@ -259,7 +266,6 @@ namespace Hotel
                 btnIzdajRacun.Enabled = false;
             }
         }
-
         
     }
 }

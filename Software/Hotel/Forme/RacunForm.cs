@@ -142,7 +142,7 @@ namespace Hotel
                
             }
             DnevniPlan dnevniPlan = new DnevniPlan();
-            dnevniPlan.DohvatiDnevniPlanUseljenja();
+            
             dnevniPlan.OsvjeziDnevniPlan();
             this.Close();
         }
