@@ -14,6 +14,13 @@ namespace Hotel
 {
     public partial class RezervacijaForm : Form
     {
+        public class NepostojecaRezervacijaException : Exception
+        {
+            public NepostojecaRezervacijaException(string poruka) : base(poruka)
+            {
+
+            }
+        }
         public RezervacijaForm()
         {
             InitializeComponent();
@@ -59,26 +66,29 @@ namespace Hotel
                     var ProvjeraPostojiLiRacun = from ra in context.Racun
                                                  where IDbrisanja == ra.ID_rezervacije
                                                  select ra;
+                    var upit = (from r in context.Rezervacija
+                                where r.ID_rezervacija == IDbrisanja
+                                select r);
+
 
                     if (ProvjeraPostojiLiRacun.FirstOrDefault() != null)
                     {
+                         
                         ObrisiRacun(IDbrisanja);
-                        var upit = (from r in context.Rezervacija
-                                    where r.ID_rezervacija == IDbrisanja
-                                    select r);
-                        context.Rezervacija.Attach(upit.FirstOrDefault());
-                        context.Rezervacija.Remove(upit.FirstOrDefault());
-                        context.SaveChanges();
+                    
                     }
-                    else
+                    try { 
+                    context.Rezervacija.Remove(upit.FirstOrDefault());
+                    context.SaveChanges();
+                    }
+                    catch
                     {
-                        var upit = (from r in context.Rezervacija
-                                    where r.ID_rezervacija == IDbrisanja
-                                    select r);
-                        context.Rezervacija.Attach(upit.FirstOrDefault());
-                        context.Rezervacija.Remove(upit.FirstOrDefault());
-                        context.SaveChanges();
+                        MessageBox.Show("Obrisali ste racun odabrane rezervacije, pritisnite opet za brisanje same rezervacije!");
                     }
+
+
+
+
                 }
                 DohvatiRezervacije();
             }

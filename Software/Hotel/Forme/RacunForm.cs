@@ -13,7 +13,7 @@ namespace Hotel
     
     public partial class RacunForm : Form
     {
-        
+        public static readonly List<int> listaIndeksa = new List<int>();
         Rezervacija odabranoUseljenje;
         public RacunForm(Rezervacija rezervacija)
         {
@@ -129,6 +129,9 @@ namespace Hotel
 
         private void btnNaplata_Click(object sender, EventArgs e)
         {
+            DnevniPlan dnevniPlan = new DnevniPlan();
+            int indekss = DnevniPlan.indeks;
+            
             using (var context = new PI20_021_DBEntities2())
             {
                 var upitZaNaplatu = from ra in context.Racun
@@ -137,12 +140,13 @@ namespace Hotel
                 foreach (var item in upitZaNaplatu)
                 {
                     item.Placen = true;
+                    listaIndeksa.Add(indekss);
                 }
                 context.SaveChanges();
                
             }
-            DnevniPlan dnevniPlan = new DnevniPlan();
             
+            dnevniPlan.DohvatiDnevniPlanUseljenja();
             dnevniPlan.OsvjeziDnevniPlan();
             this.Close();
         }

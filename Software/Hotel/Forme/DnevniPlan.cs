@@ -15,7 +15,7 @@ namespace Hotel
 {   
     public partial class DnevniPlan : Form
     {
-        
+        public static int indeks;
         public DnevniPlan()
         {
             InitializeComponent();
@@ -32,18 +32,18 @@ namespace Hotel
             using (var context = new PI20_021_DBEntities2())
             {
 
-                var upitUseljenja = from r in context.Rezervacija
+                var upit = from r in context.Rezervacija
                            from vr in context.VrstaRezervacije
+
                            from g in context.Gost
                            from u in context.Usluga
                            from s in context.Soba
                            from vS in context.VrstaSobe
-                           from ra in context.Racun
                            where s.ID_soba == r.ID_sobe && r.ID_vrste_rezervacije == vr.ID_vrsta_rezervacije
 
-                           && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga && r.Datum_pocetka.Day == DateTime.Now.Day && r.Datum_pocetka.Month == DateTime.Now.Month &&
+                           && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga
+                           && s.ID_vrste_sobe == vS.ID_vrsta_sobe && r.ID_hotela == frmPrijava.IDhotela && r.Datum_pocetka.Day == DateTime.Now.Day && r.Datum_pocetka.Month == DateTime.Now.Month &&
                            r.Datum_pocetka.Year == DateTime.Now.Year
-                           && s.ID_vrste_sobe == vS.ID_vrsta_sobe && r.ID_hotela == frmPrijava.IDhotela 
                            select new
                            {
                                ID = r.ID_rezervacija,
@@ -53,21 +53,18 @@ namespace Hotel
                                NazivVrsteRez = vr.NazivVrsteRezeravcije,
                                ImeGosta = g.Ime,
                                PrezimeGosta = g.Prezime,
-
                                BrojSobe = s.ID_soba,
                                CijenaSobe = vS.Cijena,
-                               VrstaUsluge = u.NazivUsluge,
-                               PlacenRacun = ra.Placen
+                               VrstaUsluge = u.NazivUsluge
+
 
                            };
 
-                
-                dnevniPlanUseljenje_dgv.DataSource = upitUseljenja.ToList();
-
-
-
+                dnevniPlanUseljenje_dgv.DataSource = upit.ToList();
 
             }
+          
+            
         }
         
 
@@ -100,15 +97,28 @@ namespace Hotel
                                CijenaSobe = vS.Cijena,
                                VrstaUsluge = u.NazivUsluge
                            };
-                dgvIseljenjeDnevniPlan.DataSource = upitIseljenja.ToList();
+                dgvIseljenjeDnevniPlan.DataSource= upitIseljenja.ToList();
             }
         }
-        
+        public void ObojiPlaceneRacune()
+        {
+            List<int> indeksi = RacunForm.listaIndeksa;
+            DataGridViewCellStyle CellStyle = new DataGridViewCellStyle();
+            CellStyle.BackColor = Color.Green;
+            foreach (var item in indeksi)
+            {
+
+                dnevniPlanUseljenje_dgv.Rows[item].DefaultCellStyle = CellStyle;
+            }
+        }
         private void DnevniPlan_Load(object sender, EventArgs e)
         {
+            
             DohvatiDnevniPlanUseljenja();
-            
-            
+            ObojiPlaceneRacune();
+
+
+
             DohvatiDnevniPlanIseljenja();
             if (dgvIseljenjeDnevniPlan == null)
             {
@@ -117,9 +127,11 @@ namespace Hotel
         }
         public void OsvjeziDnevniPlan()
         {
-            
+            DohvatiDnevniPlanUseljenja();
             DohvatiDnevniPlanIseljenja();
-            
+            ObojiPlaceneRacune();
+
+
         }
         private void btnOsvjezi_Click(object sender, EventArgs e)
         {
@@ -227,6 +239,7 @@ namespace Hotel
         private void DohvatiTrenutnoUseljenje()
         {
             int ID = int.Parse(dnevniPlanUseljenje_dgv.CurrentRow.Cells[0].Value.ToString());
+            indeks = int.Parse(dnevniPlanUseljenje_dgv.CurrentRow.Index.ToString());
             using (var context = new PI20_021_DBEntities2()) {
                 var upit = from r in context.Rezervacija
                            from ra in context.Racun
@@ -266,6 +279,7 @@ namespace Hotel
                 btnIzdajRacun.Enabled = false;
             }
         }
+
         
     }
 }
