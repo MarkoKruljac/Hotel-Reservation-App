@@ -42,6 +42,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnIzvrsiGost
@@ -50,7 +51,7 @@
             this.btnIzvrsiGost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvrsiGost.ForeColor = System.Drawing.Color.White;
             this.btnIzvrsiGost.Location = new System.Drawing.Point(288, 342);
-            this.btnIzvrsiGost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIzvrsiGost.Margin = new System.Windows.Forms.Padding(2);
             this.btnIzvrsiGost.Name = "btnIzvrsiGost";
             this.btnIzvrsiGost.Size = new System.Drawing.Size(125, 50);
             this.btnIzvrsiGost.TabIndex = 0;
@@ -62,7 +63,7 @@
             // 
             this.cbVrstaGostaIzmjena.FormattingEnabled = true;
             this.cbVrstaGostaIzmjena.Location = new System.Drawing.Point(517, 241);
-            this.cbVrstaGostaIzmjena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbVrstaGostaIzmjena.Margin = new System.Windows.Forms.Padding(2);
             this.cbVrstaGostaIzmjena.Name = "cbVrstaGostaIzmjena";
             this.cbVrstaGostaIzmjena.Size = new System.Drawing.Size(153, 21);
             this.cbVrstaGostaIzmjena.TabIndex = 2;
@@ -70,7 +71,7 @@
             // tbAdresaGostaIzmjena
             // 
             this.tbAdresaGostaIzmjena.Location = new System.Drawing.Point(70, 242);
-            this.tbAdresaGostaIzmjena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAdresaGostaIzmjena.Margin = new System.Windows.Forms.Padding(2);
             this.tbAdresaGostaIzmjena.Name = "tbAdresaGostaIzmjena";
             this.tbAdresaGostaIzmjena.Size = new System.Drawing.Size(169, 20);
             this.tbAdresaGostaIzmjena.TabIndex = 3;
@@ -78,7 +79,7 @@
             // tbEmailGostaIzmjena
             // 
             this.tbEmailGostaIzmjena.Location = new System.Drawing.Point(288, 242);
-            this.tbEmailGostaIzmjena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmailGostaIzmjena.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmailGostaIzmjena.Name = "tbEmailGostaIzmjena";
             this.tbEmailGostaIzmjena.Size = new System.Drawing.Size(167, 20);
             this.tbEmailGostaIzmjena.TabIndex = 4;
@@ -86,7 +87,7 @@
             // tbTelefonGostaIzmjena
             // 
             this.tbTelefonGostaIzmjena.Location = new System.Drawing.Point(516, 118);
-            this.tbTelefonGostaIzmjena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTelefonGostaIzmjena.Margin = new System.Windows.Forms.Padding(2);
             this.tbTelefonGostaIzmjena.Name = "tbTelefonGostaIzmjena";
             this.tbTelefonGostaIzmjena.Size = new System.Drawing.Size(154, 20);
             this.tbTelefonGostaIzmjena.TabIndex = 5;
@@ -94,7 +95,7 @@
             // tbPrezimeGostaIzmjena
             // 
             this.tbPrezimeGostaIzmjena.Location = new System.Drawing.Point(288, 118);
-            this.tbPrezimeGostaIzmjena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPrezimeGostaIzmjena.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrezimeGostaIzmjena.Name = "tbPrezimeGostaIzmjena";
             this.tbPrezimeGostaIzmjena.Size = new System.Drawing.Size(167, 20);
             this.tbPrezimeGostaIzmjena.TabIndex = 6;
@@ -102,7 +103,7 @@
             // tbImeGostaIzmjena
             // 
             this.tbImeGostaIzmjena.Location = new System.Drawing.Point(70, 118);
-            this.tbImeGostaIzmjena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbImeGostaIzmjena.Margin = new System.Windows.Forms.Padding(2);
             this.tbImeGostaIzmjena.Name = "tbImeGostaIzmjena";
             this.tbImeGostaIzmjena.Size = new System.Drawing.Size(169, 20);
             this.tbImeGostaIzmjena.TabIndex = 7;
@@ -186,11 +187,20 @@
             this.panel1.Size = new System.Drawing.Size(663, 246);
             this.panel1.TabIndex = 55;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(45, 342);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 56;
+            // 
             // IzmjenaGostaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 461);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
@@ -205,7 +215,7 @@
             this.Controls.Add(this.cbVrstaGostaIzmjena);
             this.Controls.Add(this.btnIzvrsiGost);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IzmjenaGostaForm";
             this.Text = "IzmjenaGostaForm";
             this.Load += new System.EventHandler(this.IzmjenaGostaForm_Load);
@@ -230,5 +240,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblError;
     }
 }

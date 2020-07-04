@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.Net;
+using System.Security.AccessControl;
 
 namespace Hotel
 {
     
     public partial class RacunForm : Form
     {
-        
+        public static readonly List<int> listaIndeksa = new List<int>();
         Rezervacija odabranoUseljenje;
         public RacunForm(Rezervacija rezervacija)
         {
@@ -129,6 +132,9 @@ namespace Hotel
 
         private void btnNaplata_Click(object sender, EventArgs e)
         {
+            DnevniPlan dnevniPlan = new DnevniPlan();
+            int indekss = DnevniPlan.indeks;
+            
             using (var context = new PI20_021_DBEntities2())
             {
                 var upitZaNaplatu = from ra in context.Racun
@@ -137,11 +143,50 @@ namespace Hotel
                 foreach (var item in upitZaNaplatu)
                 {
                     item.Placen = true;
+                    listaIndeksa.Add(indekss);
                 }
+                var emailGostaUpit = from g in context.Gost
+                                     where g.Ime == lbImeGosta.Text && g.Prezime == lbPrezimeGosta.Text
+                                     select g;
+
+                try
+                {
+                    string emailGosta = emailGostaUpit.FirstOrDefault().Email;
+                    string emailZaposlenika = frmPrijava.emailZaposlenika;
+                    string passWordZaposlenika = frmPrijava.lozinkaZaposlenika;
+
+                    //MessageBox.Show(emailZaposlenika);
+                    //MessageBox.Show(passWordZaposlenika);
+                    //MessageBox.Show(emailGosta);
+                    SmtpClient clientDetails = new SmtpClient();
+                    clientDetails.Port = 587;
+                    clientDetails.Host = "smtp.gmail.com";
+                    clientDetails.EnableSsl = true;
+                    clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    clientDetails.UseDefaultCredentials = false;
+                    clientDetails.Credentials = new NetworkCredential(emailZaposlenika, passWordZaposlenika);
+
+                    //message details
+
+                    MailMessage mailDetails = new MailMessage();
+                    mailDetails.From = new MailAddress(emailZaposlenika);
+                    mailDetails.To.Add(emailGosta);
+                    mailDetails.Subject = $"Vaš račun br. {lbIDracuna.Text}";
+                    mailDetails.IsBodyHtml = true;
+                    mailDetails.Body = $"Broj računa: {lbIDracuna.Text} <br>  ------------------------------- <br>  Broj odabrane sobe: {lbBrojSobe.Text} <br>  Cijena odabrane sobe: {lbCijenaSobe.Text} <br>   Ukupno dana boravka: {lbUKDana.Text} <br>  Vrsta usluge:" +
+                            $" {lbVrstaUsluge.Text} <br> Kaucija: {lbKaucija.Text} <br>  ------------------------------- <br> Ukupan iznos za platiti: {lbUkupanIznos.Text} <br><br>  Zahvaljujemo vam na vašoj posjeti! <br> Dođite nam ponovo!";
+                    clientDetails.Send(mailDetails);
+
+                }
+                catch
+                {
+
+                }
+
                 context.SaveChanges();
-               
+
             }
-            DnevniPlan dnevniPlan = new DnevniPlan();
+            
             dnevniPlan.DohvatiDnevniPlanUseljenja();
             dnevniPlan.OsvjeziDnevniPlan();
             this.Close();

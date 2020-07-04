@@ -45,23 +45,12 @@ namespace Hotel.Forme
             cbIzmijeniStrucnuSpremuZaposlenika.DataSource = strucnaSprema;
         }
 
-        public void PupuniHotelZaposlenika()
-        {
-            List<string> hotel = new List<string>() { };
-            using (var context = new PI20_021_DBEntities2())
-            {
-                var upit = from h in context.Hotel
-                           select h.Ime;
-                hotel = upit.ToList();
-            }
-            cbIzmijeniHotelZaposleniku.DataSource = hotel;
-        }
+        
 
         private void IzmjenaZaposlenika_Load(object sender, EventArgs e)
         {
             PopuniStrucnuSpremu();
             PopuniVrstuZaposlenika();
-            PupuniHotelZaposlenika();
             PopuniTextBoxeve();
         }
 
@@ -93,11 +82,7 @@ namespace Hotel.Forme
                 cbIzmijeniStrucnuSpremuZaposlenika.Text = upitStrucnaSpremaKorisnika.FirstOrDefault();
 
 
-                var upitHotelKorisnika = from k in context.Korisnik
-                                         from h in context.Hotel
-                                         where odabraniZaposlenik.ID_hotela == h.ID_hotel
-                                         select k.Ime;
-                cbIzmijeniHotelZaposleniku.Text = upitHotelKorisnika.FirstOrDefault();
+                
             }
         }
 
@@ -118,7 +103,7 @@ namespace Hotel.Forme
                 string lozinkaZaposlenika = tbIzmijeniLozinkuZaposleniku.Text;
                 string vrstaZaposlenika = cbIzmijeniVrstuZaposlenika.SelectedItem.ToString();
                 string strucnaSpremaZaposlenika = cbIzmijeniStrucnuSpremuZaposlenika.SelectedItem.ToString(); ;
-                string hotelZaposlenika = cbIzmijeniHotelZaposleniku.SelectedItem.ToString(); 
+                 
 
                 try 
                 { 
@@ -134,9 +119,7 @@ namespace Hotel.Forme
                             where ss.Naziv == strucnaSpremaZaposlenika
                             select ss.ID_strucna_sprema;
 
-                    var upit4 = from h in context.Hotel
-                            where h.Ime == hotelZaposlenika
-                            select h.ID_hotel;
+                    
 
                     if(upit.FirstOrDefault() != null)
                     { 
@@ -153,15 +136,15 @@ namespace Hotel.Forme
                             item.Lozinka = lozinkaZaposlenika;
                             item.ID_vrste_korisnika = upit2.FirstOrDefault();
                             item.ID_strucne_spreme = upit3.FirstOrDefault();
-                            item.ID_hotela = upit4.FirstOrDefault();
+                            
                         }
                         context.SaveChanges();
-                        MessageBox.Show("Uspješno ste izmjenili odabranog korisnika!");
+                        lblError.Text = "Uspješno ste izmjenili odabranog korisnika!";  //novo
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Nepostojeći Korisnik!");
+                    lblError.Text = "Nepostojeći Korisnik!";    //novo
                 }
             }
         }
@@ -169,6 +152,11 @@ namespace Hotel.Forme
         private void btnDodajZaposlenika_Click(object sender, EventArgs e)
         {
             Azuriraj();
+        }
+
+        private void cbIzmijeniHotelZaposleniku_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

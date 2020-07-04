@@ -36,6 +36,7 @@
             this.btnOsvjeziRezervacije = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPretragaPoPrezimenu = new System.Windows.Forms.TextBox();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rezervacija_dtg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +134,20 @@
             this.tbPretragaPoPrezimenu.TabIndex = 8;
             this.tbPretragaPoPrezimenu.TextChanged += new System.EventHandler(this.tbPretragaPoPrezimenu_TextChanged);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(30, 419);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 9;
+            // 
             // RezervacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 461);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.tbPretragaPoPrezimenu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOsvjeziRezervacije);
@@ -165,5 +175,6 @@
         private System.Windows.Forms.Button btnOsvjeziRezervacije;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbPretragaPoPrezimenu;
+        private System.Windows.Forms.Label lblError;
     }
 }

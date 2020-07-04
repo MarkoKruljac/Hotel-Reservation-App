@@ -97,8 +97,8 @@ namespace Hotel.Forme
                 }
                 
                 context.SaveChanges();
-                
-                MessageBox.Show("Uspješno ste izmjenili podatke o gostu");
+
+                        lblError.Text = "Uspješno ste izmjenili podatke o gostu";   //novo
 
                 }
                         
@@ -106,7 +106,7 @@ namespace Hotel.Forme
             }
             catch
             {
-                MessageBox.Show("Nepotpuni podaci!");
+                lblError.Text = "Nepotpuni podaci!";    //novo
             }
         }
         private void btnIzvrsiGost_Click(object sender, EventArgs e)

@@ -16,22 +16,10 @@ namespace Hotel.Forme
         {
             InitializeComponent();
         }
-        public void PopuniHotelDobavljaca()
-        {
-            List<string> hotelDobavljaca = new List<string>() { };
-            using (var context = new PI20_021_DBEntities2())
-            {
-                var upit = from h in context.Hotel
-                           select h.Ime;
-                hotelDobavljaca = upit.ToList();
-            }
-            hotelDobavljaca.Distinct();
-            cbDodajHotelDobavljaca.DataSource = hotelDobavljaca;
-        }
-
+       
         private void DodavanjeDobavljacaForm_Load(object sender, EventArgs e)
         {
-            PopuniHotelDobavljaca();
+            
         }
 
         private void btbDodajDobavljaca_Click(object sender, EventArgs e)
@@ -53,15 +41,13 @@ namespace Hotel.Forme
 
                 string ziroRacun = tbDodajZiroRacDobavljaca.Text;
 
-                string ugovorSaHotelom = cbDodajHotelDobavljaca.SelectedItem.ToString();
+                
 
                 
 
-                var hotelDobavljacaupit = from h in context.Hotel
-                                         where h.Ime == cbDodajHotelDobavljaca.SelectedItem.ToString()
-                                         select h;
+                
 
-                int idHotelaDobavljaca = hotelDobavljacaupit.FirstOrDefault().ID_hotel;
+                
 
 
 
@@ -75,17 +61,17 @@ namespace Hotel.Forme
                     Telefon = telefonDobavljaca,
                     Email = emailDobavljaca,
                     Broj_ziro_racuna = ziroRacun,
-                    ID_hotela = idHotelaDobavljaca
+                    ID_hotela = frmPrijava.IDhotela
                      
                 };
                  
                 context.Dobavljac.Add(dobavljac);
                 context.SaveChanges();
-                MessageBox.Show("Uspješno ste dodali novog dobavljaca!");
+                lblError.Text = "Uspješno ste dodali novog dobavljaca!";    //novo
                 }
                 catch
                 {
-                    MessageBox.Show("Neispravni podaci!");
+                 lblError.Text = "Neispravni podaci!";  //novo
                 }
             }
         }

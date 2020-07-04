@@ -14,6 +14,13 @@ namespace Hotel
 {
     public partial class RezervacijaForm : Form
     {
+        public class NepostojecaRezervacijaException : Exception
+        {
+            public NepostojecaRezervacijaException(string poruka) : base(poruka)
+            {
+
+            }
+        }
         public RezervacijaForm()
         {
             InitializeComponent();
@@ -44,7 +51,7 @@ namespace Hotel
         {
             if (rezervacija_dtg.CurrentRow == null)
             {
-                MessageBox.Show("Nema vise dostupnih rezervacija!");
+                lblError.Text = "Nema vise dostupnih rezervacija!";     //novo
                 izbriši_btn.Enabled = false;
                 izmijeni_btn.Enabled = false;
             }
@@ -59,17 +66,31 @@ namespace Hotel
                     var ProvjeraPostojiLiRacun = from ra in context.Racun
                                                  where IDbrisanja == ra.ID_rezervacije
                                                  select ra;
-
-                    if (ProvjeraPostojiLiRacun.FirstOrDefault() != null)
-                    {
-                        ObrisiRacun(IDbrisanja);
-                    }
                     var upit = (from r in context.Rezervacija
                                 where r.ID_rezervacija == IDbrisanja
                                 select r);
-                    context.Rezervacija.Attach(upit.FirstOrDefault());
+
+
+                    if (ProvjeraPostojiLiRacun.FirstOrDefault() != null)
+                    {
+                         
+                        ObrisiRacun(IDbrisanja);
+                        lblError.Text = ""; //novo
+
+
+                    }
+                    try { 
                     context.Rezervacija.Remove(upit.FirstOrDefault());
                     context.SaveChanges();
+                    }
+                    catch
+                    {
+                        lblError.Text = "Obrisali ste racun odabrane rezervacije, pritisnite opet za brisanje same rezervacije!";   //novo
+                    }
+
+
+
+
                 }
                 DohvatiRezervacije();
             }
@@ -85,7 +106,7 @@ namespace Hotel
         {
             if(rezervacija_dtg.CurrentRow == null)
             {
-                MessageBox.Show("Nema dostupnih rezervacija!");
+                lblError.Text = "Nema dostupnih rezervacija!";  //novo
                 izmijeni_btn.Enabled = false;
                 izbriši_btn.Enabled = false;
             }
@@ -142,7 +163,7 @@ namespace Hotel
                            where s.ID_soba==r.ID_sobe && r.ID_vrste_rezervacije == vr.ID_vrsta_rezervacije 
                            
                            && r.ID_gosta == g.ID_gost && r.ID_usluge == u.ID_usluga
-                           && s.ID_vrste_sobe == vS.ID_vrsta_sobe
+                           && s.ID_vrste_sobe == vS.ID_vrsta_sobe && r.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                ID = r.ID_rezervacija,
@@ -156,6 +177,7 @@ namespace Hotel
                                BrojSobe = s.ID_soba,
                                CijenaSobe = vS.Cijena,
                                VrstaUsluge = u.NazivUsluge
+                               
 
                            };
 
