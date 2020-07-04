@@ -16,9 +16,12 @@ namespace Hotel
     
     public partial class frmPrijava : Form
     {
-        
+        public static string emailZaposlenika;
+        public static string lozinkaZaposlenika;
         public static string imeZaposlenika;
         public static string prezimeZaposlenika;
+        public static int IDprijavljenog;
+        public static int IDhotela;
         public int brojac;
         public frmPrijava()
         {
@@ -47,10 +50,14 @@ namespace Hotel
                 var upitPasswordEmailZaposlenika = from k in context.Korisnik
                                                    where k.Lozinka == tbLozinka.Text
                                                    select k.Lozinka;
+                var upitZaPoslanEmail = from r in context.Rezervacija
+                                        where r.PoslanEmail == false
+                                        select r.ID_gosta;
 
                 var emailGostaUpit = from g in context.Gost
                                      from r in context.Rezervacija
                                      where DateTime.Compare(r.Datum_pocetka, danasnjiDatum) == 1 && (r.PoslanEmail == false || r.PoslanEmail == null) && g.ID_gost == r.ID_gosta
+                                     && g.Email.Contains("@gmail.com")
                                      select g;
 
                 
@@ -61,38 +68,51 @@ namespace Hotel
                     {
                             var upitZaRezervacije = from r in context.Rezervacija
                                                     from g in context.Gost
-                                                    where (r.PoslanEmail == false || r.PoslanEmail == null)
+                                                    where (r.PoslanEmail == false || r.PoslanEmail == null) && r.ID_gosta == emailGostaUpit.FirstOrDefault().ID_gost 
+                                                    && DateTime.Compare(r.Datum_pocetka, danasnjiDatum) == 1
                                                     select r;
-                            foreach (var item2 in upitZaRezervacije)
+                    foreach (var item2 in upitZaRezervacije)
+                    {
+                        item2.PoslanEmail = true;
+                    }
+                            
+                            try
                             {
-                                item2.PoslanEmail = true;
-                            }
-                            string emailGosta = item.Email;
-                            string emailZaposlenika = upitEmailZaposlenika.FirstOrDefault();
-                            string passWordZaposlenika = upitPasswordEmailZaposlenika.FirstOrDefault();
+                                string emailGosta = item.Email;
 
-
-                         SmtpClient clientDetails = new SmtpClient();
-                         clientDetails.Port = 587;
-                         clientDetails.Host = "smtp.gmail.com";
-                         clientDetails.EnableSsl = true;
-                         clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
-                         clientDetails.UseDefaultCredentials = false;
-                         clientDetails.Credentials = new NetworkCredential(emailZaposlenika, passWordZaposlenika);
+                                string emailZaposlenika = upitEmailZaposlenika.FirstOrDefault();
+                                string passWordZaposlenika = upitPasswordEmailZaposlenika.FirstOrDefault();
+                                SmtpClient clientDetails = new SmtpClient();
+                                clientDetails.Port = 587;
+                                clientDetails.Host = "smtp.gmail.com";
+                                clientDetails.EnableSsl = true;
+                                clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
+                                clientDetails.UseDefaultCredentials = false;
+                                clientDetails.Credentials = new NetworkCredential(emailZaposlenika, passWordZaposlenika);
 
                                 //message details
 
-                        MailMessage mailDetails = new MailMessage();
-                        mailDetails.From = new MailAddress(emailZaposlenika);
-                        mailDetails.To.Add(emailGosta);
-                        mailDetails.Subject = "Automatski podsjetnik za rezervacije";
-                        mailDetails.IsBodyHtml = true;
-                        mailDetails.Body = "Sutra imate zakazanu rezervaciju";
-                        clientDetails.Send(mailDetails);
-      
+                                MailMessage mailDetails = new MailMessage();
+                                mailDetails.From = new MailAddress(emailZaposlenika);
+                                mailDetails.To.Add(emailGosta);
+                                mailDetails.Subject = "Automatski podsjetnik za rezervacije";
+                                mailDetails.IsBodyHtml = true;
+                                mailDetails.Body = "Sutra imate zakazanu rezervaciju";
+                                clientDetails.Send(mailDetails);
+                               
+                             }
+                            catch
+                            {
+                                continue;
+                            }
+                    
+                        
+
+                        
+
+
                 }
                 context.SaveChanges();
-                MessageBox.Show("Mailovi su  poslani!");
                  
             }
 
@@ -104,7 +124,7 @@ namespace Hotel
             imetextbox.Focus();
             if (string.IsNullOrEmpty(imetextbox.Text))
             {
-                MessageBox.Show("Unesite korisnicko ime");
+                lblError.Text = "Unesite korisnicko ime"; //novo
                 
                 return;
             }
@@ -125,12 +145,14 @@ namespace Hotel
                                                 select k;
                         if (upitZaZaposlenika.FirstOrDefault() != null)
                         {
+                            emailZaposlenika = upitZaZaposlenika.FirstOrDefault().Email;
+                            lozinkaZaposlenika = upitZaZaposlenika.FirstOrDefault().Lozinka;
                             imeZaposlenika = upitZaZaposlenika.FirstOrDefault().Ime;
                             prezimeZaposlenika = upitZaZaposlenika.FirstOrDefault().Prezime;
+                            IDhotela = upitZaZaposlenika.FirstOrDefault().ID_hotela;
                             Admin = false;
                             GlavnaForma glavnaForma = new GlavnaForma(Admin);
 
-                            MessageBox.Show("Uspjesno ste prijavljeni kao zaposlenik");
 
                             SaljiEmail();
                             this.Hide();
@@ -142,7 +164,7 @@ namespace Hotel
                         else
 
                         {
-                            MessageBox.Show("Unešeni podaci nisu ispravni");
+                            lblError.Text = "Unešeni podaci nisu ispravni"; //novo
                         }
                     }
                     if (administrator_rbtn.Checked == true)
@@ -155,12 +177,15 @@ namespace Hotel
                                                    select k;
                         if (upitZaAdministratora.FirstOrDefault() != null)
                         {
+                            emailZaposlenika = upitZaAdministratora.FirstOrDefault().Email;
+                            lozinkaZaposlenika = upitZaAdministratora.FirstOrDefault().Lozinka;
                             imeZaposlenika = upitZaAdministratora.FirstOrDefault().Ime;
                             prezimeZaposlenika = upitZaAdministratora.FirstOrDefault().Prezime;
+                            IDprijavljenog = upitZaAdministratora.FirstOrDefault().ID_korisnik;
+                            IDhotela = upitZaAdministratora.FirstOrDefault().ID_hotela;
                             Admin = true;
                             GlavnaForma glavnaForma = new GlavnaForma(Admin);
                             
-                            MessageBox.Show("Uspjesno ste prijavljeni kao adminstrator");
                             SaljiEmail();
                             this.Hide();
                             
@@ -173,7 +198,7 @@ namespace Hotel
                         else
                         {
                                
-                            MessageBox.Show("Uneseni podaci nisu ispravni/Nemate administratorska prava");
+                            lblError.Text = "Uneseni podaci nisu ispravni/Nemate administratorska prava";   //novo
                         }
                     }
 

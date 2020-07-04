@@ -157,12 +157,12 @@ namespace Hotel.Forme
                         item.ID_sobe = brojSobe;
                 }
                     context.SaveChanges();
-                    MessageBox.Show("Uspjesno ste izmjenili odabranu rezervaciju");
+                        lblError.Text = "Uspjesno ste izmjenili odabranu rezervaciju";  //novo
                 }
                 }
                 catch
                 {
-                    MessageBox.Show("Nepostojeci gost!!");
+                    lblError.Text = "Nepostojeci gost!!";   //novo
                 }
             }
         }

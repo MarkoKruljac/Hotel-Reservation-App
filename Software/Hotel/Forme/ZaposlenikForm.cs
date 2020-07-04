@@ -26,13 +26,21 @@ namespace Hotel.Forme
         {
             using (var context = new PI20_021_DBEntities2())
             {
+                string imeAdmina = frmPrijava.imeZaposlenika;
+                string prezimeAdmina = frmPrijava.prezimeZaposlenika;
+                int IDhotel = frmPrijava.IDhotela;
+                var hotelAdmina = from k in context.Korisnik
+                                  where IDhotel == k.ID_hotela
+                                  select k.ID_hotela;
+
+                int IDhotela = int.Parse(hotelAdmina.FirstOrDefault().ToString());
 
                 var upit = from k in context.Korisnik
                            from vk in context.VrstaKorisnika
                            from ss in context.StrucnaSprema
                            from h in context.Hotel
                            where k.ID_vrste_korisnika == vk.ID_vrsta_korisnika && k.ID_strucne_spreme == ss.ID_strucna_sprema
-                           && k.ID_hotela == h.ID_hotel
+                           && k.ID_hotela == h.ID_hotel && IDhotela == k.ID_hotela
                            select new
                            {
                                ID = k.ID_korisnik,
@@ -110,11 +118,12 @@ namespace Hotel.Forme
         {
             if(dgvZaposlenici.CurrentRow == null)
             {
-                MessageBox.Show("Nema vise dostupnih zaposlenika!");
+                lblError.Text = "Nema vise dostupnih zaposlenika!"; //novo
                 btnIzbrisiZaposlenika.Enabled = false;
                 btnIzmijeniZaposlenika.Enabled = false;
             }
-            else { 
+            else {
+                lblError.Text = ""; //novo
             int ID = int.Parse(dgvZaposlenici.CurrentRow.Cells[0].Value.ToString());
             using (var context = new PI20_021_DBEntities2())
             {
@@ -133,11 +142,12 @@ namespace Hotel.Forme
         {
             if (dgvZaposlenici.CurrentRow == null)
             {
-                MessageBox.Show("Nema vise dostupnih zaposlenika!");
+                lblError.Text = "Nema vise dostupnih zaposlenika!"; //novo
                 btnIzbrisiZaposlenika.Enabled = false;
                 btnIzmijeniZaposlenika.Enabled = false;
             }
-            else { 
+            else {
+                lblError.Text = "";
             int ID = int.Parse(dgvZaposlenici.CurrentRow.Cells[0].Value.ToString());
 
             using (var context = new PI20_021_DBEntities2())

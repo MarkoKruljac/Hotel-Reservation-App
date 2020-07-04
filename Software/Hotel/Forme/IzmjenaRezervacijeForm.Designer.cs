@@ -40,14 +40,15 @@
             this.cbIzmjenaBrojSobe = new System.Windows.Forms.ComboBox();
             this.tbIzmjenaCijenaSobe = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             this.btnIzvrsiIzmjenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvrsiIzmjenu.ForeColor = System.Drawing.Color.White;
             this.btnIzvrsiIzmjenu.Location = new System.Drawing.Point(291, 372);
-            this.btnIzvrsiIzmjenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIzvrsiIzmjenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnIzvrsiIzmjenu.Name = "btnIzvrsiIzmjenu";
             this.btnIzvrsiIzmjenu.Size = new System.Drawing.Size(125, 50);
             this.btnIzvrsiIzmjenu.TabIndex = 0;
@@ -69,7 +70,7 @@
             // 
             this.cbIzmjenaUsluga.FormattingEnabled = true;
             this.cbIzmjenaUsluga.Location = new System.Drawing.Point(505, 258);
-            this.cbIzmjenaUsluga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbIzmjenaUsluga.Margin = new System.Windows.Forms.Padding(2);
             this.cbIzmjenaUsluga.Name = "cbIzmjenaUsluga";
             this.cbIzmjenaUsluga.Size = new System.Drawing.Size(149, 21);
             this.cbIzmjenaUsluga.TabIndex = 4;
@@ -89,7 +90,7 @@
             // tbIzmjenaPrezime
             // 
             this.tbIzmjenaPrezime.Location = new System.Drawing.Point(291, 173);
-            this.tbIzmjenaPrezime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjenaPrezime.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjenaPrezime.Name = "tbIzmjenaPrezime";
             this.tbIzmjenaPrezime.Size = new System.Drawing.Size(160, 20);
             this.tbIzmjenaPrezime.TabIndex = 17;
@@ -99,7 +100,7 @@
             // 
             this.cbIzmjenaVR.FormattingEnabled = true;
             this.cbIzmjenaVR.Location = new System.Drawing.Point(504, 171);
-            this.cbIzmjenaVR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbIzmjenaVR.Margin = new System.Windows.Forms.Padding(2);
             this.cbIzmjenaVR.Name = "cbIzmjenaVR";
             this.cbIzmjenaVR.Size = new System.Drawing.Size(150, 21);
             this.cbIzmjenaVR.TabIndex = 20;
@@ -107,7 +108,7 @@
             // tbIzmjenaIme
             // 
             this.tbIzmjenaIme.Location = new System.Drawing.Point(87, 173);
-            this.tbIzmjenaIme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjenaIme.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjenaIme.Name = "tbIzmjenaIme";
             this.tbIzmjenaIme.Size = new System.Drawing.Size(159, 20);
             this.tbIzmjenaIme.TabIndex = 21;
@@ -115,7 +116,7 @@
             // tbIzmjenaCijena
             // 
             this.tbIzmjenaCijena.Location = new System.Drawing.Point(504, 99);
-            this.tbIzmjenaCijena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjenaCijena.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjenaCijena.Name = "tbIzmjenaCijena";
             this.tbIzmjenaCijena.Size = new System.Drawing.Size(150, 20);
             this.tbIzmjenaCijena.TabIndex = 22;
@@ -123,7 +124,7 @@
             // tbIzmjenaDZ
             // 
             this.tbIzmjenaDZ.Location = new System.Drawing.Point(291, 99);
-            this.tbIzmjenaDZ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjenaDZ.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjenaDZ.Name = "tbIzmjenaDZ";
             this.tbIzmjenaDZ.Size = new System.Drawing.Size(160, 20);
             this.tbIzmjenaDZ.TabIndex = 23;
@@ -131,7 +132,7 @@
             // tbIzmjenaDP
             // 
             this.tbIzmjenaDP.Location = new System.Drawing.Point(87, 99);
-            this.tbIzmjenaDP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjenaDP.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjenaDP.Name = "tbIzmjenaDP";
             this.tbIzmjenaDP.Size = new System.Drawing.Size(159, 20);
             this.tbIzmjenaDP.TabIndex = 24;
@@ -140,7 +141,7 @@
             // 
             this.cbIzmjenaBrojSobe.FormattingEnabled = true;
             this.cbIzmjenaBrojSobe.Location = new System.Drawing.Point(89, 259);
-            this.cbIzmjenaBrojSobe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbIzmjenaBrojSobe.Margin = new System.Windows.Forms.Padding(2);
             this.cbIzmjenaBrojSobe.Name = "cbIzmjenaBrojSobe";
             this.cbIzmjenaBrojSobe.Size = new System.Drawing.Size(157, 21);
             this.cbIzmjenaBrojSobe.TabIndex = 26;
@@ -149,7 +150,7 @@
             // tbIzmjenaCijenaSobe
             // 
             this.tbIzmjenaCijenaSobe.Location = new System.Drawing.Point(291, 259);
-            this.tbIzmjenaCijenaSobe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjenaCijenaSobe.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjenaCijenaSobe.Name = "tbIzmjenaCijenaSobe";
             this.tbIzmjenaCijenaSobe.Size = new System.Drawing.Size(160, 20);
             this.tbIzmjenaCijenaSobe.TabIndex = 27;
@@ -168,6 +169,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(651, 323);
             this.panel1.TabIndex = 30;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label16.Location = new System.Drawing.Point(469, 211);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 15);
+            this.label16.TabIndex = 39;
+            this.label16.Text = "Usluga";
             // 
             // label9
             // 
@@ -193,30 +206,6 @@
             this.label10.TabIndex = 33;
             this.label10.Text = "Cijena rezervacije";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label11.Location = new System.Drawing.Point(51, 127);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 15);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Ime gosta";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label12.Location = new System.Drawing.Point(258, 127);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 15);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Prezime gosta";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -241,6 +230,18 @@
             this.label14.TabIndex = 37;
             this.label14.Text = "Broj sobe";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label12.Location = new System.Drawing.Point(258, 127);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 15);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Prezime gosta";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -253,23 +254,32 @@
             this.label15.TabIndex = 38;
             this.label15.Text = "Cijena sobe";
             // 
-            // label16
+            // label11
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label16.Location = new System.Drawing.Point(469, 211);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 15);
-            this.label16.TabIndex = 39;
-            this.label16.Text = "Usluga";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label11.Location = new System.Drawing.Point(51, 127);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 15);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Ime gosta";
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(33, 372);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 31;
             // 
             // IzmjenarezervacijeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 461);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.tbIzmjenaCijenaSobe);
             this.Controls.Add(this.cbIzmjenaBrojSobe);
             this.Controls.Add(this.tbIzmjenaDP);
@@ -282,7 +292,7 @@
             this.Controls.Add(this.cbIzmjenaUsluga);
             this.Controls.Add(this.btnIzvrsiIzmjenu);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IzmjenarezervacijeForm";
             this.Text = "IzmjenarezervacijeForm";
             this.Load += new System.EventHandler(this.IzmjenarezervacijeForm_Load);
@@ -315,5 +325,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblError;
     }
 }

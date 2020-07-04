@@ -28,7 +28,8 @@
     <Property Name="ID_vrste_gosta" Type="Int32" Nullable="false" />
     <NavigationProperty Name="VrstaGosta" Relationship="Self.FK_Gost_VrstaGosta" FromRole="Gost" ToRole="VrstaGosta" />
     <NavigationProperty Name="Rezervacija" Relationship="Self.FK_Rezervacija_Gost" FromRole="Gost" ToRole="Rezervacija" />
-    <NavigationProperty Name="StavkaRacuna" Relationship="Self.FK_StavkaRacuna_Gost" FromRole="Gost" ToRole="StavkaRacuna" />
+    <Property Name="ID_hotela" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hotel" Relationship="PI20_021_DBModel.FK_Gost_Hotel" FromRole="Gost" ToRole="Hotel" />
   </EntityType>
   <EntityType Name="Hotel">
     <Key>
@@ -43,6 +44,8 @@
     <NavigationProperty Name="Dobavljac" Relationship="Self.FK_Dobavljac_Hotel" FromRole="Hotel" ToRole="Dobavljac" />
     <NavigationProperty Name="Korisnik" Relationship="Self.FK_Korisnik_Hotel" FromRole="Hotel" ToRole="Korisnik" />
     <NavigationProperty Name="Soba" Relationship="Self.FK_Soba_Hotel" FromRole="Hotel" ToRole="Soba" />
+    <NavigationProperty Name="Rezervacija" Relationship="PI20_021_DBModel.FK_Rezervacija_Hotel" FromRole="Hotel" ToRole="Rezervacija" />
+    <NavigationProperty Name="Gost" Relationship="PI20_021_DBModel.FK_Gost_Hotel" FromRole="Hotel" ToRole="Gost" />
   </EntityType>
   <EntityType Name="Korisnik">
     <Key>
@@ -62,7 +65,6 @@
     <Property Name="ID_strucne_spreme" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Hotel" Relationship="Self.FK_Korisnik_Hotel" FromRole="Korisnik" ToRole="Hotel" />
     <NavigationProperty Name="StrucnaSprema" Relationship="Self.FK_Korisnik_StrucnaSprema" FromRole="Korisnik" ToRole="StrucnaSprema" />
-    <NavigationProperty Name="StavkaRacuna" Relationship="Self.FK_StavkaRacuna_Korisnik" FromRole="Korisnik" ToRole="StavkaRacuna" />
     <Property Name="ID_vrste_korisnika" Type="Int32" Nullable="false" />
     <NavigationProperty Name="VrstaKorisnika1" Relationship="PI20_021_DBModel.FK_Korisnik_VrstaKorisnika" FromRole="Korisnik" ToRole="VrstaKorisnika" />
   </EntityType>
@@ -79,7 +81,6 @@
     <Property Name="ID_sobe" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Rezervacija" Relationship="Self.FK_Racun_Rezervacija" FromRole="Racun" ToRole="Rezervacija" />
     <NavigationProperty Name="Soba" Relationship="Self.FK_Racun_Soba" FromRole="Racun" ToRole="Soba" />
-    <NavigationProperty Name="StavkaRacuna" Relationship="Self.FK_StavkaRacuna_Racun" FromRole="Racun" ToRole="StavkaRacuna" />
   </EntityType>
   <EntityType Name="Rezervacija">
     <Key>
@@ -99,6 +100,8 @@
     <NavigationProperty Name="Usluga" Relationship="Self.FK_Rezervacija_Usluga" FromRole="Rezervacija" ToRole="Usluga" />
     <NavigationProperty Name="VrstaRezervacije" Relationship="Self.FK_Rezervacija_VrstaRezervacije" FromRole="Rezervacija" ToRole="VrstaRezervacije" />
     <Property Name="PoslanEmail" Type="Boolean" />
+    <Property Name="ID_hotela" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hotel" Relationship="PI20_021_DBModel.FK_Rezervacija_Hotel" FromRole="Rezervacija" ToRole="Hotel" />
   </EntityType>
   <EntityType Name="Soba">
     <Key>
@@ -175,19 +178,6 @@
     <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Soba" Relationship="Self.FK_Soba_VrstaSobe" FromRole="VrstaSobe" ToRole="Soba" />
   </EntityType>
-  <EntityType Name="StavkaRacuna">
-    <Key>
-      <PropertyRef Name="ID_racuna" />
-      <PropertyRef Name="ID_korisnika" />
-      <PropertyRef Name="ID_gosta" />
-    </Key>
-    <Property Name="ID_racuna" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_korisnika" Type="Int32" Nullable="false" />
-    <Property Name="ID_gosta" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Gost" Relationship="Self.FK_StavkaRacuna_Gost" FromRole="StavkaRacuna" ToRole="Gost" />
-    <NavigationProperty Name="Korisnik" Relationship="Self.FK_StavkaRacuna_Korisnik" FromRole="StavkaRacuna" ToRole="Korisnik" />
-    <NavigationProperty Name="Racun" Relationship="Self.FK_StavkaRacuna_Racun" FromRole="StavkaRacuna" ToRole="Racun" />
-  </EntityType>
   <Association Name="FK_Dobavljac_Hotel">
     <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
     <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="*" />
@@ -220,18 +210,6 @@
         <PropertyRef Name="ID_gost" />
       </Principal>
       <Dependent Role="Rezervacija">
-        <PropertyRef Name="ID_gosta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StavkaRacuna_Gost">
-    <End Role="Gost" Type="Self.Gost" Multiplicity="1" />
-    <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Gost">
-        <PropertyRef Name="ID_gost" />
-      </Principal>
-      <Dependent Role="StavkaRacuna">
         <PropertyRef Name="ID_gosta" />
       </Dependent>
     </ReferentialConstraint>
@@ -272,18 +250,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_StavkaRacuna_Korisnik">
-    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
-    <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Korisnik">
-        <PropertyRef Name="ID_korisnik" />
-      </Principal>
-      <Dependent Role="StavkaRacuna">
-        <PropertyRef Name="ID_korisnika" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Racun_Rezervacija">
     <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="1" />
     <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
@@ -305,18 +271,6 @@
       </Principal>
       <Dependent Role="Racun">
         <PropertyRef Name="ID_sobe" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StavkaRacuna_Racun">
-    <End Role="Racun" Type="Self.Racun" Multiplicity="1" />
-    <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Racun">
-        <PropertyRef Name="ID_racun" />
-      </Principal>
-      <Dependent Role="StavkaRacuna">
-        <PropertyRef Name="ID_racuna" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -383,7 +337,6 @@
     <EntitySet Name="VrstaKorisnika" EntityType="Self.VrstaKorisnika" />
     <EntitySet Name="VrstaRezervacije" EntityType="Self.VrstaRezervacije" />
     <EntitySet Name="VrstaSobe" EntityType="Self.VrstaSobe" />
-    <EntitySet Name="StavkaRacuna" EntityType="Self.StavkaRacuna" />
     <AssociationSet Name="FK_Dobavljac_Hotel" Association="Self.FK_Dobavljac_Hotel">
       <End Role="Hotel" EntitySet="Hotel" />
       <End Role="Dobavljac" EntitySet="Dobavljac" />
@@ -395,10 +348,6 @@
     <AssociationSet Name="FK_Rezervacija_Gost" Association="Self.FK_Rezervacija_Gost">
       <End Role="Gost" EntitySet="Gost" />
       <End Role="Rezervacija" EntitySet="Rezervacija" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StavkaRacuna_Gost" Association="Self.FK_StavkaRacuna_Gost">
-      <End Role="Gost" EntitySet="Gost" />
-      <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
     </AssociationSet>
     <AssociationSet Name="FK_Korisnik_Hotel" Association="Self.FK_Korisnik_Hotel">
       <End Role="Hotel" EntitySet="Hotel" />
@@ -412,10 +361,6 @@
       <End Role="StrucnaSprema" EntitySet="StrucnaSprema" />
       <End Role="Korisnik" EntitySet="Korisnik" />
     </AssociationSet>
-    <AssociationSet Name="FK_StavkaRacuna_Korisnik" Association="Self.FK_StavkaRacuna_Korisnik">
-      <End Role="Korisnik" EntitySet="Korisnik" />
-      <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
-    </AssociationSet>
     <AssociationSet Name="FK_Racun_Rezervacija" Association="Self.FK_Racun_Rezervacija">
       <End Role="Rezervacija" EntitySet="Rezervacija" />
       <End Role="Racun" EntitySet="Racun" />
@@ -423,10 +368,6 @@
     <AssociationSet Name="FK_Racun_Soba" Association="Self.FK_Racun_Soba">
       <End Role="Soba" EntitySet="Soba" />
       <End Role="Racun" EntitySet="Racun" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StavkaRacuna_Racun" Association="Self.FK_StavkaRacuna_Racun">
-      <End Role="Racun" EntitySet="Racun" />
-      <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
     </AssociationSet>
     <AssociationSet Name="FK_Rezervacija_Soba" Association="Self.FK_Rezervacija_Soba">
       <End Role="Soba" EntitySet="Soba" />
@@ -448,6 +389,14 @@
       <End Role="VrstaKorisnika" EntitySet="VrstaKorisnika" />
       <End Role="Korisnik" EntitySet="Korisnik" />
     </AssociationSet>
+    <AssociationSet Name="FK_Rezervacija_Hotel" Association="PI20_021_DBModel.FK_Rezervacija_Hotel">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="Rezervacija" EntitySet="Rezervacija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gost_Hotel" Association="PI20_021_DBModel.FK_Gost_Hotel">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="Gost" EntitySet="Gost" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_Korisnik_VrstaKorisnika">
     <End Type="PI20_021_DBModel.VrstaKorisnika" Role="VrstaKorisnika" Multiplicity="1" />
@@ -458,6 +407,30 @@
       </Principal>
       <Dependent Role="Korisnik">
         <PropertyRef Name="ID_vrste_korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacija_Hotel">
+    <End Type="PI20_021_DBModel.Hotel" Role="Hotel" Multiplicity="1" />
+    <End Type="PI20_021_DBModel.Rezervacija" Role="Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="ID_hotel" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="ID_hotela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gost_Hotel">
+    <End Type="PI20_021_DBModel.Hotel" Role="Hotel" Multiplicity="1" />
+    <End Type="PI20_021_DBModel.Gost" Role="Gost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="ID_hotel" />
+      </Principal>
+      <Dependent Role="Gost">
+        <PropertyRef Name="ID_hotela" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

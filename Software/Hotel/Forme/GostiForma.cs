@@ -25,7 +25,7 @@ namespace Hotel.Forme
             {
                 var upit = from g in context.Gost
                            from vG in context.VrstaGosta
-                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta
+                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta && g.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                ID = g.ID_gost,
@@ -47,7 +47,7 @@ namespace Hotel.Forme
             {
                 var upit = from g in context.Gost
                            from vG in context.VrstaGosta
-                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta && g.Prezime.Contains(prezime)
+                           where g.ID_vrste_gosta == vG.ID_vrsta_gosta && g.Prezime.Contains(prezime) && g.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                ID = g.ID_gost,
@@ -75,22 +75,50 @@ namespace Hotel.Forme
             int ID = int.Parse(dgvGosti.CurrentRow.Cells[0].Value.ToString());
             using (var context = new PI20_021_DBEntities2())
             {
-                var upit = from g in context.Gost
-                           where g.ID_gost == ID
-                           select g;
-                try { 
-                context.Gost.Attach(upit.FirstOrDefault());
-                context.Gost.Remove(upit.FirstOrDefault());
-                context.SaveChanges();
+                    var upit = from g in context.Gost
+                               where g.ID_gost == ID
+                               select g;
+                    var obrisiRezervacijuGosta = from r in context.Rezervacija
+                                                 from g in context.Gost
+                                                 where upit.FirstOrDefault().ID_gost == r.ID_gosta
+                                                 select r;
+                    var upitZaBrisanjeRacunaGosta = from g in context.Gost
+                                                    from ra in context.Racun
+                                                    from r in context.Rezervacija
+                                                    where r.ID_gosta == g.ID_gost && obrisiRezervacijuGosta.FirstOrDefault().ID_rezervacija == ra.ID_rezervacije
+                                                    select ra;
+
+
+                    if (upitZaBrisanjeRacunaGosta.FirstOrDefault() != null)
+                    {
+                        context.Racun.Remove(upitZaBrisanjeRacunaGosta.FirstOrDefault());
+                        context.Rezervacija.Remove(obrisiRezervacijuGosta.FirstOrDefault());
+                        context.Gost.Attach(upit.FirstOrDefault());
+                        context.Gost.Remove(upit.FirstOrDefault());
+                        context.SaveChanges();
+
+                    }
+                    else
+                    {
+                        if (obrisiRezervacijuGosta.FirstOrDefault() != null)
+                        {
+                            context.Rezervacija.Remove(obrisiRezervacijuGosta.FirstOrDefault());
+                            context.Gost.Remove(upit.FirstOrDefault());
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            context.Gost.Remove(upit.FirstOrDefault());
+                            context.SaveChanges();
+                        }
+
+                    }
+                
                 }
-                catch{
-                    MessageBox.Show("Odaberite Gosta");
-                }
-            }
             }
             else
             {
-                MessageBox.Show("Nema dostupnih gostiju");
+                lblError.Text = "Nema dostupnih gostiju";   //novo
                 btnIzbrisiGosta.Enabled = false;
                 btnIzmjenaGosta.Enabled = false;
             }
@@ -99,34 +127,7 @@ namespace Hotel.Forme
         private void btnIzbrisiGosta_Click(object sender, EventArgs e)
         {
 
-            using (var context = new PI20_021_DBEntities2())
-            {
-                var upitZabrisanjeGosta = from g in context.Gost
-                                          from r in context.Rezervacija
-                                          where g.ID_gost == r.ID_gosta
-                                          select g;
-                var obrisiRezervacijuGosta = from r in context.Rezervacija
-                                             from g in context.Gost
-                                             where g.ID_gost == r.ID_gosta
-                                             select r;
-                var upitZaBrisanjeRacunaGosta = from g in context.Gost
-                                                from ra in context.Racun
-                                                from r in context.Rezervacija
-                                                where r.ID_gosta == g.ID_gost && r.ID_rezervacija == ra.ID_rezervacije
-                                                select ra;
-
-                if(upitZaBrisanjeRacunaGosta.FirstOrDefault() != null)
-                {
-                    context.Racun.Remove(upitZaBrisanjeRacunaGosta.FirstOrDefault());
-                    context.Rezervacija.Remove(obrisiRezervacijuGosta.FirstOrDefault());
-                    
-                    context.SaveChanges();
-                    
-                }
-            }
-
             IzbrisiGosta();
-            
         }   
         
         private void btnIzmjenaGosta_Click(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace Hotel.Forme
             }
             else
             {
-                MessageBox.Show("Nema dostupnih gostiju");
+                lblError.Text = "Nema dostupnih gostiju";   //novo
                 btnIzbrisiGosta.Enabled = false;
                 btnIzmjenaGosta.Enabled = false;
             }
