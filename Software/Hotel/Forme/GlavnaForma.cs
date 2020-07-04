@@ -80,5 +80,16 @@ namespace Hotel
             }
             
         }
+
+        private void btnIzvjestaji_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void btnIzvjestaji_Click(object sender, EventArgs e)
+        {
+            RezervacijaIzvještaji rezervacijaIzvještaji = new RezervacijaIzvještaji();
+            rezervacijaIzvještaji.ShowDialog();
+        }
     }
 }
