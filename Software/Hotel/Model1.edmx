@@ -153,6 +153,33 @@
           <Property Name="Cijena" Type="float" Nullable="false" />
           <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaDanas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojRezervacijaDanas">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="int" />
+          <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaGodina' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojRezervacijaGodina">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="int" />
+          <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojRezervacijaMjesec">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="int" />
+          <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Dobavljac_Hotel">
           <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
           <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="*" />
@@ -348,6 +375,24 @@
           <EntitySet Name="VrstaKorisnika" EntityType="Self.VrstaKorisnika" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VrstaRezervacije" EntityType="Self.VrstaRezervacije" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VrstaSobe" EntityType="Self.VrstaSobe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BrojRezervacijaDanas" EntityType="Self.BrojRezervacijaDanas" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrojRezervacijaDanas].[Expr1] AS [Expr1], 
+    [BrojRezervacijaDanas].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[BrojRezervacijaDanas] AS [BrojRezervacijaDanas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BrojRezervacijaGodina" EntityType="Self.BrojRezervacijaGodina" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrojRezervacijaGodina].[Expr1] AS [Expr1], 
+    [BrojRezervacijaGodina].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[BrojRezervacijaGodina] AS [BrojRezervacijaGodina]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BrojRezervacijaMjesec" EntityType="Self.BrojRezervacijaMjesec" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrojRezervacijaMjesec].[Expr1] AS [Expr1], 
+    [BrojRezervacijaMjesec].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[BrojRezervacijaMjesec] AS [BrojRezervacijaMjesec]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Dobavljac_Hotel" Association="Self.FK_Dobavljac_Hotel">
             <End Role="Hotel" EntitySet="Hotel" />
             <End Role="Dobavljac" EntitySet="Dobavljac" />
@@ -810,6 +855,9 @@
             <End Role="Hotel" EntitySet="Hotel" />
             <End Role="Gost" EntitySet="Gost" />
           </AssociationSet>
+          <EntitySet Name="BrojRezervacijaDanas" EntityType="PI20_021_DBModel.BrojRezervacijaDanas" />
+          <EntitySet Name="BrojRezervacijaGodina" EntityType="PI20_021_DBModel.BrojRezervacijaGodina" />
+          <EntitySet Name="BrojRezervacijaMjesec" EntityType="PI20_021_DBModel.BrojRezervacijaMjesec" />
         </EntityContainer>
         <Association Name="FK_Korisnik_VrstaKorisnika">
           <End Type="PI20_021_DBModel.VrstaKorisnika" Role="VrstaKorisnika" Multiplicity="1" />
@@ -847,6 +895,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="BrojRezervacijaDanas">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="Int32" />
+          <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="BrojRezervacijaGodina">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="Int32" />
+          <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="BrojRezervacijaMjesec">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="Int32" />
+          <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1015,6 +1084,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BrojRezervacijaDanas">
+            <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaDanas">
+              <MappingFragment StoreEntitySet="BrojRezervacijaDanas">
+                <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrojRezervacijaGodina">
+            <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaGodina">
+              <MappingFragment StoreEntitySet="BrojRezervacijaGodina">
+                <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrojRezervacijaMjesec">
+            <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaMjesec">
+              <MappingFragment StoreEntitySet="BrojRezervacijaMjesec">
+                <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1029,7 +1122,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

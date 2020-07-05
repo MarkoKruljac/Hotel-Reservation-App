@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1106a09e96a649e8b19244f965e8715d" Name="Diagram1">
+      <Diagram DiagramId="1106a09e96a649e8b19244f965e8715d" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="PI20_021_DBModel.Dobavljac" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PI20_021_DBModel.Gost" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PI20_021_DBModel.Hotel" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
@@ -34,6 +34,9 @@
         <AssociationConnector Association="PI20_021_DBModel.FK_Korisnik_VrstaKorisnika" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Rezervacija_Hotel" />
         <AssociationConnector Association="PI20_021_DBModel.FK_Gost_Hotel" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.BrojRezervacijaDanas" Width="1.5" PointX="11" PointY="4.125" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.BrojRezervacijaGodina" Width="1.5" PointX="11" PointY="0.875" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.BrojRezervacijaMjesec" Width="1.5" PointX="11" PointY="2.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

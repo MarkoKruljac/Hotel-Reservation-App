@@ -73,6 +73,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrojRezervacijaDanas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BrojRezervacijaGodina.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BrojRezervacijaMjesec.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Dobavljac.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -160,11 +169,11 @@
     <Compile Include="Forme\PrijavaForm.Designer.cs">
       <DependentUpon>PrijavaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forme\RezervacijaIzvještaji.cs">
+    <Compile Include="Forme\RezervacijaIzvještaj.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forme\RezervacijaIzvještaji.Designer.cs">
-      <DependentUpon>RezervacijaIzvještaji.cs</DependentUpon>
+    <Compile Include="Forme\RezervacijaIzvještaj.Designer.cs">
+      <DependentUpon>RezervacijaIzvještaj.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\ZaposlenikForm.cs">
       <SubType>Form</SubType>
@@ -177,6 +186,11 @@
     </Compile>
     <Compile Include="Hotel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Korisnik.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -277,15 +291,15 @@
     <EmbeddedResource Include="Forme\IzmjenaZaposlenikaForm.resx">
       <DependentUpon>IzmjenaZaposlenikaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forme\ReportRezervacija.rdlc" />
     <EmbeddedResource Include="Forme\KorisnickaDokumentacija.resx">
       <DependentUpon>KorisnickaDokumentacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\PrijavaForm.resx">
       <DependentUpon>PrijavaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forme\RezervacijaIzvještaji.resx">
-      <DependentUpon>RezervacijaIzvještaji.cs</DependentUpon>
+    <EmbeddedResource Include="Forme\ReportStatRez.rdlc" />
+    <EmbeddedResource Include="Forme\RezervacijaIzvještaj.resx">
+      <DependentUpon>RezervacijaIzvještaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ZaposlenikForm.resx">
       <DependentUpon>ZaposlenikForm.cs</DependentUpon>
@@ -309,12 +323,21 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="HotelDataSet.xsc">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HotelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelDataSet.xss">
+      <DependentUpon>HotelDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Gost.datasource" />
-    <None Include="Properties\DataSources\Rezervacija.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

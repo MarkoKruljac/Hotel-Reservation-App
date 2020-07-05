@@ -163,5 +163,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BrojRezervacijaDanas">
+      <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaDanas">
+        <MappingFragment StoreEntitySet="BrojRezervacijaDanas">
+          <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrojRezervacijaGodina">
+      <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaGodina">
+        <MappingFragment StoreEntitySet="BrojRezervacijaGodina">
+          <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrojRezervacijaMjesec">
+      <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaMjesec">
+        <MappingFragment StoreEntitySet="BrojRezervacijaMjesec">
+          <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

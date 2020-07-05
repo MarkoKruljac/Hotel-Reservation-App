@@ -60,6 +60,12 @@ public partial class PI20_021_DBEntities2 : DbContext
 
     public virtual DbSet<VrstaSobe> VrstaSobe { get; set; }
 
+    public virtual DbSet<BrojRezervacijaDanas> BrojRezervacijaDanas { get; set; }
+
+    public virtual DbSet<BrojRezervacijaGodina> BrojRezervacijaGodina { get; set; }
+
+    public virtual DbSet<BrojRezervacijaMjesec> BrojRezervacijaMjesec { get; set; }
+
 }
 
 }

@@ -83,13 +83,12 @@ namespace Hotel
 
         private void btnIzvjestaji_MouseClick(object sender, MouseEventArgs e)
         {
-
+            RezervacijaIzvještaj rezervacijaIzvještaj = new RezervacijaIzvještaj();
+            rezervacijaIzvještaj.ShowDialog();
         }
 
         private void btnIzvjestaji_Click(object sender, EventArgs e)
         {
-            RezervacijaIzvještaji rezervacijaIzvještaji = new RezervacijaIzvještaji();
-            rezervacijaIzvještaji.ShowDialog();
         }
     }
 }

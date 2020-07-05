@@ -397,6 +397,9 @@
       <End Role="Hotel" EntitySet="Hotel" />
       <End Role="Gost" EntitySet="Gost" />
     </AssociationSet>
+    <EntitySet Name="BrojRezervacijaDanas" EntityType="PI20_021_DBModel.BrojRezervacijaDanas" />
+    <EntitySet Name="BrojRezervacijaGodina" EntityType="PI20_021_DBModel.BrojRezervacijaGodina" />
+    <EntitySet Name="BrojRezervacijaMjesec" EntityType="PI20_021_DBModel.BrojRezervacijaMjesec" />
   </EntityContainer>
   <Association Name="FK_Korisnik_VrstaKorisnika">
     <End Type="PI20_021_DBModel.VrstaKorisnika" Role="VrstaKorisnika" Multiplicity="1" />
@@ -434,4 +437,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="BrojRezervacijaDanas">
+    <Key>
+      <PropertyRef Name="ID_rezervacija" />
+    </Key>
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="BrojRezervacijaGodina">
+    <Key>
+      <PropertyRef Name="ID_rezervacija" />
+    </Key>
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="BrojRezervacijaMjesec">
+    <Key>
+      <PropertyRef Name="ID_rezervacija" />
+    </Key>
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
 </Schema>
