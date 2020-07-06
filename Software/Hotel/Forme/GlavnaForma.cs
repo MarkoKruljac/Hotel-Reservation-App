@@ -90,5 +90,11 @@ namespace Hotel
         private void btnIzvjestaji_Click(object sender, EventArgs e)
         {
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RezervacijaIzjveštajG rezervacijaIzvještajGrafički = new RezervacijaIzjveštajG();
+            rezervacijaIzvještajGrafički.ShowDialog();
+        }
     }
 }

@@ -923,3 +923,4 @@ C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-
 C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-dlunko\Software\Hotel\obj\Debug\RdlCompile.cache
 C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-dlunko\Software\Hotel\obj\Debug\RdlCompile.compiled
 C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-dlunko\Software\Hotel\obj\Debug\Hotel.Forme.RezervacijaIzvještaj.resources
+C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-dlunko\Software\Hotel\obj\Debug\Hotel.Forme.RezervacijaIzjveštajG.resources
