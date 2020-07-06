@@ -23,7 +23,7 @@ namespace Hotel
             {
                 var upit = from d in context.Dobavljac
                            from h in context.Hotel
-                           where h.ID_hotel == d.ID_hotela
+                           where h.ID_hotel == d.ID_hotela && d.ID_hotela == frmPrijava.IDhotela
                            select new
                            {
                                IdDobavljaca = d.ID_dobavljac,
@@ -58,7 +58,8 @@ namespace Hotel
         private void izbriši_btn_Click(object sender, EventArgs e)
         {
             
-            if(dobavljaci_dtg.CurrentRow != null) { 
+            if(dobavljaci_dtg.CurrentRow != null) {
+                lblError.Text = "";
             int ID = int.Parse(dobavljaci_dtg.CurrentRow.Cells[0].Value.ToString());
 
                 using (var context = new PI20_021_DBEntities2())
@@ -74,7 +75,7 @@ namespace Hotel
             
             else
             {
-                MessageBox.Show("Nema dostupnih dobavljača!");
+                lblError.Text = "Nema dostupnih dobavljača!";
                 izbriši_btn.Enabled = false;
                 izmijeni_btn.Enabled = false;
             }
@@ -93,12 +94,12 @@ namespace Hotel
                 Dobavljac odabraniDobavljac = upit.FirstOrDefault();
                 IzmjenaDobavljacaForma izmjenaDobavljacaForma = new IzmjenaDobavljacaForma(odabraniDobavljac);
                 izmjenaDobavljacaForma.ShowDialog();
-
+                    lblError.Text = "";
             }
             }
             else
             {
-                MessageBox.Show("Nema dostupnih dobavljača!");
+                lblError.Text = "Nema dostupnih dobavljača!";
                 izbriši_btn.Enabled = false;
                 izmijeni_btn.Enabled = false;
             }

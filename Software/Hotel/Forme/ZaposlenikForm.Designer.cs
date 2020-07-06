@@ -36,6 +36,7 @@
             this.btnIzbrisiZaposlenika = new System.Windows.Forms.Button();
             this.btnIzmijeniZaposlenika = new System.Windows.Forms.Button();
             this.btnDodajZaposlenike = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,11 +133,20 @@
             this.btnDodajZaposlenike.UseVisualStyleBackColor = false;
             this.btnDodajZaposlenike.Click += new System.EventHandler(this.btnDodajZaposlenike_Click_1);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(12, 420);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 19;
+            // 
             // ZaposlenikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 461);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnIzbrisiZaposlenika);
             this.Controls.Add(this.btnIzmijeniZaposlenika);
             this.Controls.Add(this.btnDodajZaposlenike);
@@ -164,5 +174,6 @@
         private System.Windows.Forms.Button btnIzbrisiZaposlenika;
         private System.Windows.Forms.Button btnIzmijeniZaposlenika;
         private System.Windows.Forms.Button btnDodajZaposlenike;
+        private System.Windows.Forms.Label lblError;
     }
 }

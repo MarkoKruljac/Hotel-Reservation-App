@@ -41,6 +41,7 @@
             this.tbLozinka = new System.Windows.Forms.TextBox();
             this.lbKorisnickoIme = new System.Windows.Forms.Label();
             this.pbPrijava = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.prijavagroupBox.SuspendLayout();
             this.gbUloga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrijava)).BeginInit();
@@ -193,11 +194,20 @@
             this.pbPrijava.TabIndex = 1;
             this.pbPrijava.TabStop = false;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(13, 457);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 2;
+            // 
             // frmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 461);
+            this.ClientSize = new System.Drawing.Size(744, 476);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.pbPrijava);
             this.Controls.Add(this.prijavagroupBox);
             this.Name = "frmPrijava";
@@ -209,6 +219,7 @@
             this.gbUloga.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrijava)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -226,5 +237,6 @@
         private System.Windows.Forms.Label lbPrijava;
         private System.Windows.Forms.TextBox imetextbox;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.Label lblError;
     }
 }

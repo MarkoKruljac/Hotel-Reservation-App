@@ -35,41 +35,49 @@ namespace Hotel.Forme
         {
             using (var context = new PI20_021_DBEntities2())
             {
-                try { 
-                string ime = tbDodajImeGostu.Text;
-                string prezime = tbDodajPrezimeGostu.Text;
-                string telefon = tbDodajTelefoGosta.Text;
-                string adresa = tbDodajAdresuGosta.Text;
-                string email = tbDodajEmailGosta.Text;
-                string vrstaGosta = cbDodajVrstuGosta.SelectedItem.ToString();
+               
+                string imeGosta = tbDodajImeGostu.Text;
+                string prezimeGosta = tbDodajPrezimeGostu.Text;
+                string telefonGosta = tbDodajTelefoGosta.Text;
+                string adresaGosta = tbDodajAdresuGosta.Text;
+                string emailGosta = tbDodajEmailGosta.Text;
+                string vrstaGostaa = cbDodajVrstuGosta.SelectedItem.ToString();
 
 
                 var upitZaIDvrste = from vG in context.VrstaGosta
-                           where vG.VrsteGosta == vrstaGosta 
+                           where vG.VrsteGosta == vrstaGostaa 
                            select vG.ID_vrsta_gosta;
-
-                Gost gost = new Gost
+                if (!string.IsNullOrEmpty(tbDodajImeGostu.Text) && !string.IsNullOrEmpty(tbDodajPrezimeGostu.Text) &&
+                    !string.IsNullOrEmpty(tbDodajTelefoGosta.Text) && !string.IsNullOrEmpty(tbDodajAdresuGosta.Text) && !string.IsNullOrEmpty(tbDodajEmailGosta.Text))
                 {
-                    Ime = ime,
-                    Prezime = prezime,
-                    Telefon = telefon,
-                    Adresa = adresa,
-                    Email = email,
-                    ID_vrste_gosta = upitZaIDvrste.FirstOrDefault()
+                    Gost novigost = new Gost
+                    {
+                        Ime = imeGosta,
+                        Prezime = prezimeGosta,
+                        Telefon = telefonGosta,
+                        Adresa = adresaGosta,
+                        Email = emailGosta,
+                        ID_vrste_gosta = upitZaIDvrste.FirstOrDefault(),
+                        ID_hotela = frmPrijava.IDhotela
+
+
+                    };
+
                     
-
-                };
-
+                        context.Gost.Add(novigost);
+                        context.SaveChanges();
+                    lblError.Text = "Uspješno ste dodali gosta";    //novo
+                    
                 
-                context.Gost.Add(gost);
-                context.SaveChanges();
-                MessageBox.Show("Uspješno ste dodali gosta");
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("NeispravniPodaci");
+                    lblError.Text = "Nepotuni podaci o gostu!"; //novo
                 }
+                
             }
+                
+            
 
         }
 

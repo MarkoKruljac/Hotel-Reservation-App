@@ -30,6 +30,7 @@
           <Property Name="Adresa" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_vrste_gosta" Type="int" Nullable="false" />
+          <Property Name="ID_hotela" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Hotel">
           <Key>
@@ -85,6 +86,7 @@
           <Property Name="ID_usluge" Type="int" Nullable="false" />
           <Property Name="ID_vrste_rezervacije" Type="int" Nullable="false" />
           <Property Name="PoslanEmail" Type="bit" />
+          <Property Name="ID_hotela" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Soba">
           <Key>
@@ -95,18 +97,6 @@
           <Property Name="Opis" Type="nvarchar" MaxLength="100" />
           <Property Name="ID_vrste_sobe" Type="int" Nullable="false" />
           <Property Name="ID_hotela" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="StavkaRacuna">
-          <Key>
-            <PropertyRef Name="ID_racuna" />
-            <PropertyRef Name="ID_korisnika" />
-            <PropertyRef Name="ID_gosta" />
-          </Key>
-          <Property Name="ID_racuna" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_korisnika" Type="int" Nullable="false" />
-          <Property Name="ID_gosta" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="StrucnaSprema">
           <Key>
@@ -163,6 +153,33 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <Property Name="Cijena" Type="float" Nullable="false" />
           <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaDanas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojRezervacijaDanas">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="int" />
+          <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaGodina' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojRezervacijaGodina">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="int" />
+          <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojRezervacijaMjesec">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="int" />
+          <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Dobavljac_Hotel">
           <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
           <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="*" />
@@ -171,6 +188,18 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
               <PropertyRef Name="ID_hotel" />
             </Principal>
             <Dependent Role="Dobavljac">
+              <PropertyRef Name="ID_hotela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gost_Hotel">
+          <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+          <End Role="Gost" Type="Self.Gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="ID_hotel" />
+            </Principal>
+            <Dependent Role="Gost">
               <PropertyRef Name="ID_hotela" />
             </Dependent>
           </ReferentialConstraint>
@@ -259,6 +288,18 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Rezervacija_Hotel">
+          <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+          <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="ID_hotel" />
+            </Principal>
+            <Dependent Role="Rezervacija">
+              <PropertyRef Name="ID_hotela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Rezervacija_Soba">
           <End Role="Soba" Type="Self.Soba" Multiplicity="1" />
           <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
@@ -319,42 +360,39 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_StavkaRacuna_Gost">
-          <End Role="Gost" Type="Self.Gost" Multiplicity="1" />
-          <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gost">
-              <PropertyRef Name="ID_gost" />
-            </Principal>
-            <Dependent Role="StavkaRacuna">
-              <PropertyRef Name="ID_gosta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StavkaRacuna_Korisnik">
-          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
-          <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Korisnik">
-              <PropertyRef Name="ID_korisnik" />
-            </Principal>
-            <Dependent Role="StavkaRacuna">
-              <PropertyRef Name="ID_korisnika" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StavkaRacuna_Racun">
-          <End Role="Racun" Type="Self.Racun" Multiplicity="1" />
-          <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Racun">
-              <PropertyRef Name="ID_racun" />
-            </Principal>
-            <Dependent Role="StavkaRacuna">
-              <PropertyRef Name="ID_racuna" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <Function Name="DohvatiMjesecnuStatistiku" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DohvatiPodatkeZaMjesec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="PI20_021_DBModelStoreContainer">
           <EntitySet Name="Dobavljac" EntityType="Self.Dobavljac" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gost" EntityType="Self.Gost" Schema="dbo" store:Type="Tables" />
@@ -370,16 +408,31 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <EntitySet Name="VrstaKorisnika" EntityType="Self.VrstaKorisnika" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VrstaRezervacije" EntityType="Self.VrstaRezervacije" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VrstaSobe" EntityType="Self.VrstaSobe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="StavkaRacuna" EntityType="Self.StavkaRacuna" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="BrojRezervacijaDanas" EntityType="Self.BrojRezervacijaDanas" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [StavkaRacuna].[ID_racuna] AS [ID_racuna], 
-    [StavkaRacuna].[ID_korisnika] AS [ID_korisnika], 
-    [StavkaRacuna].[ID_gosta] AS [ID_gosta]
-    FROM [dbo].[StavkaRacuna] AS [StavkaRacuna]</DefiningQuery>
+    [BrojRezervacijaDanas].[Expr1] AS [Expr1], 
+    [BrojRezervacijaDanas].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[BrojRezervacijaDanas] AS [BrojRezervacijaDanas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BrojRezervacijaGodina" EntityType="Self.BrojRezervacijaGodina" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrojRezervacijaGodina].[Expr1] AS [Expr1], 
+    [BrojRezervacijaGodina].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[BrojRezervacijaGodina] AS [BrojRezervacijaGodina]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BrojRezervacijaMjesec" EntityType="Self.BrojRezervacijaMjesec" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrojRezervacijaMjesec].[Expr1] AS [Expr1], 
+    [BrojRezervacijaMjesec].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[BrojRezervacijaMjesec] AS [BrojRezervacijaMjesec]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Dobavljac_Hotel" Association="Self.FK_Dobavljac_Hotel">
             <End Role="Hotel" EntitySet="Hotel" />
             <End Role="Dobavljac" EntitySet="Dobavljac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gost_Hotel" Association="Self.FK_Gost_Hotel">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="Gost" EntitySet="Gost" />
           </AssociationSet>
           <AssociationSet Name="FK_Gost_VrstaGosta" Association="Self.FK_Gost_VrstaGosta">
             <End Role="VrstaGosta" EntitySet="VrstaGosta" />
@@ -409,6 +462,10 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             <End Role="Gost" EntitySet="Gost" />
             <End Role="Rezervacija" EntitySet="Rezervacija" />
           </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_Hotel" Association="Self.FK_Rezervacija_Hotel">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="Rezervacija" EntitySet="Rezervacija" />
+          </AssociationSet>
           <AssociationSet Name="FK_Rezervacija_Soba" Association="Self.FK_Rezervacija_Soba">
             <End Role="Soba" EntitySet="Soba" />
             <End Role="Rezervacija" EntitySet="Rezervacija" />
@@ -428,18 +485,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <AssociationSet Name="FK_Soba_VrstaSobe" Association="Self.FK_Soba_VrstaSobe">
             <End Role="VrstaSobe" EntitySet="VrstaSobe" />
             <End Role="Soba" EntitySet="Soba" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StavkaRacuna_Gost" Association="Self.FK_StavkaRacuna_Gost">
-            <End Role="Gost" EntitySet="Gost" />
-            <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StavkaRacuna_Korisnik" Association="Self.FK_StavkaRacuna_Korisnik">
-            <End Role="Korisnik" EntitySet="Korisnik" />
-            <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StavkaRacuna_Racun" Association="Self.FK_StavkaRacuna_Racun">
-            <End Role="Racun" EntitySet="Racun" />
-            <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -474,7 +519,8 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <Property Name="ID_vrste_gosta" Type="Int32" Nullable="false" />
           <NavigationProperty Name="VrstaGosta" Relationship="Self.FK_Gost_VrstaGosta" FromRole="Gost" ToRole="VrstaGosta" />
           <NavigationProperty Name="Rezervacija" Relationship="Self.FK_Rezervacija_Gost" FromRole="Gost" ToRole="Rezervacija" />
-          <NavigationProperty Name="StavkaRacuna" Relationship="Self.FK_StavkaRacuna_Gost" FromRole="Gost" ToRole="StavkaRacuna" />
+          <Property Name="ID_hotela" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Hotel" Relationship="PI20_021_DBModel.FK_Gost_Hotel" FromRole="Gost" ToRole="Hotel" />
         </EntityType>
         <EntityType Name="Hotel">
           <Key>
@@ -489,6 +535,8 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <NavigationProperty Name="Dobavljac" Relationship="Self.FK_Dobavljac_Hotel" FromRole="Hotel" ToRole="Dobavljac" />
           <NavigationProperty Name="Korisnik" Relationship="Self.FK_Korisnik_Hotel" FromRole="Hotel" ToRole="Korisnik" />
           <NavigationProperty Name="Soba" Relationship="Self.FK_Soba_Hotel" FromRole="Hotel" ToRole="Soba" />
+          <NavigationProperty Name="Rezervacija" Relationship="PI20_021_DBModel.FK_Rezervacija_Hotel" FromRole="Hotel" ToRole="Rezervacija" />
+          <NavigationProperty Name="Gost" Relationship="PI20_021_DBModel.FK_Gost_Hotel" FromRole="Hotel" ToRole="Gost" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -508,7 +556,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <Property Name="ID_strucne_spreme" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Hotel" Relationship="Self.FK_Korisnik_Hotel" FromRole="Korisnik" ToRole="Hotel" />
           <NavigationProperty Name="StrucnaSprema" Relationship="Self.FK_Korisnik_StrucnaSprema" FromRole="Korisnik" ToRole="StrucnaSprema" />
-          <NavigationProperty Name="StavkaRacuna" Relationship="Self.FK_StavkaRacuna_Korisnik" FromRole="Korisnik" ToRole="StavkaRacuna" />
           <Property Name="ID_vrste_korisnika" Type="Int32" Nullable="false" />
           <NavigationProperty Name="VrstaKorisnika1" Relationship="PI20_021_DBModel.FK_Korisnik_VrstaKorisnika" FromRole="Korisnik" ToRole="VrstaKorisnika" />
         </EntityType>
@@ -525,7 +572,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <Property Name="ID_sobe" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Rezervacija" Relationship="Self.FK_Racun_Rezervacija" FromRole="Racun" ToRole="Rezervacija" />
           <NavigationProperty Name="Soba" Relationship="Self.FK_Racun_Soba" FromRole="Racun" ToRole="Soba" />
-          <NavigationProperty Name="StavkaRacuna" Relationship="Self.FK_StavkaRacuna_Racun" FromRole="Racun" ToRole="StavkaRacuna" />
         </EntityType>
         <EntityType Name="Rezervacija">
           <Key>
@@ -545,6 +591,8 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <NavigationProperty Name="Usluga" Relationship="Self.FK_Rezervacija_Usluga" FromRole="Rezervacija" ToRole="Usluga" />
           <NavigationProperty Name="VrstaRezervacije" Relationship="Self.FK_Rezervacija_VrstaRezervacije" FromRole="Rezervacija" ToRole="VrstaRezervacije" />
           <Property Name="PoslanEmail" Type="Boolean" />
+          <Property Name="ID_hotela" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Hotel" Relationship="PI20_021_DBModel.FK_Rezervacija_Hotel" FromRole="Rezervacija" ToRole="Hotel" />
         </EntityType>
         <EntityType Name="Soba">
           <Key>
@@ -621,19 +669,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Soba" Relationship="Self.FK_Soba_VrstaSobe" FromRole="VrstaSobe" ToRole="Soba" />
         </EntityType>
-        <EntityType Name="StavkaRacuna">
-          <Key>
-            <PropertyRef Name="ID_racuna" />
-            <PropertyRef Name="ID_korisnika" />
-            <PropertyRef Name="ID_gosta" />
-          </Key>
-          <Property Name="ID_racuna" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_korisnika" Type="Int32" Nullable="false" />
-          <Property Name="ID_gosta" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Gost" Relationship="Self.FK_StavkaRacuna_Gost" FromRole="StavkaRacuna" ToRole="Gost" />
-          <NavigationProperty Name="Korisnik" Relationship="Self.FK_StavkaRacuna_Korisnik" FromRole="StavkaRacuna" ToRole="Korisnik" />
-          <NavigationProperty Name="Racun" Relationship="Self.FK_StavkaRacuna_Racun" FromRole="StavkaRacuna" ToRole="Racun" />
-        </EntityType>
         <Association Name="FK_Dobavljac_Hotel">
           <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
           <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="*" />
@@ -666,18 +701,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
               <PropertyRef Name="ID_gost" />
             </Principal>
             <Dependent Role="Rezervacija">
-              <PropertyRef Name="ID_gosta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StavkaRacuna_Gost">
-          <End Role="Gost" Type="Self.Gost" Multiplicity="1" />
-          <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gost">
-              <PropertyRef Name="ID_gost" />
-            </Principal>
-            <Dependent Role="StavkaRacuna">
               <PropertyRef Name="ID_gosta" />
             </Dependent>
           </ReferentialConstraint>
@@ -718,18 +741,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_StavkaRacuna_Korisnik">
-          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
-          <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Korisnik">
-              <PropertyRef Name="ID_korisnik" />
-            </Principal>
-            <Dependent Role="StavkaRacuna">
-              <PropertyRef Name="ID_korisnika" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Racun_Rezervacija">
           <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="1" />
           <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
@@ -751,18 +762,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             </Principal>
             <Dependent Role="Racun">
               <PropertyRef Name="ID_sobe" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StavkaRacuna_Racun">
-          <End Role="Racun" Type="Self.Racun" Multiplicity="1" />
-          <End Role="StavkaRacuna" Type="Self.StavkaRacuna" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Racun">
-              <PropertyRef Name="ID_racun" />
-            </Principal>
-            <Dependent Role="StavkaRacuna">
-              <PropertyRef Name="ID_racuna" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -829,7 +828,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <EntitySet Name="VrstaKorisnika" EntityType="Self.VrstaKorisnika" />
           <EntitySet Name="VrstaRezervacije" EntityType="Self.VrstaRezervacije" />
           <EntitySet Name="VrstaSobe" EntityType="Self.VrstaSobe" />
-          <EntitySet Name="StavkaRacuna" EntityType="Self.StavkaRacuna" />
           <AssociationSet Name="FK_Dobavljac_Hotel" Association="Self.FK_Dobavljac_Hotel">
             <End Role="Hotel" EntitySet="Hotel" />
             <End Role="Dobavljac" EntitySet="Dobavljac" />
@@ -841,10 +839,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <AssociationSet Name="FK_Rezervacija_Gost" Association="Self.FK_Rezervacija_Gost">
             <End Role="Gost" EntitySet="Gost" />
             <End Role="Rezervacija" EntitySet="Rezervacija" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StavkaRacuna_Gost" Association="Self.FK_StavkaRacuna_Gost">
-            <End Role="Gost" EntitySet="Gost" />
-            <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
           </AssociationSet>
           <AssociationSet Name="FK_Korisnik_Hotel" Association="Self.FK_Korisnik_Hotel">
             <End Role="Hotel" EntitySet="Hotel" />
@@ -858,10 +852,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             <End Role="StrucnaSprema" EntitySet="StrucnaSprema" />
             <End Role="Korisnik" EntitySet="Korisnik" />
           </AssociationSet>
-          <AssociationSet Name="FK_StavkaRacuna_Korisnik" Association="Self.FK_StavkaRacuna_Korisnik">
-            <End Role="Korisnik" EntitySet="Korisnik" />
-            <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
-          </AssociationSet>
           <AssociationSet Name="FK_Racun_Rezervacija" Association="Self.FK_Racun_Rezervacija">
             <End Role="Rezervacija" EntitySet="Rezervacija" />
             <End Role="Racun" EntitySet="Racun" />
@@ -869,10 +859,6 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <AssociationSet Name="FK_Racun_Soba" Association="Self.FK_Racun_Soba">
             <End Role="Soba" EntitySet="Soba" />
             <End Role="Racun" EntitySet="Racun" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StavkaRacuna_Racun" Association="Self.FK_StavkaRacuna_Racun">
-            <End Role="Racun" EntitySet="Racun" />
-            <End Role="StavkaRacuna" EntitySet="StavkaRacuna" />
           </AssociationSet>
           <AssociationSet Name="FK_Rezervacija_Soba" Association="Self.FK_Rezervacija_Soba">
             <End Role="Soba" EntitySet="Soba" />
@@ -894,6 +880,49 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             <End Role="VrstaKorisnika" EntitySet="VrstaKorisnika" />
             <End Role="Korisnik" EntitySet="Korisnik" />
           </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_Hotel" Association="PI20_021_DBModel.FK_Rezervacija_Hotel">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="Rezervacija" EntitySet="Rezervacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gost_Hotel" Association="PI20_021_DBModel.FK_Gost_Hotel">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="Gost" EntitySet="Gost" />
+          </AssociationSet>
+          <EntitySet Name="BrojRezervacijaDanas" EntityType="PI20_021_DBModel.BrojRezervacijaDanas" />
+          <EntitySet Name="BrojRezervacijaGodina" EntityType="PI20_021_DBModel.BrojRezervacijaGodina" />
+          <EntitySet Name="BrojRezervacijaMjesec" EntityType="PI20_021_DBModel.BrojRezervacijaMjesec" />
+          <FunctionImport Name="DohvatiPodatkeZaMjesec" ReturnType="Collection(PI20_021_DBModel.DohvatiPodatkeZaMjesec_Result)" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(PI20_021_DBModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(PI20_021_DBModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="DohvatiMjesecnuStatistiku" ReturnType="Collection(PI20_021_DBModel.DohvatiMjesecnuStatistiku_Result)" />
         </EntityContainer>
         <Association Name="FK_Korisnik_VrstaKorisnika">
           <End Type="PI20_021_DBModel.VrstaKorisnika" Role="VrstaKorisnika" Multiplicity="1" />
@@ -907,6 +936,70 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Rezervacija_Hotel">
+          <End Type="PI20_021_DBModel.Hotel" Role="Hotel" Multiplicity="1" />
+          <End Type="PI20_021_DBModel.Rezervacija" Role="Rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="ID_hotel" />
+            </Principal>
+            <Dependent Role="Rezervacija">
+              <PropertyRef Name="ID_hotela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gost_Hotel">
+          <End Type="PI20_021_DBModel.Hotel" Role="Hotel" Multiplicity="1" />
+          <End Type="PI20_021_DBModel.Gost" Role="Gost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="ID_hotel" />
+            </Principal>
+            <Dependent Role="Gost">
+              <PropertyRef Name="ID_hotela" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BrojRezervacijaDanas">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="Int32" />
+          <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="BrojRezervacijaGodina">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="Int32" />
+          <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="BrojRezervacijaMjesec">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Expr1" Type="Int32" />
+          <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <ComplexType Name="DohvatiPodatkeZaMjesec_Result">
+          <Property Type="Int32" Name="Mjesec" Nullable="true" />
+          <Property Type="Int32" Name="Ukupno" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="DohvatiMjesecnuStatistiku_Result">
+          <Property Type="Int32" Name="Mjesec" Nullable="true" />
+          <Property Type="Int32" Name="Ukupno" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -931,6 +1024,7 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <EntitySetMapping Name="Gost">
             <EntityTypeMapping TypeName="PI20_021_DBModel.Gost">
               <MappingFragment StoreEntitySet="Gost">
+                <ScalarProperty Name="ID_hotela" ColumnName="ID_hotela" />
                 <ScalarProperty Name="ID_gost" ColumnName="ID_gost" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
@@ -988,6 +1082,7 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
           <EntitySetMapping Name="Rezervacija">
             <EntityTypeMapping TypeName="PI20_021_DBModel.Rezervacija">
               <MappingFragment StoreEntitySet="Rezervacija">
+                <ScalarProperty Name="ID_hotela" ColumnName="ID_hotela" />
                 <ScalarProperty Name="PoslanEmail" ColumnName="PoslanEmail" />
                 <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
                 <ScalarProperty Name="Datum_pocetka" ColumnName="Datum_pocetka" />
@@ -1073,15 +1168,70 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="StavkaRacuna">
-            <EntityTypeMapping TypeName="PI20_021_DBModel.StavkaRacuna">
-              <MappingFragment StoreEntitySet="StavkaRacuna">
-                <ScalarProperty Name="ID_racuna" ColumnName="ID_racuna" />
-                <ScalarProperty Name="ID_korisnika" ColumnName="ID_korisnika" />
-                <ScalarProperty Name="ID_gosta" ColumnName="ID_gosta" />
+          <EntitySetMapping Name="BrojRezervacijaDanas">
+            <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaDanas">
+              <MappingFragment StoreEntitySet="BrojRezervacijaDanas">
+                <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BrojRezervacijaGodina">
+            <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaGodina">
+              <MappingFragment StoreEntitySet="BrojRezervacijaGodina">
+                <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrojRezervacijaMjesec">
+            <EntityTypeMapping TypeName="PI20_021_DBModel.BrojRezervacijaMjesec">
+              <MappingFragment StoreEntitySet="BrojRezervacijaMjesec">
+                <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DohvatiPodatkeZaMjesec" FunctionName="PI20_021_DBModel.Store.DohvatiPodatkeZaMjesec">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PI20_021_DBModel.DohvatiPodatkeZaMjesec_Result">
+                <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+                <ScalarProperty Name="Ukupno" ColumnName="Ukupno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="PI20_021_DBModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="PI20_021_DBModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="PI20_021_DBModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="PI20_021_DBModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PI20_021_DBModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="PI20_021_DBModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PI20_021_DBModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PI20_021_DBModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="PI20_021_DBModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="DohvatiMjesecnuStatistiku" FunctionName="PI20_021_DBModel.Store.DohvatiMjesecnuStatistiku">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PI20_021_DBModel.DohvatiMjesecnuStatistiku_Result">
+                <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+                <ScalarProperty Name="Ukupno" ColumnName="Ukupno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1096,7 +1246,7 @@ warning 6002: The table/view 'PI20_021_DB.dbo.StavkaRacuna' does not have a prim
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
