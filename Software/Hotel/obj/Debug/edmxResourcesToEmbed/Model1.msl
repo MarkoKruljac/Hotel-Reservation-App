@@ -227,5 +227,14 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="MjesecnaStatistika">
+      <EntityTypeMapping TypeName="PI20_021_DBModel.MjesecnaStatistika">
+        <MappingFragment StoreEntitySet="MjesecnaStatistika">
+          <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+          <ScalarProperty Name="Ukupno" ColumnName="Ukupno" />
+          <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

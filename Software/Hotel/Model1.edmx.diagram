@@ -37,6 +37,7 @@
         <EntityTypeShape EntityType="PI20_021_DBModel.BrojRezervacijaDanas" Width="1.5" PointX="11" PointY="4.125" />
         <EntityTypeShape EntityType="PI20_021_DBModel.BrojRezervacijaGodina" Width="1.5" PointX="11" PointY="0.875" />
         <EntityTypeShape EntityType="PI20_021_DBModel.BrojRezervacijaMjesec" Width="1.5" PointX="11" PointY="2.5" />
+        <EntityTypeShape EntityType="PI20_021_DBModel.MjesecnaStatistika" Width="1.5" PointX="10.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

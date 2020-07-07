@@ -36,5 +36,15 @@ namespace Hotel.Forme
             }
             this.rvRezervacija.RefreshReport();
         }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExportToPDF()
+        {
+
+        }
     }
 }

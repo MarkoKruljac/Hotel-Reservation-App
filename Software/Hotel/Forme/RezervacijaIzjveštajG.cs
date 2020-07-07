@@ -20,7 +20,13 @@ namespace Hotel.Forme
         private void RezervacijaIzjveštajG_Load(object sender, EventArgs e)
         {
 
-            this.rvGraficki.RefreshReport();
+            using (var context = new PI20_021_DBEntities2())
+            {
+                dohvatiMjesecnuStatistikuResultBindingSource.DataSource = context.DohvatiMjesecnuStatistiku().ToList();
+            }
+
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

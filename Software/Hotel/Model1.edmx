@@ -180,6 +180,16 @@ warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not ha
           <Property Name="Expr1" Type="int" />
           <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.MjesecnaStatistika' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MjesecnaStatistika">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Mjesec" Type="int" />
+          <Property Name="Ukupno" Type="int" />
+          <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Dobavljac_Hotel">
           <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
           <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="*" />
@@ -425,6 +435,13 @@ warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not ha
     [BrojRezervacijaMjesec].[Expr1] AS [Expr1], 
     [BrojRezervacijaMjesec].[ID_rezervacija] AS [ID_rezervacija]
     FROM [dbo].[BrojRezervacijaMjesec] AS [BrojRezervacijaMjesec]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MjesecnaStatistika" EntityType="Self.MjesecnaStatistika" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MjesecnaStatistika].[Mjesec] AS [Mjesec], 
+    [MjesecnaStatistika].[Ukupno] AS [Ukupno], 
+    [MjesecnaStatistika].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[MjesecnaStatistika] AS [MjesecnaStatistika]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Dobavljac_Hotel" Association="Self.FK_Dobavljac_Hotel">
             <End Role="Hotel" EntitySet="Hotel" />
@@ -923,6 +940,7 @@ warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not ha
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="DohvatiMjesecnuStatistiku" ReturnType="Collection(PI20_021_DBModel.DohvatiMjesecnuStatistiku_Result)" />
+          <EntitySet Name="MjesecnaStatistika" EntityType="PI20_021_DBModel.MjesecnaStatistika" />
         </EntityContainer>
         <Association Name="FK_Korisnik_VrstaKorisnika">
           <End Type="PI20_021_DBModel.VrstaKorisnika" Role="VrstaKorisnika" Multiplicity="1" />
@@ -1000,6 +1018,14 @@ warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not ha
           <Property Type="Int32" Name="Mjesec" Nullable="true" />
           <Property Type="Int32" Name="Ukupno" Nullable="true" />
         </ComplexType>
+        <EntityType Name="MjesecnaStatistika">
+          <Key>
+            <PropertyRef Name="ID_rezervacija" />
+          </Key>
+          <Property Name="Mjesec" Type="Int32" />
+          <Property Name="Ukupno" Type="Int32" />
+          <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1232,6 +1258,15 @@ warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not ha
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="MjesecnaStatistika">
+            <EntityTypeMapping TypeName="PI20_021_DBModel.MjesecnaStatistika">
+              <MappingFragment StoreEntitySet="MjesecnaStatistika">
+                <ScalarProperty Name="ID_rezervacija" ColumnName="ID_rezervacija" />
+                <ScalarProperty Name="Ukupno" ColumnName="Ukupno" />
+                <ScalarProperty Name="Mjesec" ColumnName="Mjesec" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
