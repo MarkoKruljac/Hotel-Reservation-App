@@ -72,6 +72,12 @@ namespace Hotel
 
         private void GlavnaForma_Load(object sender, EventArgs e)
         {
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(w, h);
+            this.AutoScaleDimensions.ToSize();
+
             frmPrijava frmPrijava = new frmPrijava();
             if(admin==false)
             {
@@ -97,10 +103,15 @@ namespace Hotel
             rezervacijaIzvještajGrafički.ShowDialog();
         }
 
-        private void sobebtn_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            UpravljanjeSobamaForm popisSoba = new UpravljanjeSobamaForm();
-            popisSoba.ShowDialog();
+
+        }
+
+        private void btnPopisSoba_Click(object sender, EventArgs e)
+        {
+            UpravljanjeSobamaForm upravljanjeSobamaForm = new UpravljanjeSobamaForm();
+            upravljanjeSobamaForm.ShowDialog();
         }
     }
 }

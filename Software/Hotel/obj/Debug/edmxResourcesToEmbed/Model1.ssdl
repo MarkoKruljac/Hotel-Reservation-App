@@ -175,6 +175,16 @@ warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not ha
     <Property Name="Expr1" Type="int" />
     <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PI20_021_DB.dbo.MjesecnaStatistika' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MjesecnaStatistika">
+    <Key>
+      <PropertyRef Name="ID_rezervacija" />
+    </Key>
+    <Property Name="Mjesec" Type="int" />
+    <Property Name="Ukupno" Type="int" />
+    <Property Name="ID_rezervacija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Dobavljac_Hotel">
     <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
     <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="*" />
@@ -420,6 +430,13 @@ warning 6002: The table/view 'PI20_021_DB.dbo.BrojRezervacijaMjesec' does not ha
     [BrojRezervacijaMjesec].[Expr1] AS [Expr1], 
     [BrojRezervacijaMjesec].[ID_rezervacija] AS [ID_rezervacija]
     FROM [dbo].[BrojRezervacijaMjesec] AS [BrojRezervacijaMjesec]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MjesecnaStatistika" EntityType="Self.MjesecnaStatistika" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MjesecnaStatistika].[Mjesec] AS [Mjesec], 
+    [MjesecnaStatistika].[Ukupno] AS [Ukupno], 
+    [MjesecnaStatistika].[ID_rezervacija] AS [ID_rezervacija]
+    FROM [dbo].[MjesecnaStatistika] AS [MjesecnaStatistika]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Dobavljac_Hotel" Association="Self.FK_Dobavljac_Hotel">
       <End Role="Hotel" EntitySet="Hotel" />

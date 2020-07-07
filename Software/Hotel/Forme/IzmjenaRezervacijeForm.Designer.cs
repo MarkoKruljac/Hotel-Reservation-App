@@ -62,7 +62,7 @@
             this.btnIzvrsiIzmjenu.Name = "btnIzvrsiIzmjenu";
             this.btnIzvrsiIzmjenu.Size = new System.Drawing.Size(125, 50);
             this.btnIzvrsiIzmjenu.TabIndex = 0;
-            this.btnIzvrsiIzmjenu.Text = "Izmijeni";
+            this.btnIzvrsiIzmjenu.Text = "Izmjeni";
             this.btnIzvrsiIzmjenu.UseVisualStyleBackColor = false;
             this.btnIzvrsiIzmjenu.Click += new System.EventHandler(this.btnIzvrsiIzmjenu_Click);
             // 
@@ -294,6 +294,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IzmjenarezervacijeForm";
+            this.Text = "IzmjenarezervacijeForm";
             this.Load += new System.EventHandler(this.IzmjenarezervacijeForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -50,7 +50,7 @@
             // tbDodajPrezimeGostu
             // 
             this.tbDodajPrezimeGostu.Location = new System.Drawing.Point(273, 120);
-            this.tbDodajPrezimeGostu.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajPrezimeGostu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajPrezimeGostu.Name = "tbDodajPrezimeGostu";
             this.tbDodajPrezimeGostu.Size = new System.Drawing.Size(151, 20);
             this.tbDodajPrezimeGostu.TabIndex = 0;
@@ -58,7 +58,7 @@
             // tbDodajEmailGosta
             // 
             this.tbDodajEmailGosta.Location = new System.Drawing.Point(273, 248);
-            this.tbDodajEmailGosta.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajEmailGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajEmailGosta.Name = "tbDodajEmailGosta";
             this.tbDodajEmailGosta.Size = new System.Drawing.Size(151, 20);
             this.tbDodajEmailGosta.TabIndex = 1;
@@ -66,7 +66,7 @@
             // tbDodajAdresuGosta
             // 
             this.tbDodajAdresuGosta.Location = new System.Drawing.Point(73, 247);
-            this.tbDodajAdresuGosta.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajAdresuGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajAdresuGosta.Name = "tbDodajAdresuGosta";
             this.tbDodajAdresuGosta.Size = new System.Drawing.Size(141, 20);
             this.tbDodajAdresuGosta.TabIndex = 2;
@@ -74,7 +74,7 @@
             // tbDodajTelefoGosta
             // 
             this.tbDodajTelefoGosta.Location = new System.Drawing.Point(477, 120);
-            this.tbDodajTelefoGosta.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajTelefoGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajTelefoGosta.Name = "tbDodajTelefoGosta";
             this.tbDodajTelefoGosta.Size = new System.Drawing.Size(146, 20);
             this.tbDodajTelefoGosta.TabIndex = 3;
@@ -82,7 +82,7 @@
             // tbDodajImeGostu
             // 
             this.tbDodajImeGostu.Location = new System.Drawing.Point(73, 120);
-            this.tbDodajImeGostu.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajImeGostu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajImeGostu.Name = "tbDodajImeGostu";
             this.tbDodajImeGostu.Size = new System.Drawing.Size(141, 20);
             this.tbDodajImeGostu.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             this.cbDodajVrstuGosta.FormattingEnabled = true;
             this.cbDodajVrstuGosta.Location = new System.Drawing.Point(477, 247);
-            this.cbDodajVrstuGosta.Margin = new System.Windows.Forms.Padding(2);
+            this.cbDodajVrstuGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDodajVrstuGosta.Name = "cbDodajVrstuGosta";
             this.cbDodajVrstuGosta.Size = new System.Drawing.Size(146, 21);
             this.cbDodajVrstuGosta.TabIndex = 5;
@@ -102,7 +102,7 @@
             this.btnDodajGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajGosta.ForeColor = System.Drawing.Color.White;
             this.btnDodajGosta.Location = new System.Drawing.Point(321, 337);
-            this.btnDodajGosta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDodajGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDodajGosta.Name = "btnDodajGosta";
             this.btnDodajGosta.Size = new System.Drawing.Size(125, 50);
             this.btnDodajGosta.TabIndex = 13;
@@ -230,8 +230,9 @@
             this.Controls.Add(this.tbDodajEmailGosta);
             this.Controls.Add(this.tbDodajPrezimeGostu);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DodavanjeGostiForm";
+            this.Text = "Dodavanje gosta";
             this.Load += new System.EventHandler(this.DodavanjeGostiForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

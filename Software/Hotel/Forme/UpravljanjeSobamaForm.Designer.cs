@@ -28,48 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Sobe_dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Sobe_dgv)).BeginInit();
+            this.dgvSobe = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSobe)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Sobe_dgv
-            // 
-            this.Sobe_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Sobe_dgv.Location = new System.Drawing.Point(35, 56);
-            this.Sobe_dgv.Name = "Sobe_dgv";
-            this.Sobe_dgv.Size = new System.Drawing.Size(710, 353);
-            this.Sobe_dgv.TabIndex = 1;
-            this.Sobe_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Sobe_dgv_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label1.Location = new System.Drawing.Point(32, 26);
+            this.label1.Location = new System.Drawing.Point(7, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 25);
+            this.label1.Size = new System.Drawing.Size(132, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Popis soba:";
+            this.label1.Text = "Popis soba :";
+            // 
+            // dgvSobe
+            // 
+            this.dgvSobe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSobe.Location = new System.Drawing.Point(12, 83);
+            this.dgvSobe.Name = "dgvSobe";
+            this.dgvSobe.RowHeadersWidth = 51;
+            this.dgvSobe.RowTemplate.Height = 24;
+            this.dgvSobe.Size = new System.Drawing.Size(662, 335);
+            this.dgvSobe.TabIndex = 1;
             // 
             // UpravljanjeSobamaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 475);
-            this.Controls.Add(this.Sobe_dgv);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvSobe);
             this.Controls.Add(this.label1);
             this.Name = "UpravljanjeSobamaForm";
+            this.Text = "UpravljanjeSobamaForm";
             this.Load += new System.EventHandler(this.UpravljanjeSobamaForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Sobe_dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSobe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView Sobe_dgv;
+
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvSobe;
     }
 }

@@ -432,6 +432,7 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
     <FunctionImport Name="DohvatiMjesecnuStatistiku" ReturnType="Collection(PI20_021_DBModel.DohvatiMjesecnuStatistiku_Result)" />
+    <EntitySet Name="MjesecnaStatistika" EntityType="PI20_021_DBModel.MjesecnaStatistika" />
   </EntityContainer>
   <Association Name="FK_Korisnik_VrstaKorisnika">
     <End Type="PI20_021_DBModel.VrstaKorisnika" Role="VrstaKorisnika" Multiplicity="1" />
@@ -509,4 +510,12 @@
     <Property Type="Int32" Name="Mjesec" Nullable="true" />
     <Property Type="Int32" Name="Ukupno" Nullable="true" />
   </ComplexType>
+  <EntityType Name="MjesecnaStatistika">
+    <Key>
+      <PropertyRef Name="ID_rezervacija" />
+    </Key>
+    <Property Name="Mjesec" Type="Int32" />
+    <Property Name="Ukupno" Type="Int32" />
+    <Property Name="ID_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
 </Schema>

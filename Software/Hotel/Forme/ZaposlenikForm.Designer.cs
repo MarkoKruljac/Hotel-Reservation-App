@@ -156,6 +156,7 @@
             this.Controls.Add(this.dgvZaposlenici);
             this.Controls.Add(this.rezervacije_lbl);
             this.Name = "ZaposlenikForm";
+            this.Text = "ZaposlenikForm";
             this.Load += new System.EventHandler(this.ZaposlenikForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).EndInit();
             this.ResumeLayout(false);

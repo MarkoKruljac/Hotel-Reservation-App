@@ -69,6 +69,8 @@ public partial class PI20_021_DBEntities2 : DbContext
 
     public virtual DbSet<BrojRezervacijaMjesec> BrojRezervacijaMjesec { get; set; }
 
+    public virtual DbSet<MjesecnaStatistika> MjesecnaStatistika { get; set; }
+
 
     public virtual ObjectResult<DohvatiPodatkeZaMjesec_Result> DohvatiPodatkeZaMjesec()
     {

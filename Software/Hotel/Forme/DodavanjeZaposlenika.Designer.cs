@@ -62,7 +62,7 @@
             this.btnDodajZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajZaposlenika.ForeColor = System.Drawing.Color.White;
             this.btnDodajZaposlenika.Location = new System.Drawing.Point(302, 400);
-            this.btnDodajZaposlenika.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDodajZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDodajZaposlenika.Name = "btnDodajZaposlenika";
             this.btnDodajZaposlenika.Size = new System.Drawing.Size(120, 50);
             this.btnDodajZaposlenika.TabIndex = 26;
@@ -74,7 +74,7 @@
             // 
             this.cbDodajVrstuZaposlenika.FormattingEnabled = true;
             this.cbDodajVrstuZaposlenika.Location = new System.Drawing.Point(86, 251);
-            this.cbDodajVrstuZaposlenika.Margin = new System.Windows.Forms.Padding(2);
+            this.cbDodajVrstuZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDodajVrstuZaposlenika.Name = "cbDodajVrstuZaposlenika";
             this.cbDodajVrstuZaposlenika.Size = new System.Drawing.Size(144, 21);
             this.cbDodajVrstuZaposlenika.TabIndex = 19;
@@ -82,7 +82,7 @@
             // tbDodajImeZaposlenika
             // 
             this.tbDodajImeZaposlenika.Location = new System.Drawing.Point(100, 105);
-            this.tbDodajImeZaposlenika.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajImeZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajImeZaposlenika.Name = "tbDodajImeZaposlenika";
             this.tbDodajImeZaposlenika.Size = new System.Drawing.Size(144, 20);
             this.tbDodajImeZaposlenika.TabIndex = 18;
@@ -90,7 +90,7 @@
             // tbDodajKorisnickoImeZaposlenika
             // 
             this.tbDodajKorisnickoImeZaposlenika.Location = new System.Drawing.Point(196, 193);
-            this.tbDodajKorisnickoImeZaposlenika.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajKorisnickoImeZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajKorisnickoImeZaposlenika.Name = "tbDodajKorisnickoImeZaposlenika";
             this.tbDodajKorisnickoImeZaposlenika.Size = new System.Drawing.Size(144, 20);
             this.tbDodajKorisnickoImeZaposlenika.TabIndex = 17;
@@ -98,7 +98,7 @@
             // tbDodajAdresuZaposlenika
             // 
             this.tbDodajAdresuZaposlenika.Location = new System.Drawing.Point(478, 182);
-            this.tbDodajAdresuZaposlenika.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajAdresuZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajAdresuZaposlenika.Name = "tbDodajAdresuZaposlenika";
             this.tbDodajAdresuZaposlenika.Size = new System.Drawing.Size(144, 20);
             this.tbDodajAdresuZaposlenika.TabIndex = 16;
@@ -106,7 +106,7 @@
             // tbDodajEmailZaposleniku
             // 
             this.tbDodajEmailZaposleniku.Location = new System.Drawing.Point(100, 182);
-            this.tbDodajEmailZaposleniku.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajEmailZaposleniku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajEmailZaposleniku.Name = "tbDodajEmailZaposleniku";
             this.tbDodajEmailZaposleniku.Size = new System.Drawing.Size(144, 20);
             this.tbDodajEmailZaposleniku.TabIndex = 15;
@@ -114,7 +114,7 @@
             // tbDodajPrezimeZaposleniku
             // 
             this.tbDodajPrezimeZaposleniku.Location = new System.Drawing.Point(277, 105);
-            this.tbDodajPrezimeZaposleniku.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajPrezimeZaposleniku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajPrezimeZaposleniku.Name = "tbDodajPrezimeZaposleniku";
             this.tbDodajPrezimeZaposleniku.Size = new System.Drawing.Size(145, 20);
             this.tbDodajPrezimeZaposleniku.TabIndex = 14;
@@ -122,7 +122,7 @@
             // tbDodajDatumZaposlenja
             // 
             this.tbDodajDatumZaposlenja.Location = new System.Drawing.Point(478, 105);
-            this.tbDodajDatumZaposlenja.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajDatumZaposlenja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajDatumZaposlenja.Name = "tbDodajDatumZaposlenja";
             this.tbDodajDatumZaposlenja.Size = new System.Drawing.Size(144, 20);
             this.tbDodajDatumZaposlenja.TabIndex = 28;
@@ -130,7 +130,7 @@
             // tbDodajOIBZaposleniku
             // 
             this.tbDodajOIBZaposleniku.Location = new System.Drawing.Point(277, 182);
-            this.tbDodajOIBZaposleniku.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajOIBZaposleniku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajOIBZaposleniku.Name = "tbDodajOIBZaposleniku";
             this.tbDodajOIBZaposleniku.Size = new System.Drawing.Size(145, 20);
             this.tbDodajOIBZaposleniku.TabIndex = 30;
@@ -138,7 +138,7 @@
             // tbDodajLozinkuZaposleniku
             // 
             this.tbDodajLozinkuZaposleniku.Location = new System.Drawing.Point(478, 254);
-            this.tbDodajLozinkuZaposleniku.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajLozinkuZaposleniku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajLozinkuZaposleniku.Name = "tbDodajLozinkuZaposleniku";
             this.tbDodajLozinkuZaposleniku.Size = new System.Drawing.Size(144, 20);
             this.tbDodajLozinkuZaposleniku.TabIndex = 31;
@@ -147,7 +147,7 @@
             // 
             this.cbDodajStrucnuSpremuZaposlenika.FormattingEnabled = true;
             this.cbDodajStrucnuSpremuZaposlenika.Location = new System.Drawing.Point(332, 251);
-            this.cbDodajStrucnuSpremuZaposlenika.Margin = new System.Windows.Forms.Padding(2);
+            this.cbDodajStrucnuSpremuZaposlenika.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDodajStrucnuSpremuZaposlenika.Name = "cbDodajStrucnuSpremuZaposlenika";
             this.cbDodajStrucnuSpremuZaposlenika.Size = new System.Drawing.Size(144, 21);
             this.cbDodajStrucnuSpremuZaposlenika.TabIndex = 33;
@@ -313,7 +313,7 @@
             // tbDodajTelefonZaposleniku
             // 
             this.tbDodajTelefonZaposleniku.Location = new System.Drawing.Point(100, 254);
-            this.tbDodajTelefonZaposleniku.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDodajTelefonZaposleniku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDodajTelefonZaposleniku.Name = "tbDodajTelefonZaposleniku";
             this.tbDodajTelefonZaposleniku.Size = new System.Drawing.Size(144, 20);
             this.tbDodajTelefonZaposleniku.TabIndex = 41;
@@ -343,6 +343,7 @@
             this.Controls.Add(this.tbDodajPrezimeZaposleniku);
             this.Controls.Add(this.gbZaposlenici);
             this.Name = "DodavanjeZaposlenika";
+            this.Text = "DodavanjeZaposlenika";
             this.Load += new System.EventHandler(this.DodavanjeZaposlenika_Load);
             this.gbZaposlenici.ResumeLayout(false);
             this.gbZaposlenici.PerformLayout();

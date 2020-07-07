@@ -17,44 +17,24 @@ namespace Hotel.Forme
             InitializeComponent();
         }
 
-
-
-        private void Sobe_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void sobe_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void DohvatiSobe()
-        {
-
-            using (var context = new PI20_021_DBEntities2())
-            {
-
-                var upit = from s in context.Soba
-                           from vs in context.VrstaSobe
-
-
-                           where s.ID_vrste_sobe == vs.ID_vrsta_sobe
-                           select new
-                           {
-                               brojSobe=s.ID_soba,
-                               cijenaSobe=vs.Cijena,
-                               opisSobe=s.Opis
-
-                           };
-
-                Sobe_dgv.DataSource = upit.ToList();
-            }
-        }
-
         private void UpravljanjeSobamaForm_Load(object sender, EventArgs e)
         {
-            DohvatiSobe();
+            using ( var context = new PI20_021_DBEntities2())
+            {
+                int IdHotela = frmPrijava.IDhotela;
+                var upitZaSobe = from s in context.Soba
+                                 from vS in context.VrstaSobe
+                                 from h in context.Hotel
+                                 where s.ID_vrste_sobe == vS.ID_vrsta_sobe && s.ID_hotela == IdHotela && h.ID_hotel == s.ID_hotela
+                                 select new
+                                 {
+                                    BrojSobe = s.ID_soba,
+                                    PripadajuciHotel = h.Ime,
+                                    CijenaSobe = vS.Cijena,
+                                    OpisSobe = s.Opis
+                                 };
+                dgvSobe.DataSource = upitZaSobe.ToList();
+            }
         }
     }
 }

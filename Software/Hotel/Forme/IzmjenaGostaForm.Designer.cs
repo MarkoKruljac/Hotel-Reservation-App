@@ -217,6 +217,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IzmjenaGostaForm";
+            this.Text = "IzmjenaGostaForm";
             this.Load += new System.EventHandler(this.IzmjenaGostaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
