@@ -54,7 +54,7 @@
             this.btbDodajDobavljaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btbDodajDobavljaca.ForeColor = System.Drawing.Color.White;
             this.btbDodajDobavljaca.Location = new System.Drawing.Point(295, 370);
-            this.btbDodajDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btbDodajDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.btbDodajDobavljaca.Name = "btbDodajDobavljaca";
             this.btbDodajDobavljaca.Size = new System.Drawing.Size(125, 50);
             this.btbDodajDobavljaca.TabIndex = 0;
@@ -65,7 +65,7 @@
             // tbDodajDatumIstekaDobavljaca
             // 
             this.tbDodajDatumIstekaDobavljaca.Location = new System.Drawing.Point(67, 180);
-            this.tbDodajDatumIstekaDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDodajDatumIstekaDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbDodajDatumIstekaDobavljaca.Name = "tbDodajDatumIstekaDobavljaca";
             this.tbDodajDatumIstekaDobavljaca.Size = new System.Drawing.Size(137, 20);
             this.tbDodajDatumIstekaDobavljaca.TabIndex = 3;
@@ -73,7 +73,7 @@
             // tbDodajZiroRacDobavljaca
             // 
             this.tbDodajZiroRacDobavljaca.Location = new System.Drawing.Point(220, 225);
-            this.tbDodajZiroRacDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDodajZiroRacDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbDodajZiroRacDobavljaca.Name = "tbDodajZiroRacDobavljaca";
             this.tbDodajZiroRacDobavljaca.Size = new System.Drawing.Size(149, 20);
             this.tbDodajZiroRacDobavljaca.TabIndex = 10;
@@ -81,7 +81,7 @@
             // tbDodajEmailDobaljaca
             // 
             this.tbDodajEmailDobaljaca.Location = new System.Drawing.Point(500, 180);
-            this.tbDodajEmailDobaljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDodajEmailDobaljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbDodajEmailDobaljaca.Name = "tbDodajEmailDobaljaca";
             this.tbDodajEmailDobaljaca.Size = new System.Drawing.Size(167, 20);
             this.tbDodajEmailDobaljaca.TabIndex = 11;
@@ -89,7 +89,7 @@
             // tbDodajTelefonDobavljaca
             // 
             this.tbDodajTelefonDobavljaca.Location = new System.Drawing.Point(263, 180);
-            this.tbDodajTelefonDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDodajTelefonDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbDodajTelefonDobavljaca.Name = "tbDodajTelefonDobavljaca";
             this.tbDodajTelefonDobavljaca.Size = new System.Drawing.Size(157, 20);
             this.tbDodajTelefonDobavljaca.TabIndex = 12;
@@ -97,7 +97,7 @@
             // tbDodajDatumPocDobavljaca
             // 
             this.tbDodajDatumPocDobavljaca.Location = new System.Drawing.Point(500, 97);
-            this.tbDodajDatumPocDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDodajDatumPocDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbDodajDatumPocDobavljaca.Name = "tbDodajDatumPocDobavljaca";
             this.tbDodajDatumPocDobavljaca.Size = new System.Drawing.Size(167, 20);
             this.tbDodajDatumPocDobavljaca.TabIndex = 13;
@@ -105,7 +105,7 @@
             // tbDodajAdresuDobavljaca
             // 
             this.tbDodajAdresuDobavljaca.Location = new System.Drawing.Point(263, 97);
-            this.tbDodajAdresuDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDodajAdresuDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbDodajAdresuDobavljaca.Name = "tbDodajAdresuDobavljaca";
             this.tbDodajAdresuDobavljaca.Size = new System.Drawing.Size(157, 20);
             this.tbDodajAdresuDobavljaca.TabIndex = 14;
@@ -113,7 +113,7 @@
             // tbDodajNazivDobavljaca
             // 
             this.tbDodajNazivDobavljaca.Location = new System.Drawing.Point(68, 97);
-            this.tbDodajNazivDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDodajNazivDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbDodajNazivDobavljaca.Name = "tbDodajNazivDobavljaca";
             this.tbDodajNazivDobavljaca.Size = new System.Drawing.Size(136, 20);
             this.tbDodajNazivDobavljaca.TabIndex = 15;
@@ -239,9 +239,8 @@
             this.Controls.Add(this.tbDodajDatumIstekaDobavljaca);
             this.Controls.Add(this.btbDodajDobavljaca);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DodavanjeDobavljacaForm";
-            this.Text = "Dodavanje dobavljača";
             this.Load += new System.EventHandler(this.DodavanjeDobavljacaForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

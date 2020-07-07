@@ -39,11 +39,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sobebtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnGrafickiIzvjestaji = new System.Windows.Forms.Button();
             this.btnIzvjestaji = new System.Windows.Forms.Button();
-            this.sobebtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,7 +69,7 @@
             this.rezervacije_btn.BackColor = System.Drawing.Color.OliveDrab;
             this.rezervacije_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rezervacije_btn.ForeColor = System.Drawing.Color.White;
-            this.rezervacije_btn.Location = new System.Drawing.Point(27, 54);
+            this.rezervacije_btn.Location = new System.Drawing.Point(27, 59);
             this.rezervacije_btn.Name = "rezervacije_btn";
             this.rezervacije_btn.Size = new System.Drawing.Size(125, 50);
             this.rezervacije_btn.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.dnevniPlan_btn.BackColor = System.Drawing.Color.OliveDrab;
             this.dnevniPlan_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dnevniPlan_btn.ForeColor = System.Drawing.Color.White;
-            this.dnevniPlan_btn.Location = new System.Drawing.Point(207, 54);
+            this.dnevniPlan_btn.Location = new System.Drawing.Point(207, 59);
             this.dnevniPlan_btn.Name = "dnevniPlan_btn";
             this.dnevniPlan_btn.Size = new System.Drawing.Size(125, 50);
             this.dnevniPlan_btn.TabIndex = 4;
@@ -134,7 +134,7 @@
             this.btnGosti.BackColor = System.Drawing.Color.OliveDrab;
             this.btnGosti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnGosti.ForeColor = System.Drawing.Color.White;
-            this.btnGosti.Location = new System.Drawing.Point(113, 110);
+            this.btnGosti.Location = new System.Drawing.Point(113, 113);
             this.btnGosti.Name = "btnGosti";
             this.btnGosti.Size = new System.Drawing.Size(125, 50);
             this.btnGosti.TabIndex = 7;
@@ -156,7 +156,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(446, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(479, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(225, 225);
             this.pictureBox1.TabIndex = 10;
@@ -168,10 +168,23 @@
             this.panel2.Controls.Add(this.btnGosti);
             this.panel2.Controls.Add(this.dnevniPlan_btn);
             this.panel2.Controls.Add(this.rezervacije_btn);
-            this.panel2.Location = new System.Drawing.Point(24, 58);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(361, 163);
             this.panel2.TabIndex = 8;
+            // 
+            // sobebtn
+            // 
+            this.sobebtn.BackColor = System.Drawing.Color.OliveDrab;
+            this.sobebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sobebtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.sobebtn.Location = new System.Drawing.Point(113, 3);
+            this.sobebtn.Name = "sobebtn";
+            this.sobebtn.Size = new System.Drawing.Size(125, 50);
+            this.sobebtn.TabIndex = 12;
+            this.sobebtn.Text = "Pregled soba";
+            this.sobebtn.UseVisualStyleBackColor = false;
+            this.sobebtn.Click += new System.EventHandler(this.sobebtn_Click);
             // 
             // panel3
             // 
@@ -186,7 +199,7 @@
             // 
             this.panel4.Controls.Add(this.btnGrafickiIzvjestaji);
             this.panel4.Controls.Add(this.btnIzvjestaji);
-            this.panel4.Location = new System.Drawing.Point(24, 274);
+            this.panel4.Location = new System.Drawing.Point(3, 274);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(361, 103);
             this.panel4.TabIndex = 11;
@@ -218,16 +231,6 @@
             this.btnIzvjestaji.Click += new System.EventHandler(this.btnIzvjestaji_Click);
             this.btnIzvjestaji.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnIzvjestaji_MouseClick);
             // 
-            // sobebtn
-            // 
-            this.sobebtn.Location = new System.Drawing.Point(130, 7);
-            this.sobebtn.Name = "sobebtn";
-            this.sobebtn.Size = new System.Drawing.Size(91, 41);
-            this.sobebtn.TabIndex = 12;
-            this.sobebtn.Text = "Pregled soba";
-            this.sobebtn.UseVisualStyleBackColor = true;
-            this.sobebtn.Click += new System.EventHandler(this.sobebtn_Click);
-            // 
             // GlavnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,7 +240,6 @@
             this.Controls.Add(this.pomoc_btn);
             this.Controls.Add(this.panel1);
             this.Name = "GlavnaForma";
-            this.Text = "GlavnaForma";
             this.Load += new System.EventHandler(this.GlavnaForma_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

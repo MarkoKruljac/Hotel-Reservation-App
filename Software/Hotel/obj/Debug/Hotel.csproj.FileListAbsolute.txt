@@ -1018,3 +1018,5 @@ C:\Users\Melita\Downloads\r20--mkruljac-pkozina-dlunko-Reports\r20--mkruljac-pko
 C:\Users\Melita\Downloads\r20--mkruljac-pkozina-dlunko-Reports\r20--mkruljac-pkozina-dlunko-Reports\Software\Hotel\obj\Debug\Hotel.csproj.CopyComplete
 C:\Users\Melita\Downloads\r20--mkruljac-pkozina-dlunko-Reports\r20--mkruljac-pkozina-dlunko-Reports\Software\Hotel\obj\Debug\Hotel.exe
 C:\Users\Melita\Downloads\r20--mkruljac-pkozina-dlunko-Reports\r20--mkruljac-pkozina-dlunko-Reports\Software\Hotel\obj\Debug\Hotel.pdb
+C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-dlunko\Software\Hotel\obj\Debug\Hotel.csprojAssemblyReference.cache
+C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-dlunko\Software\Hotel\obj\Debug\Hotel.Forme.UpravljanjeSobamaForm.resources

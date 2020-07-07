@@ -51,7 +51,7 @@
             // tbIzmjeniNazivDobavljaca
             // 
             this.tbIzmjeniNazivDobavljaca.Location = new System.Drawing.Point(56, 113);
-            this.tbIzmjeniNazivDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjeniNazivDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjeniNazivDobavljaca.Name = "tbIzmjeniNazivDobavljaca";
             this.tbIzmjeniNazivDobavljaca.Size = new System.Drawing.Size(163, 20);
             this.tbIzmjeniNazivDobavljaca.TabIndex = 32;
@@ -59,7 +59,7 @@
             // tbIzmjeniAdresuDobavljaca
             // 
             this.tbIzmjeniAdresuDobavljaca.Location = new System.Drawing.Point(275, 113);
-            this.tbIzmjeniAdresuDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjeniAdresuDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjeniAdresuDobavljaca.Name = "tbIzmjeniAdresuDobavljaca";
             this.tbIzmjeniAdresuDobavljaca.Size = new System.Drawing.Size(179, 20);
             this.tbIzmjeniAdresuDobavljaca.TabIndex = 31;
@@ -67,7 +67,7 @@
             // tbIzmjeniDatumPocDobavljaca
             // 
             this.tbIzmjeniDatumPocDobavljaca.Location = new System.Drawing.Point(494, 113);
-            this.tbIzmjeniDatumPocDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjeniDatumPocDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjeniDatumPocDobavljaca.Name = "tbIzmjeniDatumPocDobavljaca";
             this.tbIzmjeniDatumPocDobavljaca.Size = new System.Drawing.Size(189, 20);
             this.tbIzmjeniDatumPocDobavljaca.TabIndex = 30;
@@ -75,7 +75,7 @@
             // tbIzmjeniTelefonDobavljaca
             // 
             this.tbIzmjeniTelefonDobavljaca.Location = new System.Drawing.Point(275, 213);
-            this.tbIzmjeniTelefonDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjeniTelefonDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjeniTelefonDobavljaca.Name = "tbIzmjeniTelefonDobavljaca";
             this.tbIzmjeniTelefonDobavljaca.Size = new System.Drawing.Size(179, 20);
             this.tbIzmjeniTelefonDobavljaca.TabIndex = 29;
@@ -83,7 +83,7 @@
             // tbIzmjeniEmailDobaljaca
             // 
             this.tbIzmjeniEmailDobaljaca.Location = new System.Drawing.Point(494, 213);
-            this.tbIzmjeniEmailDobaljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjeniEmailDobaljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjeniEmailDobaljaca.Name = "tbIzmjeniEmailDobaljaca";
             this.tbIzmjeniEmailDobaljaca.Size = new System.Drawing.Size(189, 20);
             this.tbIzmjeniEmailDobaljaca.TabIndex = 28;
@@ -91,7 +91,7 @@
             // tbIzmjeniZiroRacDobavljaca
             // 
             this.tbIzmjeniZiroRacDobavljaca.Location = new System.Drawing.Point(253, 251);
-            this.tbIzmjeniZiroRacDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjeniZiroRacDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjeniZiroRacDobavljaca.Name = "tbIzmjeniZiroRacDobavljaca";
             this.tbIzmjeniZiroRacDobavljaca.Size = new System.Drawing.Size(179, 20);
             this.tbIzmjeniZiroRacDobavljaca.TabIndex = 27;
@@ -99,7 +99,7 @@
             // tbIzmjeniDatumIstekaDobavljaca
             // 
             this.tbIzmjeniDatumIstekaDobavljaca.Location = new System.Drawing.Point(56, 213);
-            this.tbIzmjeniDatumIstekaDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIzmjeniDatumIstekaDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.tbIzmjeniDatumIstekaDobavljaca.Name = "tbIzmjeniDatumIstekaDobavljaca";
             this.tbIzmjeniDatumIstekaDobavljaca.Size = new System.Drawing.Size(163, 20);
             this.tbIzmjeniDatumIstekaDobavljaca.TabIndex = 20;
@@ -110,7 +110,7 @@
             this.btbIzmjeniDobavljaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btbIzmjeniDobavljaca.ForeColor = System.Drawing.Color.White;
             this.btbIzmjeniDobavljaca.Location = new System.Drawing.Point(275, 384);
-            this.btbIzmjeniDobavljaca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btbIzmjeniDobavljaca.Margin = new System.Windows.Forms.Padding(2);
             this.btbIzmjeniDobavljaca.Name = "btbIzmjeniDobavljaca";
             this.btbIzmjeniDobavljaca.Size = new System.Drawing.Size(125, 50);
             this.btbIzmjeniDobavljaca.TabIndex = 17;
@@ -239,9 +239,8 @@
             this.Controls.Add(this.tbIzmjeniDatumIstekaDobavljaca);
             this.Controls.Add(this.btbIzmjeniDobavljaca);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IzmjenaDobavljacaForma";
-            this.Text = "Izmjena dobavljača";
             this.Load += new System.EventHandler(this.IzmjenaDobavljacaForma_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

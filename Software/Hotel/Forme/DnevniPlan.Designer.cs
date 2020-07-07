@@ -53,24 +53,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label1.Location = new System.Drawing.Point(19, 34);
+            this.label1.Location = new System.Drawing.Point(6, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 15);
+            this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Danas useljavaju:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label2.Location = new System.Drawing.Point(19, 223);
+            this.label2.Location = new System.Drawing.Point(6, 217);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 15);
+            this.label2.Size = new System.Drawing.Size(144, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Danas iseljavaju:";
             // 
@@ -88,35 +88,35 @@
             this.btnOsvjezi.BackColor = System.Drawing.Color.OliveDrab;
             this.btnOsvjezi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOsvjezi.ForeColor = System.Drawing.Color.White;
-            this.btnOsvjezi.Location = new System.Drawing.Point(838, 11);
+            this.btnOsvjezi.Location = new System.Drawing.Point(857, 11);
             this.btnOsvjezi.Name = "btnOsvjezi";
-            this.btnOsvjezi.Size = new System.Drawing.Size(91, 24);
+            this.btnOsvjezi.Size = new System.Drawing.Size(80, 40);
             this.btnOsvjezi.TabIndex = 12;
-            this.btnOsvjezi.Text = "Osvjezi";
+            this.btnOsvjezi.Text = "Osvježi";
             this.btnOsvjezi.UseVisualStyleBackColor = false;
             this.btnOsvjezi.Click += new System.EventHandler(this.btnOsvjezi_Click);
             // 
             // btnObaviIseljenja
             // 
             this.btnObaviIseljenja.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnObaviIseljenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnObaviIseljenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObaviIseljenja.ForeColor = System.Drawing.Color.White;
             this.btnObaviIseljenja.Location = new System.Drawing.Point(801, 313);
             this.btnObaviIseljenja.Name = "btnObaviIseljenja";
-            this.btnObaviIseljenja.Size = new System.Drawing.Size(128, 41);
+            this.btnObaviIseljenja.Size = new System.Drawing.Size(125, 50);
             this.btnObaviIseljenja.TabIndex = 13;
-            this.btnObaviIseljenja.Text = "Obavljeno Iseljenje";
+            this.btnObaviIseljenja.Text = "Obavljeno iseljenje";
             this.btnObaviIseljenja.UseVisualStyleBackColor = false;
             this.btnObaviIseljenja.Click += new System.EventHandler(this.btnObaviIseljenja_Click);
             // 
             // btnIzdajRacun
             // 
             this.btnIzdajRacun.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnIzdajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzdajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzdajRacun.ForeColor = System.Drawing.Color.White;
             this.btnIzdajRacun.Location = new System.Drawing.Point(792, 99);
             this.btnIzdajRacun.Name = "btnIzdajRacun";
-            this.btnIzdajRacun.Size = new System.Drawing.Size(94, 41);
+            this.btnIzdajRacun.Size = new System.Drawing.Size(125, 50);
             this.btnIzdajRacun.TabIndex = 14;
             this.btnIzdajRacun.Text = "Prikaži račun";
             this.btnIzdajRacun.UseVisualStyleBackColor = false;

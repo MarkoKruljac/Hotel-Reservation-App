@@ -59,7 +59,7 @@
             this.prijavagroupBox.Controls.Add(this.lbKorisnickoIme);
             this.prijavagroupBox.Location = new System.Drawing.Point(370, 0);
             this.prijavagroupBox.Name = "prijavagroupBox";
-            this.prijavagroupBox.Size = new System.Drawing.Size(372, 450);
+            this.prijavagroupBox.Size = new System.Drawing.Size(372, 470);
             this.prijavagroupBox.TabIndex = 0;
             this.prijavagroupBox.TabStop = false;
             this.prijavagroupBox.Enter += new System.EventHandler(this.prijavagroupBox_Enter);
@@ -71,7 +71,7 @@
             this.btnOdustani.FlatAppearance.BorderSize = 2;
             this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdustani.ForeColor = System.Drawing.Color.White;
-            this.btnOdustani.Location = new System.Drawing.Point(52, 388);
+            this.btnOdustani.Location = new System.Drawing.Point(189, 394);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(125, 50);
             this.btnOdustani.TabIndex = 4;
@@ -136,7 +136,7 @@
             this.btnPrijava.FlatAppearance.BorderSize = 2;
             this.btnPrijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPrijava.ForeColor = System.Drawing.Color.White;
-            this.btnPrijava.Location = new System.Drawing.Point(188, 388);
+            this.btnPrijava.Location = new System.Drawing.Point(58, 394);
             this.btnPrijava.Name = "btnPrijava";
             this.btnPrijava.Size = new System.Drawing.Size(125, 50);
             this.btnPrijava.TabIndex = 5;
@@ -188,9 +188,9 @@
             // pbPrijava
             // 
             this.pbPrijava.Image = ((System.Drawing.Image)(resources.GetObject("pbPrijava.Image")));
-            this.pbPrijava.Location = new System.Drawing.Point(1, 0);
+            this.pbPrijava.Location = new System.Drawing.Point(2, 12);
             this.pbPrijava.Name = "pbPrijava";
-            this.pbPrijava.Size = new System.Drawing.Size(372, 450);
+            this.pbPrijava.Size = new System.Drawing.Size(372, 470);
             this.pbPrijava.TabIndex = 1;
             this.pbPrijava.TabStop = false;
             // 
@@ -211,7 +211,6 @@
             this.Controls.Add(this.pbPrijava);
             this.Controls.Add(this.prijavagroupBox);
             this.Name = "frmPrijava";
-            this.Text = "Prijava";
             this.Load += new System.EventHandler(this.PrijavaForm_Load);
             this.prijavagroupBox.ResumeLayout(false);
             this.prijavagroupBox.PerformLayout();

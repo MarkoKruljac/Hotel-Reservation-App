@@ -42,51 +42,51 @@
             // btnDodajGosta
             // 
             this.btnDodajGosta.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnDodajGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajGosta.ForeColor = System.Drawing.Color.White;
-            this.btnDodajGosta.Location = new System.Drawing.Point(391, 304);
-            this.btnDodajGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDodajGosta.Location = new System.Drawing.Point(406, 338);
+            this.btnDodajGosta.Margin = new System.Windows.Forms.Padding(2);
             this.btnDodajGosta.Name = "btnDodajGosta";
-            this.btnDodajGosta.Size = new System.Drawing.Size(94, 41);
+            this.btnDodajGosta.Size = new System.Drawing.Size(125, 50);
             this.btnDodajGosta.TabIndex = 1;
-            this.btnDodajGosta.Text = "Dodaj gosta";
+            this.btnDodajGosta.Text = "Dodaj ";
             this.btnDodajGosta.UseVisualStyleBackColor = false;
             this.btnDodajGosta.Click += new System.EventHandler(this.btnDodajGosta_Click);
             // 
             // btnIzmjenaGosta
             // 
             this.btnIzmjenaGosta.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnIzmjenaGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzmjenaGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzmjenaGosta.ForeColor = System.Drawing.Color.White;
-            this.btnIzmjenaGosta.Location = new System.Drawing.Point(286, 304);
-            this.btnIzmjenaGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIzmjenaGosta.Location = new System.Drawing.Point(277, 338);
+            this.btnIzmjenaGosta.Margin = new System.Windows.Forms.Padding(2);
             this.btnIzmjenaGosta.Name = "btnIzmjenaGosta";
-            this.btnIzmjenaGosta.Size = new System.Drawing.Size(94, 41);
+            this.btnIzmjenaGosta.Size = new System.Drawing.Size(125, 50);
             this.btnIzmjenaGosta.TabIndex = 2;
-            this.btnIzmjenaGosta.Text = "Izmjeni";
+            this.btnIzmjenaGosta.Text = "Izmijeni";
             this.btnIzmjenaGosta.UseVisualStyleBackColor = false;
             this.btnIzmjenaGosta.Click += new System.EventHandler(this.btnIzmjenaGosta_Click);
             // 
             // dgvGosti
             // 
             this.dgvGosti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGosti.Location = new System.Drawing.Point(18, 41);
-            this.dgvGosti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvGosti.Location = new System.Drawing.Point(11, 51);
+            this.dgvGosti.Margin = new System.Windows.Forms.Padding(2);
             this.dgvGosti.Name = "dgvGosti";
             this.dgvGosti.RowHeadersWidth = 51;
             this.dgvGosti.RowTemplate.Height = 24;
-            this.dgvGosti.Size = new System.Drawing.Size(573, 249);
+            this.dgvGosti.Size = new System.Drawing.Size(659, 283);
             this.dgvGosti.TabIndex = 4;
             // 
             // btnOsvjeziGoste
             // 
             this.btnOsvjeziGoste.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnOsvjeziGoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOsvjeziGoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOsvjeziGoste.ForeColor = System.Drawing.Color.White;
-            this.btnOsvjeziGoste.Location = new System.Drawing.Point(506, 10);
-            this.btnOsvjeziGoste.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOsvjeziGoste.Location = new System.Drawing.Point(590, 7);
+            this.btnOsvjeziGoste.Margin = new System.Windows.Forms.Padding(2);
             this.btnOsvjeziGoste.Name = "btnOsvjeziGoste";
-            this.btnOsvjeziGoste.Size = new System.Drawing.Size(76, 26);
+            this.btnOsvjeziGoste.Size = new System.Drawing.Size(80, 40);
             this.btnOsvjeziGoste.TabIndex = 5;
             this.btnOsvjeziGoste.Text = "Osvježi";
             this.btnOsvjeziGoste.UseVisualStyleBackColor = false;
@@ -94,36 +94,36 @@
             // 
             // tbPrezimeGosta
             // 
-            this.tbPrezimeGosta.Location = new System.Drawing.Point(349, 18);
-            this.tbPrezimeGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPrezimeGosta.Location = new System.Drawing.Point(406, 19);
+            this.tbPrezimeGosta.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrezimeGosta.Name = "tbPrezimeGosta";
-            this.tbPrezimeGosta.Size = new System.Drawing.Size(103, 20);
+            this.tbPrezimeGosta.Size = new System.Drawing.Size(155, 20);
             this.tbPrezimeGosta.TabIndex = 6;
             this.tbPrezimeGosta.TextChanged += new System.EventHandler(this.tbPrezimeGosta_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label1.Location = new System.Drawing.Point(158, 18);
+            this.label1.Location = new System.Drawing.Point(206, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 17);
+            this.label1.Size = new System.Drawing.Size(196, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Pretraga po prezimenu:";
             // 
             // btnIzbrisiGosta
             // 
             this.btnIzbrisiGosta.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnIzbrisiGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzbrisiGosta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzbrisiGosta.ForeColor = System.Drawing.Color.White;
-            this.btnIzbrisiGosta.Location = new System.Drawing.Point(496, 304);
-            this.btnIzbrisiGosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIzbrisiGosta.Location = new System.Drawing.Point(535, 338);
+            this.btnIzbrisiGosta.Margin = new System.Windows.Forms.Padding(2);
             this.btnIzbrisiGosta.Name = "btnIzbrisiGosta";
-            this.btnIzbrisiGosta.Size = new System.Drawing.Size(94, 41);
+            this.btnIzbrisiGosta.Size = new System.Drawing.Size(125, 50);
             this.btnIzbrisiGosta.TabIndex = 3;
-            this.btnIzbrisiGosta.Text = "Izbriši gosta";
+            this.btnIzbrisiGosta.Text = "Izbriši ";
             this.btnIzbrisiGosta.UseVisualStyleBackColor = false;
             this.btnIzbrisiGosta.Click += new System.EventHandler(this.btnIzbrisiGosta_Click);
             // 
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(681, 410);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbPrezimeGosta);
@@ -148,9 +148,8 @@
             this.Controls.Add(this.btnIzbrisiGosta);
             this.Controls.Add(this.btnIzmjenaGosta);
             this.Controls.Add(this.btnDodajGosta);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GostiForma";
-            this.Text = "GostiForma";
             this.Load += new System.EventHandler(this.GostiForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGosti)).EndInit();
             this.ResumeLayout(false);
