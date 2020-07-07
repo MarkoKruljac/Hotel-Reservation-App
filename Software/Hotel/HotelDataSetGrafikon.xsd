@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HotelDataSetGrafikon" targetNamespace="http://tempuri.org/HotelDataSetGrafikon.xsd" xmlns:mstns="http://tempuri.org/HotelDataSetGrafikon.xsd" xmlns="http://tempuri.org/HotelDataSetGrafikon.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PI20_021_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PI20_021_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Hotel.Properties.Settings.GlobalReference.Default.PI20_021_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MjesecnaStatistikaTableAdapter" GeneratorDataComponentClassName="MjesecnaStatistikaTableAdapter" Name="MjesecnaStatistika" UserDataComponentName="MjesecnaStatistikaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PI20_021_DBConnectionString (Settings)" DbObjectName="PI20_021_DB.dbo.MjesecnaStatistika" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Mjesec, Ukupno, ID_rezervacija FROM dbo.MjesecnaStatistika</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Mjesec" DataSetColumn="Mjesec" />
+              <Mapping SourceColumn="Ukupno" DataSetColumn="Ukupno" />
+              <Mapping SourceColumn="ID_rezervacija" DataSetColumn="ID_rezervacija" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HotelDataSetGrafikon" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HotelDataSetGrafikon" msprop:Generator_UserDSName="HotelDataSetGrafikon">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MjesecnaStatistika" msprop:Generator_TableClassName="MjesecnaStatistikaDataTable" msprop:Generator_TableVarName="tableMjesecnaStatistika" msprop:Generator_TablePropName="MjesecnaStatistika" msprop:Generator_RowDeletingName="MjesecnaStatistikaRowDeleting" msprop:Generator_RowChangingName="MjesecnaStatistikaRowChanging" msprop:Generator_RowEvHandlerName="MjesecnaStatistikaRowChangeEventHandler" msprop:Generator_RowDeletedName="MjesecnaStatistikaRowDeleted" msprop:Generator_UserTableName="MjesecnaStatistika" msprop:Generator_RowChangedName="MjesecnaStatistikaRowChanged" msprop:Generator_RowEvArgName="MjesecnaStatistikaRowChangeEvent" msprop:Generator_RowClassName="MjesecnaStatistikaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mjesec" msprop:Generator_ColumnVarNameInTable="columnMjesec" msprop:Generator_ColumnPropNameInRow="Mjesec" msprop:Generator_ColumnPropNameInTable="MjesecColumn" msprop:Generator_UserColumnName="Mjesec" type="xs:int" minOccurs="0" />
+              <xs:element name="Ukupno" msprop:Generator_ColumnVarNameInTable="columnUkupno" msprop:Generator_ColumnPropNameInRow="Ukupno" msprop:Generator_ColumnPropNameInTable="UkupnoColumn" msprop:Generator_UserColumnName="Ukupno" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_rezervacija" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_rezervacija" msprop:Generator_ColumnPropNameInRow="ID_rezervacija" msprop:Generator_ColumnPropNameInTable="ID_rezervacijaColumn" msprop:Generator_UserColumnName="ID_rezervacija" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MjesecnaStatistika" />
+      <xs:field xpath="mstns:ID_rezervacija" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

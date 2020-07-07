@@ -59,8 +59,6 @@ namespace Hotel
             {
                 int IDbrisanja = int.Parse(rezervacija_dtg.CurrentRow.Cells[0].Value.ToString());
 
-
-
                 using (var context = new PI20_021_DBEntities2())
                 {
                     var ProvjeraPostojiLiRacun = from ra in context.Racun
@@ -77,7 +75,6 @@ namespace Hotel
                         ObrisiRacun(IDbrisanja);
                         lblError.Text = ""; //novo
 
-
                     }
                     try { 
                     context.Rezervacija.Remove(upit.FirstOrDefault());
@@ -87,9 +84,6 @@ namespace Hotel
                     {
                         lblError.Text = "Obrisali ste racun odabrane rezervacije, pritisnite opet za brisanje same rezervacije!";   //novo
                     }
-
-
-
 
                 }
                 DohvatiRezervacije();

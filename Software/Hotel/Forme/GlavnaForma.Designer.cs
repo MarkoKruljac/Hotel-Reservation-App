@@ -37,13 +37,17 @@
             this.odjava_btn = new System.Windows.Forms.Button();
             this.btnGosti = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnIzvjestaji = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnGrafickiIzvjestaji = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // zaposlenici_btn
@@ -142,10 +146,34 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(13, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(719, 391);
             this.panel1.TabIndex = 8;
+            // 
+            // btnIzvjestaji
+            // 
+            this.btnIzvjestaji.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzvjestaji.ForeColor = System.Drawing.Color.White;
+            this.btnIzvjestaji.Location = new System.Drawing.Point(27, 29);
+            this.btnIzvjestaji.Name = "btnIzvjestaji";
+            this.btnIzvjestaji.Size = new System.Drawing.Size(125, 50);
+            this.btnIzvjestaji.TabIndex = 7;
+            this.btnIzvjestaji.Text = "Statistika tablično";
+            this.btnIzvjestaji.UseVisualStyleBackColor = false;
+            this.btnIzvjestaji.Click += new System.EventHandler(this.btnIzvjestaji_Click);
+            this.btnIzvjestaji.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnIzvjestaji_MouseClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(446, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 225);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -166,14 +194,27 @@
             this.panel3.Size = new System.Drawing.Size(311, 103);
             this.panel3.TabIndex = 9;
             // 
-            // pictureBox1
+            // panel4
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(446, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 225);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.panel4.Controls.Add(this.btnGrafickiIzvjestaji);
+            this.panel4.Controls.Add(this.btnIzvjestaji);
+            this.panel4.Location = new System.Drawing.Point(24, 274);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(361, 103);
+            this.panel4.TabIndex = 11;
+            // 
+            // btnGrafickiIzvjestaji
+            // 
+            this.btnGrafickiIzvjestaji.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnGrafickiIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnGrafickiIzvjestaji.ForeColor = System.Drawing.Color.White;
+            this.btnGrafickiIzvjestaji.Location = new System.Drawing.Point(207, 29);
+            this.btnGrafickiIzvjestaji.Name = "btnGrafickiIzvjestaji";
+            this.btnGrafickiIzvjestaji.Size = new System.Drawing.Size(125, 50);
+            this.btnGrafickiIzvjestaji.TabIndex = 8;
+            this.btnGrafickiIzvjestaji.Text = "Statistika grafički";
+            this.btnGrafickiIzvjestaji.UseVisualStyleBackColor = false;
+            this.btnGrafickiIzvjestaji.Click += new System.EventHandler(this.button1_Click);
             // 
             // GlavnaForma
             // 
@@ -187,9 +228,10 @@
             this.Text = "GlavnaForma";
             this.Load += new System.EventHandler(this.GlavnaForma_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,5 +249,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnIzvjestaji;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnGrafickiIzvjestaji;
     }
 }

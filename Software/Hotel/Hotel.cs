@@ -69,6 +69,9 @@ public partial class Hotel
 
     public virtual ICollection<Gost> Gost { get; set; }
 
-}
+        internal class DohvatiMjesecnuStatistiku_Result
+        {
+        }
+    }
 
 }

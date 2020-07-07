@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HotelDataSet" targetNamespace="http://tempuri.org/HotelDataSet.xsd" xmlns:mstns="http://tempuri.org/HotelDataSet.xsd" xmlns="http://tempuri.org/HotelDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PI20_021_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PI20_021_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Hotel.Properties.Settings.GlobalReference.Default.PI20_021_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BrojRezervacijaDanasTableAdapter" GeneratorDataComponentClassName="BrojRezervacijaDanasTableAdapter" Name="BrojRezervacijaDanas" UserDataComponentName="BrojRezervacijaDanasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PI20_021_DBConnectionString (Settings)" DbObjectName="PI20_021_DB.dbo.BrojRezervacijaDanas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Expr1, ID_rezervacija FROM dbo.BrojRezervacijaDanas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="ID_rezervacija" DataSetColumn="ID_rezervacija" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BrojRezervacijaGodinaTableAdapter" GeneratorDataComponentClassName="BrojRezervacijaGodinaTableAdapter" Name="BrojRezervacijaGodina" UserDataComponentName="BrojRezervacijaGodinaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PI20_021_DBConnectionString (Settings)" DbObjectName="PI20_021_DB.dbo.BrojRezervacijaGodina" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Expr1, ID_rezervacija FROM dbo.BrojRezervacijaGodina</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="ID_rezervacija" DataSetColumn="ID_rezervacija" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BrojRezervacijaMjesecTableAdapter" GeneratorDataComponentClassName="BrojRezervacijaMjesecTableAdapter" Name="BrojRezervacijaMjesec" UserDataComponentName="BrojRezervacijaMjesecTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PI20_021_DBConnectionString (Settings)" DbObjectName="PI20_021_DB.dbo.BrojRezervacijaMjesec" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Expr1, ID_rezervacija FROM dbo.BrojRezervacijaMjesec</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="ID_rezervacija" DataSetColumn="ID_rezervacija" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HotelDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HotelDataSet" msprop:Generator_UserDSName="HotelDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BrojRezervacijaDanas" msprop:Generator_TableClassName="BrojRezervacijaDanasDataTable" msprop:Generator_TableVarName="tableBrojRezervacijaDanas" msprop:Generator_RowChangedName="BrojRezervacijaDanasRowChanged" msprop:Generator_TablePropName="BrojRezervacijaDanas" msprop:Generator_RowDeletingName="BrojRezervacijaDanasRowDeleting" msprop:Generator_RowChangingName="BrojRezervacijaDanasRowChanging" msprop:Generator_RowEvHandlerName="BrojRezervacijaDanasRowChangeEventHandler" msprop:Generator_RowDeletedName="BrojRezervacijaDanasRowDeleted" msprop:Generator_RowClassName="BrojRezervacijaDanasRow" msprop:Generator_UserTableName="BrojRezervacijaDanas" msprop:Generator_RowEvArgName="BrojRezervacijaDanasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_rezervacija" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_rezervacija" msprop:Generator_ColumnPropNameInRow="ID_rezervacija" msprop:Generator_ColumnPropNameInTable="ID_rezervacijaColumn" msprop:Generator_UserColumnName="ID_rezervacija" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BrojRezervacijaGodina" msprop:Generator_TableClassName="BrojRezervacijaGodinaDataTable" msprop:Generator_TableVarName="tableBrojRezervacijaGodina" msprop:Generator_RowChangedName="BrojRezervacijaGodinaRowChanged" msprop:Generator_TablePropName="BrojRezervacijaGodina" msprop:Generator_RowDeletingName="BrojRezervacijaGodinaRowDeleting" msprop:Generator_RowChangingName="BrojRezervacijaGodinaRowChanging" msprop:Generator_RowEvHandlerName="BrojRezervacijaGodinaRowChangeEventHandler" msprop:Generator_RowDeletedName="BrojRezervacijaGodinaRowDeleted" msprop:Generator_RowClassName="BrojRezervacijaGodinaRow" msprop:Generator_UserTableName="BrojRezervacijaGodina" msprop:Generator_RowEvArgName="BrojRezervacijaGodinaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_rezervacija" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_rezervacija" msprop:Generator_ColumnPropNameInRow="ID_rezervacija" msprop:Generator_ColumnPropNameInTable="ID_rezervacijaColumn" msprop:Generator_UserColumnName="ID_rezervacija" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BrojRezervacijaMjesec" msprop:Generator_TableClassName="BrojRezervacijaMjesecDataTable" msprop:Generator_TableVarName="tableBrojRezervacijaMjesec" msprop:Generator_RowChangedName="BrojRezervacijaMjesecRowChanged" msprop:Generator_TablePropName="BrojRezervacijaMjesec" msprop:Generator_RowDeletingName="BrojRezervacijaMjesecRowDeleting" msprop:Generator_RowChangingName="BrojRezervacijaMjesecRowChanging" msprop:Generator_RowEvHandlerName="BrojRezervacijaMjesecRowChangeEventHandler" msprop:Generator_RowDeletedName="BrojRezervacijaMjesecRowDeleted" msprop:Generator_RowClassName="BrojRezervacijaMjesecRow" msprop:Generator_UserTableName="BrojRezervacijaMjesec" msprop:Generator_RowEvArgName="BrojRezervacijaMjesecRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_rezervacija" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_rezervacija" msprop:Generator_ColumnPropNameInRow="ID_rezervacija" msprop:Generator_ColumnPropNameInTable="ID_rezervacijaColumn" msprop:Generator_UserColumnName="ID_rezervacija" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BrojRezervacijaDanas" />
+      <xs:field xpath="mstns:ID_rezervacija" />
+    </xs:unique>
+    <xs:unique name="BrojRezervacijaGodina_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BrojRezervacijaGodina" />
+      <xs:field xpath="mstns:ID_rezervacija" />
+    </xs:unique>
+    <xs:unique name="BrojRezervacijaMjesec_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BrojRezervacijaMjesec" />
+      <xs:field xpath="mstns:ID_rezervacija" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
