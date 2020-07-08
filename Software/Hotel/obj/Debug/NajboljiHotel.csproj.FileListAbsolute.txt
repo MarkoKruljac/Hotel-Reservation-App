@@ -172,3 +172,4 @@ C:\Users\domin\Desktop\PI_PROJEKT\r20--mkruljac-pkozina-dlunko-Reports\r20--mkru
 C:\Users\domin\Desktop\PI_PROJEKT\r20--mkruljac-pkozina-dlunko-Reports\r20--mkruljac-pkozina-dlunko-Reports\Software\Hotel\obj\Debug\Hotel.exe
 C:\Users\domin\Desktop\PI_PROJEKT\r20--mkruljac-pkozina-dlunko-Reports\r20--mkruljac-pkozina-dlunko-Reports\Software\Hotel\obj\Debug\Hotel.pdb
 C:\Users\domin\Desktop\PI_PROJEKT\r20--mkruljac-pkozina-dlunko-Reports\r20--mkruljac-pkozina-dlunko-Reports\Software\Hotel\obj\Debug\NajboljiHotel.csprojAssemblyReference.cache
+C:\Users\Marko\Documents\faks\6.semestar\PI marko\Projekt\r20--mkruljac-pkozina-dlunko\Software\Hotel\obj\Debug\Hotel.Forme.UpravljanjeSobamaForm.resources
