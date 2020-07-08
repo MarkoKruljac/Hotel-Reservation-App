@@ -31,18 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GlavnaForma));
             this.pomoc_btn = new System.Windows.Forms.Button();
             this.odjava_btn = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnIzvjestaji = new System.Windows.Forms.Button();
             this.btnGrafickiIzvjestaji = new System.Windows.Forms.Button();
+            this.btnIzvjestaji = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.zaposlenici_btn = new System.Windows.Forms.Button();
             this.dobavljaci_btn = new System.Windows.Forms.Button();
+            this.zaposlenici_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rezervacije_btn = new System.Windows.Forms.Button();
-            this.dnevniPlan_btn = new System.Windows.Forms.Button();
-            this.btnGosti = new System.Windows.Forms.Button();
             this.btnPopisSoba = new System.Windows.Forms.Button();
+            this.btnGosti = new System.Windows.Forms.Button();
+            this.dnevniPlan_btn = new System.Windows.Forms.Button();
+            this.rezervacije_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
@@ -80,18 +79,6 @@
             this.odjava_btn.UseVisualStyleBackColor = false;
             this.odjava_btn.Click += new System.EventHandler(this.odjava_btn_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1057, 629);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -104,6 +91,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(481, 127);
             this.panel4.TabIndex = 11;
+            // 
+            // btnGrafickiIzvjestaji
+            // 
+            this.btnGrafickiIzvjestaji.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnGrafickiIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnGrafickiIzvjestaji.ForeColor = System.Drawing.Color.White;
+            this.btnGrafickiIzvjestaji.Location = new System.Drawing.Point(276, 36);
+            this.btnGrafickiIzvjestaji.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGrafickiIzvjestaji.Name = "btnGrafickiIzvjestaji";
+            this.btnGrafickiIzvjestaji.Size = new System.Drawing.Size(167, 62);
+            this.btnGrafickiIzvjestaji.TabIndex = 8;
+            this.btnGrafickiIzvjestaji.Text = "Statistika grafički";
+            this.btnGrafickiIzvjestaji.UseVisualStyleBackColor = false;
+            this.btnGrafickiIzvjestaji.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnIzvjestaji
             // 
@@ -120,20 +121,6 @@
             this.btnIzvjestaji.Click += new System.EventHandler(this.btnIzvjestaji_Click);
             this.btnIzvjestaji.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnIzvjestaji_MouseClick);
             // 
-            // btnGrafickiIzvjestaji
-            // 
-            this.btnGrafickiIzvjestaji.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnGrafickiIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnGrafickiIzvjestaji.ForeColor = System.Drawing.Color.White;
-            this.btnGrafickiIzvjestaji.Location = new System.Drawing.Point(276, 36);
-            this.btnGrafickiIzvjestaji.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGrafickiIzvjestaji.Name = "btnGrafickiIzvjestaji";
-            this.btnGrafickiIzvjestaji.Size = new System.Drawing.Size(167, 62);
-            this.btnGrafickiIzvjestaji.TabIndex = 8;
-            this.btnGrafickiIzvjestaji.Text = "Statistika grafički";
-            this.btnGrafickiIzvjestaji.UseVisualStyleBackColor = false;
-            this.btnGrafickiIzvjestaji.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -146,20 +133,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(415, 127);
             this.panel3.TabIndex = 9;
-            // 
-            // zaposlenici_btn
-            // 
-            this.zaposlenici_btn.BackColor = System.Drawing.Color.OliveDrab;
-            this.zaposlenici_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.zaposlenici_btn.ForeColor = System.Drawing.Color.White;
-            this.zaposlenici_btn.Location = new System.Drawing.Point(32, 36);
-            this.zaposlenici_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.zaposlenici_btn.Name = "zaposlenici_btn";
-            this.zaposlenici_btn.Size = new System.Drawing.Size(167, 62);
-            this.zaposlenici_btn.TabIndex = 0;
-            this.zaposlenici_btn.Text = "Zaposlenici";
-            this.zaposlenici_btn.UseVisualStyleBackColor = false;
-            this.zaposlenici_btn.Click += new System.EventHandler(this.zaposlenici_btn_Click);
             // 
             // dobavljaci_btn
             // 
@@ -174,6 +147,20 @@
             this.dobavljaci_btn.Text = "Dobavljači";
             this.dobavljaci_btn.UseVisualStyleBackColor = false;
             this.dobavljaci_btn.Click += new System.EventHandler(this.dobavljaci_btn_Click);
+            // 
+            // zaposlenici_btn
+            // 
+            this.zaposlenici_btn.BackColor = System.Drawing.Color.OliveDrab;
+            this.zaposlenici_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.zaposlenici_btn.ForeColor = System.Drawing.Color.White;
+            this.zaposlenici_btn.Location = new System.Drawing.Point(32, 36);
+            this.zaposlenici_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.zaposlenici_btn.Name = "zaposlenici_btn";
+            this.zaposlenici_btn.Size = new System.Drawing.Size(167, 62);
+            this.zaposlenici_btn.TabIndex = 0;
+            this.zaposlenici_btn.Text = "Zaposlenici";
+            this.zaposlenici_btn.UseVisualStyleBackColor = false;
+            this.zaposlenici_btn.Click += new System.EventHandler(this.zaposlenici_btn_Click);
             // 
             // panel2
             // 
@@ -190,33 +177,19 @@
             this.panel2.Size = new System.Drawing.Size(465, 299);
             this.panel2.TabIndex = 8;
             // 
-            // rezervacije_btn
+            // btnPopisSoba
             // 
-            this.rezervacije_btn.BackColor = System.Drawing.Color.OliveDrab;
-            this.rezervacije_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rezervacije_btn.ForeColor = System.Drawing.Color.White;
-            this.rezervacije_btn.Location = new System.Drawing.Point(36, 104);
-            this.rezervacije_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.rezervacije_btn.Name = "rezervacije_btn";
-            this.rezervacije_btn.Size = new System.Drawing.Size(167, 62);
-            this.rezervacije_btn.TabIndex = 2;
-            this.rezervacije_btn.Text = "Rezervacije";
-            this.rezervacije_btn.UseVisualStyleBackColor = false;
-            this.rezervacije_btn.Click += new System.EventHandler(this.rezervacije_btn_Click);
-            // 
-            // dnevniPlan_btn
-            // 
-            this.dnevniPlan_btn.BackColor = System.Drawing.Color.OliveDrab;
-            this.dnevniPlan_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dnevniPlan_btn.ForeColor = System.Drawing.Color.White;
-            this.dnevniPlan_btn.Location = new System.Drawing.Point(276, 104);
-            this.dnevniPlan_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.dnevniPlan_btn.Name = "dnevniPlan_btn";
-            this.dnevniPlan_btn.Size = new System.Drawing.Size(167, 62);
-            this.dnevniPlan_btn.TabIndex = 4;
-            this.dnevniPlan_btn.Text = "Dnevni plan";
-            this.dnevniPlan_btn.UseVisualStyleBackColor = false;
-            this.dnevniPlan_btn.Click += new System.EventHandler(this.dnevniPlan_btn_Click);
+            this.btnPopisSoba.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnPopisSoba.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPopisSoba.ForeColor = System.Drawing.Color.White;
+            this.btnPopisSoba.Location = new System.Drawing.Point(151, 7);
+            this.btnPopisSoba.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPopisSoba.Name = "btnPopisSoba";
+            this.btnPopisSoba.Size = new System.Drawing.Size(167, 62);
+            this.btnPopisSoba.TabIndex = 8;
+            this.btnPopisSoba.Text = "Popis soba";
+            this.btnPopisSoba.UseVisualStyleBackColor = false;
+            this.btnPopisSoba.Click += new System.EventHandler(this.btnPopisSoba_Click);
             // 
             // btnGosti
             // 
@@ -232,19 +205,33 @@
             this.btnGosti.UseVisualStyleBackColor = false;
             this.btnGosti.Click += new System.EventHandler(this.btnGosti_Click);
             // 
-            // btnPopisSoba
+            // dnevniPlan_btn
             // 
-            this.btnPopisSoba.BackColor = System.Drawing.Color.OliveDrab;
-            this.btnPopisSoba.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPopisSoba.ForeColor = System.Drawing.Color.White;
-            this.btnPopisSoba.Location = new System.Drawing.Point(151, 7);
-            this.btnPopisSoba.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPopisSoba.Name = "btnPopisSoba";
-            this.btnPopisSoba.Size = new System.Drawing.Size(167, 62);
-            this.btnPopisSoba.TabIndex = 8;
-            this.btnPopisSoba.Text = "Popis soba";
-            this.btnPopisSoba.UseVisualStyleBackColor = false;
-            this.btnPopisSoba.Click += new System.EventHandler(this.btnPopisSoba_Click);
+            this.dnevniPlan_btn.BackColor = System.Drawing.Color.OliveDrab;
+            this.dnevniPlan_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dnevniPlan_btn.ForeColor = System.Drawing.Color.White;
+            this.dnevniPlan_btn.Location = new System.Drawing.Point(276, 104);
+            this.dnevniPlan_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.dnevniPlan_btn.Name = "dnevniPlan_btn";
+            this.dnevniPlan_btn.Size = new System.Drawing.Size(167, 62);
+            this.dnevniPlan_btn.TabIndex = 4;
+            this.dnevniPlan_btn.Text = "Dnevni plan";
+            this.dnevniPlan_btn.UseVisualStyleBackColor = false;
+            this.dnevniPlan_btn.Click += new System.EventHandler(this.dnevniPlan_btn_Click);
+            // 
+            // rezervacije_btn
+            // 
+            this.rezervacije_btn.BackColor = System.Drawing.Color.OliveDrab;
+            this.rezervacije_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rezervacije_btn.ForeColor = System.Drawing.Color.White;
+            this.rezervacije_btn.Location = new System.Drawing.Point(36, 104);
+            this.rezervacije_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.rezervacije_btn.Name = "rezervacije_btn";
+            this.rezervacije_btn.Size = new System.Drawing.Size(167, 62);
+            this.rezervacije_btn.TabIndex = 2;
+            this.rezervacije_btn.Text = "Rezervacije";
+            this.rezervacije_btn.UseVisualStyleBackColor = false;
+            this.rezervacije_btn.Click += new System.EventHandler(this.rezervacije_btn_Click);
             // 
             // panel1
             // 
@@ -283,7 +270,6 @@
             this.Controls.Add(this.odjava_btn);
             this.Controls.Add(this.pomoc_btn);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GlavnaForma";
             this.Text = "GlavnaForma";
@@ -300,7 +286,6 @@
         #endregion
         private System.Windows.Forms.Button pomoc_btn;
         private System.Windows.Forms.Button odjava_btn;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnGrafickiIzvjestaji;
         private System.Windows.Forms.Button btnIzvjestaji;
