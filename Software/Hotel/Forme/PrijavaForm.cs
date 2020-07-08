@@ -225,12 +225,17 @@ namespace Hotel
         {
             tbLozinka.PasswordChar = '*';
             
-            
+
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lbKorisnickoIme_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

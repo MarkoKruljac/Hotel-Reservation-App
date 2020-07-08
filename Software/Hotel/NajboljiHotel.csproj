@@ -188,6 +188,12 @@
     <Compile Include="Forme\RezervacijaIzvještaj.Designer.cs">
       <DependentUpon>RezervacijaIzvještaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\UpravljanjeSobamaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\UpravljanjeSobamaForm.Designer.cs">
+      <DependentUpon>UpravljanjeSobamaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\ZaposlenikForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\RezervacijaIzvještaj.resx">
       <DependentUpon>RezervacijaIzvještaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\UpravljanjeSobamaForm.resx">
+      <DependentUpon>UpravljanjeSobamaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ZaposlenikForm.resx">
       <DependentUpon>ZaposlenikForm.cs</DependentUpon>

@@ -72,6 +72,8 @@ namespace Hotel
 
         private void GlavnaForma_Load(object sender, EventArgs e)
         {
+            
+
             frmPrijava frmPrijava = new frmPrijava();
             if(admin==false)
             {
@@ -95,6 +97,17 @@ namespace Hotel
         {
             RezervacijaIzjveštajG rezervacijaIzvještajGrafički = new RezervacijaIzjveštajG();
             rezervacijaIzvještajGrafički.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnPopisSoba_Click(object sender, EventArgs e)
+        {
+            UpravljanjeSobamaForm upravljanjeSobamaForm = new UpravljanjeSobamaForm();
+            upravljanjeSobamaForm.ShowDialog();
         }
     }
 }
