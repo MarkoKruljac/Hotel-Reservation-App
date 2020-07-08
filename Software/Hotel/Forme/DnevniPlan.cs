@@ -104,7 +104,10 @@ namespace Hotel
 
         private void DnevniPlan_Load(object sender, EventArgs e)
         {
-            
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(w, h);
             DohvatiDnevniPlanUseljenja();
             if(dnevniPlanUseljenje_dgv.CurrentRow == null)
             {
