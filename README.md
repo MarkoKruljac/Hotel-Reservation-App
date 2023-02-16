@@ -1,5 +1,7 @@
-## PI20-021 Hotel 
+## PI20-021 Hotel
 (mentor: Zlatko Stapić)
+
+zadatak iz kolegija Programsko inženjerstvo
 
 ## Projektni tim
 
